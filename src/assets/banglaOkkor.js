@@ -595,17 +595,8 @@ const banglaOkkor = {
             }
         },
         {
-            word : 'ه',
-            sentense : '',
-            banglaPunctuation : 'হা',
-            position : {
-                start : 'هـ',
-                center : 'ـهـ',
-                end : 'ـه'
-            }
-        },
-        {
-            word : 'هه',
+            letter : 'ه',
+            word : '',
             sentense : '',
             banglaPunctuation : 'হা',
             position : {
@@ -637,7 +628,7 @@ const banglaOkkor = {
             }
         },
         {
-            letter : 'ي (ى)',
+            letter : 'ى',
             word : '',
             sentense : '',
             banglaPunctuation : 'ইয়া',

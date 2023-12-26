@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'kalpurush';
+    src: url('./assets/fonts/kalpurush.ttf');
+}
+
+@font-face {
+    font-family: 'uthemi';
+    src: url('./assets/fonts/arabic_uthemi.otf');
+}
