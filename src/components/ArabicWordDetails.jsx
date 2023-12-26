@@ -1,22 +1,28 @@
 import { motion, AnimatePresence } from "framer-motion"
 
-const WordDetails = ({ id, letter, view, setView }) => {
+const ArabicWordDetails = ({ id, letter, view, setView }) => {
     return (
         <div
-            className="fixed top-0 left-0 h-screen w-full flex justify-center items-center bg-teal-500/90"
+            className="fixed top-0 left-0 h-screen w-full flex justify-center items-center bg-gradient-to-r from-pink-500/95 to-pink-500 p-4"
         >
             <AnimatePresence>
                 <motion.div
                     layoutId={id}
-                    className="w-4/12 p-4 bg-white rounded-xl shadow-md"
+                    className="relative w-4/12 p-4 bg-white rounded-3xl shadow-md"
                 >
+                    <div
+                        onClick={()=>setView(!view)}
+                        className="absolute right-3 top-3 h-8 w-8 flex justify-center items-center bg-pink-100 text-pink-500 hover:bg-pink-200 hover:text-pink-600 cursor-pointer rounded-full"
+                    >
+                        <span>X</span>
+                    </div>
                     <p
-                        className="font-uthemi text-8xl text-center font-extrabold"
+                        className="font-uthemi text-9xl text-center font-extrabold"
                     >
                         {letter.letter}
                     </p>
                     <p
-                        className="font-kalpurush py-2 text-3xl"
+                        className="font-kalpurush py-2 text-4xl"
                     >
                         {letter.banglaPunctuation}
                     </p>
@@ -25,7 +31,7 @@ const WordDetails = ({ id, letter, view, setView }) => {
                     >
                         <tbody>
                             <tr
-                                className="text-center"
+                                className="text-center font-kalpurush bg-teal-50"
                             >
                                 <td
                                     className='p-2 border'
@@ -44,7 +50,7 @@ const WordDetails = ({ id, letter, view, setView }) => {
                                 </td>
                             </tr>
                             <tr
-                                className="text-center"
+                                className="text-center text-4xl font-uthemi"
                             >
                                 <td
                                     className='p-2 border'
@@ -64,16 +70,11 @@ const WordDetails = ({ id, letter, view, setView }) => {
                             </tr>
                         </tbody>
                     </table>
-                    <button
-                        onClick={()=>setView(!view)}
-                        className="px-4 py-2 bg-red-500 text-white rounded-md"
-                    >
-                        Close
-                    </button>
+                    
                 </motion.div>
             </AnimatePresence>
         </div>
     );
 };
 
-export default WordDetails;
+export default ArabicWordDetails;

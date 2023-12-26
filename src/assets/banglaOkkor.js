@@ -1,318 +1,432 @@
 const banglaOkkor = {
-    sorbonno : [
+    bangla : [
         {
             letter : 'অ',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'yes'
         },
         {
             letter : 'আ',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'yes'
         },
         {
             letter : 'ই',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'yes'
         },
         {
             letter : 'ঈ',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'yes'
         },
         {
             letter : 'উ',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'yes'
         },
         {
             letter : 'ঊ',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'yes'
         },
         {
             letter : 'ঋ',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'yes'
         },
         {
             letter : 'এ',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'yes'
         },
         {
             letter : 'ঐ',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'yes'
         },
         {
             letter : 'ও',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'yes'
         },
         {
             letter : 'ঔ',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'yes'
         },
-    ],
-    benjonborno : [
         {
             letter : 'ক',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'no'
         },
         {
             letter : 'খ',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'no'
         },
         {
             letter : 'গ',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'no'
         },
         {
             letter : 'ঘ',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'no'
         },
         {
             letter : 'ঙ',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'no'
         },
         {
             letter : 'চ',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'no'
         },
         {
             letter : 'ছ',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'no'
         },
         {
             letter : 'জ',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'no'
         },
         {
             letter : 'ঝ',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'no'
         },
         {
             letter : 'ঞ',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'no'
         },
         {
             letter : 'ট',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'no'
         },
         {
             letter : 'ঠ',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'no'
         },
         {
             letter : 'ড',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'no'
         },
         {
             letter : 'ঢ',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'no'
         },
         {
             letter : 'ণ',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'no'
         },
         {
             letter : 'ত',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'no'
         },
         {
             letter : 'থ',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'no'
         },
         {
             letter : 'দ',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'no'
         },
         {
             letter : 'ধ',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'no'
         },
         {
             letter : 'ন',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'no'
         },
         {
             letter : 'প',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'no'
         },
         {
             letter : 'ফ',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'no'
         },
         {
             letter : 'ব',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'no'
         },
         {
             letter : 'ভ',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'no'
         },
         {
             letter : 'ম',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'no'
         },
         {
             letter : 'য',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'no'
         },
         {
             letter : 'র',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'no'
         },
         {
             letter : 'ল',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'no'
         },
         {
             letter : 'শ',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'no'
         },
         {
             letter : 'ষ',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'no'
         },
         {
             letter : 'স',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'no'
         },
         {
             letter : 'হ',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'no'
         },
         {
             letter : 'য়',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'no'
         },
         {
             letter : 'ড়',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'no'
         },
         {
             letter : 'ঢ়',
             word : '',
-            sentense : ''
+            sentense : '',
+            vowel : 'no'
         }
     ],
     songkha : [
         {
-            bangla : '০',
-            english : '0',
-            arabic : '٠',
-            banglaPunctuation : 'শূন্য',
-            englishPunctuation : 'Zero',
-            arabicPunctuation : 'সিফর'
+            letter : '০',
+            punctuation : 'শূন্য',
+            lang : 'BN'
         },
         {
-            bangla : '১',
-            english : '1',
-            arabic : '١',
-            banglaPunctuation : 'এক',
-            englishPunctuation : 'One',
-            arabicPunctuation : 'অহেদ'
+            letter : '১',
+            punctuation : 'এক',
+            lang : 'BN'
         },
         {
-            bangla : '২',
-            english : '2',
-            arabic : '٢',
-            banglaPunctuation : 'দুই',
-            englishPunctuation : 'Two',
-            arabicPunctuation : 'ইতনেন'
+            letter : '২',
+            punctuation : 'দুই',
+            lang : 'BN'
         },
         {
-            bangla : '৩',
-            english : '3',
-            arabic : '٣',
-            banglaPunctuation : 'তিন',
-            englishPunctuation : 'Three',
-            arabicPunctuation : 'তালাতা'
+            letter : '৩',
+            punctuation : 'তিন',
+            lang : 'BN'
         },
         {
-            bangla : '৪',
-            english : '4',
-            arabic : '٤',
-            banglaPunctuation : 'চার',
-            englishPunctuation : 'Four',
-            arabicPunctuation : 'আরবা'
+            letter : '৪',
+            punctuation : 'চার',
+            lang : 'BN'
         },
         {
-            bangla : '৫',
-            english : '5',
-            arabic : '٥',
-            banglaPunctuation : 'পাঁচ',
-            englishPunctuation : 'Five',
-            arabicPunctuation : 'খামছা'
+            letter : '৫',
+            punctuation : 'পাঁচ',
+            lang : 'BN'
         },
         {
-            bangla : '৬',
-            english : '6',
-            arabic : '٦',
-            banglaPunctuation : 'ছয়',
-            englishPunctuation : 'Six',
-            arabicPunctuation : 'ছিত্তা'
+            letter : '৬',
+            punctuation : 'ছয়',
+            lang : 'BN'
         },
         {
-            bangla : '৭',
-            english : '7',
-            arabic : '٧',
-            banglaPunctuation : 'সাত',
-            englishPunctuation : 'Seven',
-            arabicPunctuation : 'ছাবা'
+            letter : '৭',
+            punctuation : 'সাত',
+            lang : 'BN'
         },
         {
-            bangla : '৮',
-            english : '8',
-            arabic : '٨',
-            banglaPunctuation : 'আট',
-            englishPunctuation : 'Eight',
-            arabicPunctuation : 'তামানিয়া'
+            letter : '৮',
+            punctuation : 'আট',
+            lang : 'BN'
         },
         {
-            bangla : '৯',
-            english : '9',
-            arabic : '٩',
-            banglaPunctuation : 'নয়',
-            englishPunctuation : 'Nine',
-            arabicPunctuation : 'তিছা'
+            letter : '৯',
+            punctuation : 'নয়',
+            lang : 'BN'
+        },
+        {
+            letter : '0',
+            punctuation : 'Zero',
+            lang : 'EN'
+        },
+        {
+            letter : '1',
+            punctuation : 'One',
+            lang : 'EN'
+        },
+        {
+            letter : '2',
+            punctuation : 'Two',
+            lang : 'EN'
+        },
+        {
+            letter : '3',
+            punctuation : 'Three',
+            lang : 'EN'
+        },
+        {
+            letter : '4',
+            punctuation : 'Four',
+            lang : 'EN'
+        },
+        {
+            letter : '5',
+            punctuation : 'Five',
+            lang : 'EN'
+        },
+        {
+            letter : '6',
+            punctuation : 'Six',
+            lang : 'EN'
+        },
+        {
+            letter : '7',
+            punctuation : 'Seven',
+            lang : 'EN'
+        },
+        {
+            letter : '8',
+            punctuation : 'Eight',
+            lang : 'EN'
+        },
+        {
+            letter : '9',
+            punctuation : 'Nine',
+            lang : 'EN'
+        },
+        {
+            letter : '٠',
+            punctuation : 'সিফর',
+            lang : 'AR'
+        },
+        {
+            letter : '١',
+            punctuation : 'অহেদ',
+            lang : 'AR'
+        },
+        {
+            letter : '٢',
+            punctuation : 'ইতনেন',
+            lang : 'AR'
+        },
+        {
+            letter : '٣',
+            punctuation : 'তালাতা',
+            lang : 'AR'
+        },
+        {
+            letter : '٤',
+            punctuation : 'আরবা',
+            lang : 'AR'
+        },
+        {
+            letter : '٥',
+            punctuation : 'খামছা',
+            lang : 'AR'
+        },
+        {
+            letter : '٦',
+            punctuation : 'ছিত্তা',
+            lang : 'AR'
+        },
+        {
+            letter : '٧',
+            punctuation : 'ছাবা',
+            lang : 'AR'
+        },
+        {
+            letter : '٨',
+            punctuation : 'তামানিয়া',
+            lang : 'AR'
+        },
+        {
+            letter : '٩',
+            punctuation : 'তিছা',
+            lang : 'AR'
         }
     ],
     arabicborno : [
