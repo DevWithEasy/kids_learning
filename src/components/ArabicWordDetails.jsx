@@ -1,6 +1,10 @@
 import { motion, AnimatePresence } from "framer-motion"
+import { next, previous } from "../utils/slideHandler";
+import { useState } from "react";
 
-const ArabicWordDetails = ({ id, letter, view, setView }) => {
+const ArabicWordDetails = ({ id, data, letter, view, setView  }) => {
+    const [targetLetter, setTargetLetter] = useState(letter)
+    const [targetId,setTargetId] = useState(id)
     return (
         <div
             className="fixed top-0 left-0 h-screen w-full flex justify-center items-center bg-gradient-to-r from-pink-500/95 to-pink-500 p-4"
@@ -19,12 +23,12 @@ const ArabicWordDetails = ({ id, letter, view, setView }) => {
                     <p
                         className="font-uthemi text-9xl text-center font-extrabold"
                     >
-                        {letter.letter}
+                        {targetLetter.letter}
                     </p>
                     <p
                         className="font-kalpurush py-2 text-4xl"
                     >
-                        {letter.banglaPunctuation}
+                        {targetLetter.banglaPunctuation}
                     </p>
                     <table
                         className="w-full"
@@ -55,22 +59,47 @@ const ArabicWordDetails = ({ id, letter, view, setView }) => {
                                 <td
                                     className='p-2 border'
                                 >
-                                    {letter.position.end}
+                                    {targetLetter.position.end}
                                 </td>
                                 <td
                                     className='p-2 border'
                                 >
-                                    {letter.position.center}
+                                    {targetLetter.position.center}
                                 </td>
                                 <td
                                     className='p-2 border'
                                 >
-                                    {letter.position.start}
+                                    {targetLetter.position.start}
                                 </td>
                             </tr>
                         </tbody>
                     </table>
-                    
+                    <div
+                        className="flex justify-between"
+                    >
+                        <button
+                            onClick={() => previous({
+                                data,
+                                targetId,
+                                setTargetId,
+                                setTargetLetter
+                            })}
+                            className="w-9 h-9 flex justify-center items-center bg-pink-100 text-pink-600 rounded-full cursor-pointer"
+                        >
+                            <span>⏪</span>
+                        </button>
+                        <button
+                            onClick={() => next({
+                                data,
+                                targetId,
+                                setTargetId,
+                                setTargetLetter
+                            })}
+                            className="w-9 h-9 flex justify-center items-center bg-pink-100 text-pink-600 rounded-full cursor-pointer"
+                        >
+                            ⏩
+                        </button>
+                    </div>
                 </motion.div>
             </AnimatePresence>
         </div>

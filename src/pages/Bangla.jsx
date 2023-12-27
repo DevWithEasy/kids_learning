@@ -1,19 +1,19 @@
 import { useState } from "react";
 import banglaOkkor from "../assets/banglaOkkor";
 import {motion} from 'framer-motion'
-import ArabicWordDetails from "../components/ArabicWordDetails";
 import BanglaWordDetails from "../components/BanglaWordDetails";
 
 const Bangla = () => {
     const [view,setView] = useState(false)
     const [selectedId,setSelectedId] = useState(false)
     const [letter,setLetter] = useState({})
+    const [data,setData] = useState([...banglaOkkor.bangla])
     return (
         <div
             className={`font-kalpurush bg-gradient-to-r from-pink-500 to-pink-300 p-4 grid grid-cols-5 gap-4 }`}
         >
             {
-                banglaOkkor.bangla.map((letter,i)=>
+                data.map((letter,i)=>
                     <motion.div
                         key={i}
                         layoutId={i}
@@ -38,7 +38,7 @@ const Bangla = () => {
                 )
             }
             {view &&
-                <BanglaWordDetails {...{id: selectedId,letter,view,setView}}/>
+                <BanglaWordDetails {...{id: selectedId,data,letter,view,setView}}/>
             }
         </div>
     );

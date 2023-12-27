@@ -7,12 +7,13 @@ const Arabic = () => {
     const [view,setView] = useState(false)
     const [selectedId,setSelectedId] = useState(false)
     const [letter,setLetter] = useState({})
+    const [data,setData] = useState([...banglaOkkor.arabicborno])
     return (
         <div
             className={`bg-gradient-to-r from-pink-500 to-pink-300 p-4 grid grid-cols-5 gap-4 }`}
         >
             {
-                banglaOkkor.arabicborno.reverse().map((letter,i)=>
+                data.map((letter,i)=>
                     <motion.div
                         key={i}
                         layoutId={i}
@@ -37,7 +38,7 @@ const Arabic = () => {
                 )
             }
             {view &&
-                <ArabicWordDetails {...{id: selectedId,letter,view,setView}}/>
+                <ArabicWordDetails {...{id: selectedId,data,letter,view,setView}}/>
             }
         </div>
     );

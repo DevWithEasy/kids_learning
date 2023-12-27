@@ -8,7 +8,7 @@ const Math = () => {
     const [selectedId, setSelectedId] = useState(false)
     const [letter, setLetter] = useState({})
     const [query,setQuery] = useState('BN')
-
+    const [data,setData] = useState([...banglaOkkor.songkha])
     return (
         <div
             className="font-kalpurush p-4 space-y-2 bg-gradient-to-r from-pink-500 to-pink-300"
@@ -40,7 +40,7 @@ const Math = () => {
             >
 
                 {
-                    banglaOkkor.songkha.filter(letter=>letter.lang === query).map((letter, i) =>
+                    data.filter(letter=>letter.lang === query).map((letter, i) =>
                         <motion.div
                             key={i}
                             layoutId={i}
@@ -65,7 +65,7 @@ const Math = () => {
                     )
                 }
                 {view &&
-                    <MathWordDetails {...{ id: selectedId, letter, view, setView }} />
+                    <MathWordDetails {...{ id: selectedId,data, letter, view, setView }} />
                 }
             </div>
         </div>

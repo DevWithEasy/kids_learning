@@ -752,6 +752,164 @@ const banglaOkkor = {
                 end : 'ـي'
             }
         },
+    ],
+    englishborno : [
+        {
+            capital : 'A',
+            small : 'a',
+            word : '',
+            sentense : '',
+        },
+        {
+            capital : 'B',
+            small : 'b',
+            word : '',
+            sentense : '',
+        },
+        {
+            capital : 'C',
+            small : 'c',
+            word : '',
+            sentense : '',
+        },
+        {
+            capital : 'D',
+            small : 'd',
+            word : '',
+            sentense : '',
+        },
+        {
+            capital : 'E',
+            small : 'e',
+            word : '',
+            sentense : '',
+        },
+        {
+            capital : 'F',
+            small : 'f',
+            word : '',
+            sentense : '',
+        },
+        {
+            capital : 'G',
+            small : 'g',
+            word : '',
+            sentense : '',
+        },
+        {
+            capital : 'H',
+            small : 'h',
+            word : '',
+            sentense : '',
+        },
+        {
+            capital : 'I',
+            small : 'i',
+            word : '',
+            sentense : '',
+        },
+        {
+            capital : 'J',
+            small : 'j',
+            word : '',
+            sentense : '',
+        },
+        {
+            capital : 'K',
+            small : 'k',
+            word : '',
+            sentense : '',
+        },
+        {
+            capital : 'L',
+            small : 'l',
+            word : '',
+            sentense : '',
+        },
+        {
+            capital : 'M',
+            small : 'm',
+            word : '',
+            sentense : '',
+        },
+        {
+            capital : 'N',
+            small : 'n',
+            word : '',
+            sentense : '',
+        },
+        {
+            capital : 'O',
+            small : 'o',
+            word : '',
+            sentense : '',
+        },
+        {
+            capital : 'P',
+            small : 'p',
+            word : '',
+            sentense : '',
+        },
+        {
+            capital : 'Q',
+            small : 'q',
+            word : '',
+            sentense : '',
+        },
+        {
+            capital : 'R',
+            small : 'r',
+            word : '',
+            sentense : '',
+        },
+        {
+            capital : 'S',
+            small : 's',
+            word : '',
+            sentense : '',
+        },
+        {
+            capital : 'T',
+            small : 't',
+            word : '',
+            sentense : '',
+        },
+        {
+            capital : 'U',
+            small : 'u',
+            word : '',
+            sentense : '',
+        },
+        {
+            capital : 'V',
+            small : 'v',
+            word : '',
+            sentense : '',
+        },
+        {
+            capital : 'W',
+            small : 'w',
+            word : '',
+            sentense : '',
+        },
+        {
+            capital : 'X',
+            small : 'x',
+            word : '',
+            sentense : '',
+        },
+        {
+            capital : 'Y',
+            small : 'y',
+            word : '',
+            sentense : '',
+        },
+        {
+            capital : 'Z',
+            small : 'z',
+            word : '',
+            sentense : '',
+        }
     ]
 }
 
