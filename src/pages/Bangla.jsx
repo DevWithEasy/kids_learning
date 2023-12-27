@@ -1,7 +1,7 @@
+import { motion } from 'framer-motion';
 import { useState } from "react";
 import banglaOkkor from "../assets/banglaOkkor";
-import {motion} from 'framer-motion'
-import BanglaWordDetails from "../components/BanglaWordDetails";
+import BanglaWordDetails from "../components/details/BanglaWordDetails";
 
 const Bangla = () => {
     const [view,setView] = useState(false)
@@ -10,7 +10,7 @@ const Bangla = () => {
     const [data,setData] = useState([...banglaOkkor.bangla])
     return (
         <div
-            className={`font-kalpurush bg-gradient-to-r from-pink-500 to-pink-300 p-4 grid grid-cols-5 gap-4 }`}
+            className={`font-kalpurush bg-gradient-to-r from-pink-500 to-pink-300 p-4 grid grid-cols-4 md:grid-cols-5 gap-4 }`}
         >
             {
                 data.map((letter,i)=>
@@ -22,17 +22,12 @@ const Bangla = () => {
                             setSelectedId(i)
                             setLetter(letter)
                         }}
-                        className="p-4 space-y-3 bg-white rounded-2xl shadow-md cursor-pointer"
+                        className="p-4 flex justify-center items-center bg-white rounded-2xl shadow-md cursor-pointer"
                     >
                         <p
-                            className="text-8xl text-center font-extrabold"
+                            className="text-4xl md:text-8xl text-center font-extrabold"
                         >
                             {letter.letter}
-                        </p>
-                        <p
-                            className="py-2 text-3xl"
-                        >
-                            {letter.word}
                         </p>
                     </motion.div>
                 )

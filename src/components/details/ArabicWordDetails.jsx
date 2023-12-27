@@ -1,10 +1,11 @@
-import { motion, AnimatePresence } from "framer-motion"
-import { next, previous } from "../utils/slideHandler";
+import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
+import { next, previous } from "../../utils/slideHandler";
+import SlideHandler from "../SlideHandler";
 
-const ArabicWordDetails = ({ id, data, letter, view, setView  }) => {
+const ArabicWordDetails = ({ id, data, letter, view, setView }) => {
     const [targetLetter, setTargetLetter] = useState(letter)
-    const [targetId,setTargetId] = useState(id)
+    const [targetId, setTargetId] = useState(id)
     return (
         <div
             className="fixed top-0 left-0 h-screen w-full flex justify-center items-center bg-gradient-to-r from-pink-500/95 to-pink-500 p-4"
@@ -15,7 +16,7 @@ const ArabicWordDetails = ({ id, data, letter, view, setView  }) => {
                     className="relative w-4/12 p-4 bg-white rounded-3xl shadow-md"
                 >
                     <div
-                        onClick={()=>setView(!view)}
+                        onClick={() => setView(!view)}
                         className="absolute right-3 top-3 h-8 w-8 flex justify-center items-center bg-pink-100 text-pink-500 hover:bg-pink-200 hover:text-pink-600 cursor-pointer rounded-full"
                     >
                         <span>X</span>
@@ -74,32 +75,12 @@ const ArabicWordDetails = ({ id, data, letter, view, setView  }) => {
                             </tr>
                         </tbody>
                     </table>
-                    <div
-                        className="flex justify-between"
-                    >
-                        <button
-                            onClick={() => previous({
-                                data,
-                                targetId,
-                                setTargetId,
-                                setTargetLetter
-                            })}
-                            className="w-9 h-9 flex justify-center items-center bg-pink-100 text-pink-600 rounded-full cursor-pointer"
-                        >
-                            <span>⏪</span>
-                        </button>
-                        <button
-                            onClick={() => next({
-                                data,
-                                targetId,
-                                setTargetId,
-                                setTargetLetter
-                            })}
-                            className="w-9 h-9 flex justify-center items-center bg-pink-100 text-pink-600 rounded-full cursor-pointer"
-                        >
-                            ⏩
-                        </button>
-                    </div>
+                    <SlideHandler {...{
+                        data,
+                        targetId,
+                        setTargetId,
+                        setTargetLetter
+                    }}/>
                 </motion.div>
             </AnimatePresence>
         </div>

@@ -1,6 +1,7 @@
-import { motion, AnimatePresence } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import { next, previous } from "../utils/slideHandler";
+import { next, previous } from "../../utils/slideHandler";
+import SlideHandler from "../SlideHandler";
 
 const EnglishWordDetails = ({ id, data, letter, view, setView }) => {
     const [targetLetter, setTargetLetter] = useState(letter)
@@ -31,32 +32,12 @@ const EnglishWordDetails = ({ id, data, letter, view, setView }) => {
                     >
                         {targetLetter.word}
                     </p>
-                    <div
-                        className="flex justify-between"
-                    >
-                        <button
-                            onClick={() => previous({
-                                data,
-                                targetId,
-                                setTargetId,
-                                setTargetLetter
-                            })}
-                            className="w-9 h-9 flex justify-center items-center bg-pink-100 text-pink-600 rounded-full cursor-pointer"
-                        >
-                            <span>⏪</span>
-                        </button>
-                        <button
-                            onClick={() => next({
-                                data,
-                                targetId,
-                                setTargetId,
-                                setTargetLetter
-                            })}
-                            className="w-9 h-9 flex justify-center items-center bg-pink-100 text-pink-600 rounded-full cursor-pointer"
-                        >
-                            ⏩
-                        </button>
-                    </div>
+                    <SlideHandler {...{
+                        data,
+                        targetId,
+                        setTargetId,
+                        setTargetLetter
+                    }}/>
                 </motion.div>
             </AnimatePresence>
         </div>
