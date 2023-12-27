@@ -277,157 +277,67 @@ const banglaOkkor = {
             vowel : 'no'
         }
     ],
-    songkha : [
+    kar_bangla : [
         {
-            letter : '০',
-            punctuation : 'শূন্য',
-            lang : 'BN'
+            letter : 'আ',
+            kar : ' া',
+            examples : ['কা', 'খা', 'গা', 'ঘা', 'ঙা', 'চা', 'ছা', 'জা', 'ঝা', 'ঞা', 'টা', 'ঠা', 'ডা', 'ঢা', 'ণা', 'তা', 'থা', 'দা', 'ধা', 'না', 'পা', 'ফা', 'বা', 'ভা', 'মা', 'যা', 'রা', 'লা', 'শা', 'ষা', 'সা', 'হা', 'ড়া', 'ঢ়া', 'য়া'],
+            example_words : ['মা', 'বাবা', 'ঢাকা']
         },
         {
-            letter : '১',
-            punctuation : 'এক',
-            lang : 'BN'
+            letter : 'ই',
+            kar : ' ি',
+            examples : ['কি', 'খি', 'গি', 'ঘি', 'ঙি', 'চি', 'ছি', 'জি', 'ঝি', 'ঞি', 'টি','ঠি', 'ডি', 'ঢি', 'ণি', 'তি', 'থি', 'দি', 'ধি', 'নি', 'পি', 'ফি', 'বি', 'ভি', 'মি', 'যি', 'রি', 'লি', 'শি', 'ষি', 'সি', 'হি', 'ড়ু', 'ঢ়ি', 'য়ি'],
+            example_words : ['কিনি', 'চিনি', 'মিনি']
         },
         {
-            letter : '২',
-            punctuation : 'দুই',
-            lang : 'BN'
+            letter : 'ঈ',
+            kar : ' ী',
+            examples : ['কী', 'খী', 'গী', 'ঘী', 'ঙী', 'চী', 'ছী', 'জী', 'ঝী', 'ঞী', 'টী', 'ঠী', 'ডী', 'ঢী', 'ণী', 'তী', 'থী', 'দী', 'ধী', 'নী', 'পী', 'ফী', 'বী', 'ভী', 'মী', 'যী', 'রী', 'লী', 'শী', 'ষী', 'সী', 'হী', 'ড়ী', 'ঢ়ী', 'য়ী'],
+            example_words : ['শশী', 'সীমানা', 'রীতি']
         },
         {
-            letter : '৩',
-            punctuation : 'তিন',
-            lang : 'BN'
+            letter : 'উ',
+            kar : ' ু',
+            examples : ['কু', 'খু', 'ঘু', 'ঙু', 'চু', 'ছু', 'জু', 'ঝু', 'ঞু', 'টু', 'ঠু', 'ডু', 'ঢু', 'ণু', 'তু', 'থু', 'দু', 'ধু', 'নু', 'পু', 'ফু', 'বু', 'ভু', 'মু', 'যু', 'রু', 'লু',  'ষু', 'সু', 'ড়ু', 'ঢ়ু', 'য়ু'],
+            example_words : ['কুকুর', 'পুকুর', 'দুপুর']
         },
         {
-            letter : '৪',
-            punctuation : 'চার',
-            lang : 'BN'
+            letter : 'ঊ',
+            kar : ' ূ',
+            examples : ['কূ', 'খূ', 'গূ', 'ঘূ', 'ঙূ', 'চূ', 'ছূ', 'জূ', 'ঝূ', 'ঞূ', 'টূ', 'ঠূ', 'ডূ', 'ঢূ', 'ণূ', 'তূ', 'থূ', 'দূ', 'ধূ', 'নূ', 'পূ', 'ফূ', 'বূ', 'ভূ', 'মূ', 'যূ', 'লূ',  'ষূ', 'সূ', 'ড়ূ', 'ঢ়ূ', 'য়ূ', 'হূ'],
+            example_words : ['ভূত', 'মূল্য', 'সূচি']
         },
         {
-            letter : '৫',
-            punctuation : 'পাঁচ',
-            lang : 'BN'
+            letter : 'ঋ',
+            kar : ' ৃ',
+            examples : ['কৃ', 'খৃ', 'গৃ', 'ঘৃ', 'ঙৃ', 'চৃ', 'ছৃ', 'জৃ', 'ঝৃ', 'ঞৃ', 'টৃ', 'ঠৃ', 'ডৃ', 'ঢৃ', 'ণৃ', 'তৃ', 'থৃ', 'দৃ', 'ধৃ', 'নৃ', 'পৃ', 'ফৃ','বৃ', 'ভৃ', 'মৃ', 'যৃ', 'লৃ',  'ষৃ', 'সৃ', 'ড়ৃ', 'ঢ়ৃ', 'য়ৃ'],
+            example_words : ['কৃষক', 'তৃণ', 'পৃথিবী']
         },
         {
-            letter : '৬',
-            punctuation : 'ছয়',
-            lang : 'BN'
+            letter : 'এ',
+            kar : 'ে',
+            examples : ['কে', 'খে', 'গে', 'ঘে', 'ঙে', 'চে', 'ছে', 'জে', 'ঝে', 'ঞে', 'টে', 'ঠে', 'ডে', 'ঢে', 'ণে', 'তে', 'থে', 'দে', 'ধে', 'নে', 'পে', 'ফে', 'বে', 'ভে', 'মে', 'যে', 'রে', 'লে', 'শে', 'ষে', 'সে', 'হে', 'ড়ে', 'ঢ়ে', 'য়ে'],
+            example_words : ['চেয়ার', 'টেবিল', 'মেয়ে']
         },
         {
-            letter : '৭',
-            punctuation : 'সাত',
-            lang : 'BN'
+            letter : 'ঐ',
+            kar : 'ৈ',
+            examples : [ 'কৈ', 'খৈ', 'গৈ', 'ঘৈ', 'ঙৈ', 'চৈ', 'ছৈ', 'জৈ', 'ঝৈ', 'ঞৈ', 'টৈ', 'ঠৈ', 'ডৈ', 'ঢৈ', 'ণৈ', 'তৈ', 'থৈ', 'দৈ', 'ধৈ', 'নৈ', 'পৈ', 'ফৈ', 'বৈ', 'ভৈ', 'মৈ', 'যৈ', 'রৈ', 'লৈ', 'শৈ', 'ষৈ', 'সৈ', 'হৈ', 'ড়ৈ', 'ঢ়ৈ', 'য়ৈ'],
+            example_words : ['তৈরি', 'বৈরী', 'নৈঋত']
         },
         {
-            letter : '৮',
-            punctuation : 'আট',
-            lang : 'BN'
+            letter : 'ও',
+            kar : ' ো',
+            examples : ['কো', 'খো', 'গো', 'ঘো', 'ঙো', 'চো', 'ছো', 'জো', 'ঝো', 'ঞো', 'টো', 'ঠো', 'ডো', 'ঢো', 'ণো', 'তো', 'থো', 'দো', 'ধো', 'নো', 'পো', 'ফো', 'বো', 'ভো', 'মো', 'যো', 'রো', 'লো', 'শো', 'ষো', 'সো', 'হো', 'ড়ো', 'ঢ়ো', 'য়ো'],
+            example_words : ['খোকা', 'পোকা', 'বোকা']
         },
         {
-            letter : '৯',
-            punctuation : 'নয়',
-            lang : 'BN'
+            letter : 'ঔ',
+            kar : ' ৌ',
+            examples : ['কৌ', 'খৌ', 'গৌ', 'ঘৌ', 'ঙৌ', 'চৌ', 'ছৌ', 'জৌ', 'ঝৌ', 'ঞৌ', 'টৌ', 'ঠৌ', 'ডৌ', 'ঢৌ', 'ণৌ', 'তৌ', 'থৌ', 'দৌ', 'ধৌ', 'নৌ', 'পৌ', 'ফৌ', 'বৌ', 'ভৌ', 'মৌ', 'যৌ', 'রৌ', 'লৌ', 'শৌ', 'ষৌ', 'সৌ', 'হৌ', 'ড়ৌ', 'ঢ়ৌ', 'য়ৌ'],
+            example_words : ['নৌকা', 'মৌসুমি', 'পৌষ']
         },
-        {
-            letter : '0',
-            punctuation : 'Zero',
-            lang : 'EN'
-        },
-        {
-            letter : '1',
-            punctuation : 'One',
-            lang : 'EN'
-        },
-        {
-            letter : '2',
-            punctuation : 'Two',
-            lang : 'EN'
-        },
-        {
-            letter : '3',
-            punctuation : 'Three',
-            lang : 'EN'
-        },
-        {
-            letter : '4',
-            punctuation : 'Four',
-            lang : 'EN'
-        },
-        {
-            letter : '5',
-            punctuation : 'Five',
-            lang : 'EN'
-        },
-        {
-            letter : '6',
-            punctuation : 'Six',
-            lang : 'EN'
-        },
-        {
-            letter : '7',
-            punctuation : 'Seven',
-            lang : 'EN'
-        },
-        {
-            letter : '8',
-            punctuation : 'Eight',
-            lang : 'EN'
-        },
-        {
-            letter : '9',
-            punctuation : 'Nine',
-            lang : 'EN'
-        },
-        {
-            letter : '٠',
-            punctuation : 'সিফর',
-            lang : 'AR'
-        },
-        {
-            letter : '١',
-            punctuation : 'অহেদ',
-            lang : 'AR'
-        },
-        {
-            letter : '٢',
-            punctuation : 'ইতনেন',
-            lang : 'AR'
-        },
-        {
-            letter : '٣',
-            punctuation : 'তালাতা',
-            lang : 'AR'
-        },
-        {
-            letter : '٤',
-            punctuation : 'আরবা',
-            lang : 'AR'
-        },
-        {
-            letter : '٥',
-            punctuation : 'খামছা',
-            lang : 'AR'
-        },
-        {
-            letter : '٦',
-            punctuation : 'ছিত্তা',
-            lang : 'AR'
-        },
-        {
-            letter : '٧',
-            punctuation : 'ছাবা',
-            lang : 'AR'
-        },
-        {
-            letter : '٨',
-            punctuation : 'তামানিয়া',
-            lang : 'AR'
-        },
-        {
-            letter : '٩',
-            punctuation : 'তিছা',
-            lang : 'AR'
-        }
     ],
     arabicborno : [
         
@@ -910,7 +820,865 @@ const banglaOkkor = {
             word : '',
             sentense : '',
         }
-    ]
+    ],
+    math_bangla : [
+        {
+            letter : '০',
+            punctuation : 'শূন্য',
+        },
+        {
+            letter : '১',
+            punctuation : 'এক',
+        },
+        {
+            letter : '২',
+            punctuation : 'দুই',
+            
+        },
+        {
+            letter : '৩',
+            punctuation : 'তিন',
+        },
+        {
+            letter : '৪',
+            punctuation : 'চার',
+        },
+        {
+            letter : '৫',
+            punctuation : 'পাঁচ',
+        },
+        {
+            letter : '৬',
+            punctuation : 'ছয়',
+        },
+        {
+            letter : '৭',
+            punctuation : 'সাত',
+        },
+        {
+            letter : '৮',
+            punctuation : 'আট',
+        },
+        {
+            letter : '৯',
+            punctuation : 'নয়',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+    ],
+    math_english : [
+        {
+            letter : '0',
+            punctuation : 'Zero',
+        },
+        {
+            letter : '1',
+            punctuation : 'One',
+        },
+        {
+            letter : '2',
+            punctuation : 'Two',
+        },
+        {
+            letter : '3',
+            punctuation : 'Three',
+        },
+        {
+            letter : '4',
+            punctuation : 'Four',
+            lang : 'EN'
+        },
+        {
+            letter : '5',
+            punctuation : 'Five',
+        },
+        {
+            letter : '6',
+            punctuation : 'Six',
+        },
+        {
+            letter : '7',
+            punctuation : 'Seven',
+        },
+        {
+            letter : '8',
+            punctuation : 'Eight',
+        },
+        {
+            letter : '9',
+            punctuation : 'Nine',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+                {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+                {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+                {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+                {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+                {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+                {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+                {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+                {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+                {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        },
+        {
+            letter : '',
+            punctuation : '',
+        }
+    ],
+    day_bangla : [],
+    day_english : [],
+    month_bangla : [],
+    month_english : [],
 }
 
 export default banglaOkkor
