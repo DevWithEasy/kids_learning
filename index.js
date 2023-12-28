@@ -4,6 +4,7 @@ const express = require('express');
 const errorHandler = require("./middleware/errorHandler");
 const applyMidleware = require("./middleware/middlewares");
 const applyRouter = require("./routers/routers");
+const dbConnection = require("./config/dbConnection");
 const app = express();
 
 app.use(express.static(path.join(__dirname,'public')))
@@ -11,6 +12,8 @@ app.use(express.static(path.join(__dirname,'public')))
 applyMidleware(app)
 
 applyRouter(app)
+
+dbConnection()
 
 errorHandler(app)
 
