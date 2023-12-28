@@ -24,7 +24,7 @@ const Draw = ({ letter }) => {
 
     useEffect(() => {
         if (board.current) {
-            const { width, height } = board.current.getBoundingClientRect();
+            const { width, height } = board?.current.getBoundingClientRect();
 
             setClientWidth(width)
             setClientHeight(height)

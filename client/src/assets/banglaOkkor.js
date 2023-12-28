@@ -1,1680 +1,1864 @@
 const banglaOkkor = {
-    bangla : [
+    bangla: [
         {
-            letter : 'অ',
-            word : 'অযু',
-            sentence : 'অযু করে মসজিদে যাই',
-            vowel : 'yes'
+            letter: 'অ',
+            word: 'অযু',
+            sentence: 'অযু করে মসজিদে যাই',
+            vowel: 'yes'
         },
         {
-            letter : 'আ',
-            word : 'আযান',
-            sentence : 'আযান দেয় মুয়াযযিন ভাই',
-            vowel : 'yes'
+            letter: 'আ',
+            word: 'আযান',
+            sentence: 'আযান দেয় মুয়াযযিন ভাই',
+            vowel: 'yes'
         },
         {
-            letter : 'ই',
-            word : 'ইবাদত',
-            sentence : 'ইবাদত কর অন্তর থেকে',
-            vowel : 'yes'
+            letter: 'ই',
+            word: 'ইবাদত',
+            sentence: 'ইবাদত কর অন্তর থেকে',
+            vowel: 'yes'
         },
         {
-            letter : 'ঈ',
-            word : 'ঈদ',
-            sentence : 'ঈদের আনন্দ চারদিকে',
-            vowel : 'yes'
+            letter: 'ঈ',
+            word: 'ঈদ',
+            sentence: 'ঈদের আনন্দ চারদিকে',
+            vowel: 'yes'
         },
         {
-            letter : 'উ',
-            word : '',
-            sentence : '',
-            vowel : 'yes'
+            letter: 'উ',
+            word: '',
+            sentence: '',
+            vowel: 'yes'
         },
         {
-            letter : 'ঊ',
-            word : '',
-            sentence : '',
-            vowel : 'yes'
+            letter: 'ঊ',
+            word: '',
+            sentence: '',
+            vowel: 'yes'
         },
         {
-            letter : 'ঋ',
-            word : '',
-            sentence : '',
-            vowel : 'yes'
+            letter: 'ঋ',
+            word: '',
+            sentence: '',
+            vowel: 'yes'
         },
         {
-            letter : 'এ',
-            word : '',
-            sentence : '',
-            vowel : 'yes'
+            letter: 'এ',
+            word: '',
+            sentence: '',
+            vowel: 'yes'
         },
         {
-            letter : 'ঐ',
-            word : '',
-            sentence : '',
-            vowel : 'yes'
+            letter: 'ঐ',
+            word: '',
+            sentence: '',
+            vowel: 'yes'
         },
         {
-            letter : 'ও',
-            word : '',
-            sentence : '',
-            vowel : 'yes'
+            letter: 'ও',
+            word: '',
+            sentence: '',
+            vowel: 'yes'
         },
         {
-            letter : 'ঔ',
-            word : '',
-            sentence : '',
-            vowel : 'yes'
+            letter: 'ঔ',
+            word: '',
+            sentence: '',
+            vowel: 'yes'
         },
         {
-            letter : 'ক',
-            word : '',
-            sentence : '',
-            vowel : 'no'
+            letter: 'ক',
+            word: '',
+            sentence: '',
+            vowel: 'no'
         },
         {
-            letter : 'খ',
-            word : '',
-            sentence : '',
-            vowel : 'no'
+            letter: 'খ',
+            word: '',
+            sentence: '',
+            vowel: 'no'
         },
         {
-            letter : 'গ',
-            word : '',
-            sentence : '',
-            vowel : 'no'
+            letter: 'গ',
+            word: '',
+            sentence: '',
+            vowel: 'no'
         },
         {
-            letter : 'ঘ',
-            word : '',
-            sentence : '',
-            vowel : 'no'
+            letter: 'ঘ',
+            word: '',
+            sentence: '',
+            vowel: 'no'
         },
         {
-            letter : 'ঙ',
-            word : '',
-            sentence : '',
-            vowel : 'no'
+            letter: 'ঙ',
+            word: '',
+            sentence: '',
+            vowel: 'no'
         },
         {
-            letter : 'চ',
-            word : '',
-            sentence : '',
-            vowel : 'no'
+            letter: 'চ',
+            word: '',
+            sentence: '',
+            vowel: 'no'
         },
         {
-            letter : 'ছ',
-            word : '',
-            sentence : '',
-            vowel : 'no'
+            letter: 'ছ',
+            word: '',
+            sentence: '',
+            vowel: 'no'
         },
         {
-            letter : 'জ',
-            word : '',
-            sentence : '',
-            vowel : 'no'
+            letter: 'জ',
+            word: '',
+            sentence: '',
+            vowel: 'no'
         },
         {
-            letter : 'ঝ',
-            word : '',
-            sentence : '',
-            vowel : 'no'
+            letter: 'ঝ',
+            word: '',
+            sentence: '',
+            vowel: 'no'
         },
         {
-            letter : 'ঞ',
-            word : '',
-            sentence : '',
-            vowel : 'no'
+            letter: 'ঞ',
+            word: '',
+            sentence: '',
+            vowel: 'no'
         },
         {
-            letter : 'ট',
-            word : '',
-            sentence : '',
-            vowel : 'no'
+            letter: 'ট',
+            word: '',
+            sentence: '',
+            vowel: 'no'
         },
         {
-            letter : 'ঠ',
-            word : '',
-            sentence : '',
-            vowel : 'no'
+            letter: 'ঠ',
+            word: '',
+            sentence: '',
+            vowel: 'no'
         },
         {
-            letter : 'ড',
-            word : '',
-            sentence : '',
-            vowel : 'no'
+            letter: 'ড',
+            word: '',
+            sentence: '',
+            vowel: 'no'
         },
         {
-            letter : 'ঢ',
-            word : '',
-            sentence : '',
-            vowel : 'no'
+            letter: 'ঢ',
+            word: '',
+            sentence: '',
+            vowel: 'no'
         },
         {
-            letter : 'ণ',
-            word : '',
-            sentence : '',
-            vowel : 'no'
+            letter: 'ণ',
+            word: '',
+            sentence: '',
+            vowel: 'no'
         },
         {
-            letter : 'ত',
-            word : '',
-            sentence : '',
-            vowel : 'no'
+            letter: 'ত',
+            word: '',
+            sentence: '',
+            vowel: 'no'
         },
         {
-            letter : 'থ',
-            word : '',
-            sentence : '',
-            vowel : 'no'
+            letter: 'থ',
+            word: '',
+            sentence: '',
+            vowel: 'no'
         },
         {
-            letter : 'দ',
-            word : '',
-            sentence : '',
-            vowel : 'no'
+            letter: 'দ',
+            word: '',
+            sentence: '',
+            vowel: 'no'
         },
         {
-            letter : 'ধ',
-            word : '',
-            sentence : '',
-            vowel : 'no'
+            letter: 'ধ',
+            word: '',
+            sentence: '',
+            vowel: 'no'
         },
         {
-            letter : 'ন',
-            word : '',
-            sentence : '',
-            vowel : 'no'
+            letter: 'ন',
+            word: '',
+            sentence: '',
+            vowel: 'no'
         },
         {
-            letter : 'প',
-            word : '',
-            sentence : '',
-            vowel : 'no'
+            letter: 'প',
+            word: '',
+            sentence: '',
+            vowel: 'no'
         },
         {
-            letter : 'ফ',
-            word : '',
-            sentence : '',
-            vowel : 'no'
+            letter: 'ফ',
+            word: '',
+            sentence: '',
+            vowel: 'no'
         },
         {
-            letter : 'ব',
-            word : '',
-            sentence : '',
-            vowel : 'no'
+            letter: 'ব',
+            word: '',
+            sentence: '',
+            vowel: 'no'
         },
         {
-            letter : 'ভ',
-            word : '',
-            sentence : '',
-            vowel : 'no'
+            letter: 'ভ',
+            word: '',
+            sentence: '',
+            vowel: 'no'
         },
         {
-            letter : 'ম',
-            word : '',
-            sentence : '',
-            vowel : 'no'
+            letter: 'ম',
+            word: '',
+            sentence: '',
+            vowel: 'no'
         },
         {
-            letter : 'য',
-            word : '',
-            sentence : '',
-            vowel : 'no'
+            letter: 'য',
+            word: '',
+            sentence: '',
+            vowel: 'no'
         },
         {
-            letter : 'র',
-            word : '',
-            sentence : '',
-            vowel : 'no'
+            letter: 'র',
+            word: '',
+            sentence: '',
+            vowel: 'no'
         },
         {
-            letter : 'ল',
-            word : '',
-            sentence : '',
-            vowel : 'no'
+            letter: 'ল',
+            word: '',
+            sentence: '',
+            vowel: 'no'
         },
         {
-            letter : 'শ',
-            word : '',
-            sentence : '',
-            vowel : 'no'
+            letter: 'শ',
+            word: '',
+            sentence: '',
+            vowel: 'no'
         },
         {
-            letter : 'ষ',
-            word : '',
-            sentence : '',
-            vowel : 'no'
+            letter: 'ষ',
+            word: '',
+            sentence: '',
+            vowel: 'no'
         },
         {
-            letter : 'স',
-            word : '',
-            sentence : '',
-            vowel : 'no'
+            letter: 'স',
+            word: '',
+            sentence: '',
+            vowel: 'no'
         },
         {
-            letter : 'হ',
-            word : '',
-            sentence : '',
-            vowel : 'no'
+            letter: 'হ',
+            word: '',
+            sentence: '',
+            vowel: 'no'
         },
         {
-            letter : 'য়',
-            word : '',
-            sentence : '',
-            vowel : 'no'
+            letter: 'য়',
+            word: '',
+            sentence: '',
+            vowel: 'no'
         },
         {
-            letter : 'ড়',
-            word : '',
-            sentence : '',
-            vowel : 'no'
+            letter: 'ড়',
+            word: '',
+            sentence: '',
+            vowel: 'no'
         },
         {
-            letter : 'ঢ়',
-            word : '',
-            sentence : '',
-            vowel : 'no'
+            letter: 'ঢ়',
+            word: '',
+            sentence: '',
+            vowel: 'no'
         }
     ],
-    kar_bangla : [
+    kar_bangla: [
         {
-            letter : 'আ',
-            kar : ' া',
-            examples : ['কা', 'খা', 'গা', 'ঘা', 'ঙা', 'চা', 'ছা', 'জা', 'ঝা', 'ঞা', 'টা', 'ঠা', 'ডা', 'ঢা', 'ণা', 'তা', 'থা', 'দা', 'ধা', 'না', 'পা', 'ফা', 'বা', 'ভা', 'মা', 'যা', 'রা', 'লা', 'শা', 'ষা', 'সা', 'হা', 'ড়া', 'ঢ়া', 'য়া'],
-            example_words : ['মা', 'বাবা', 'ঢাকা']
+            letter: 'আ',
+            kar: ' া',
+            examples: ['কা', 'খা', 'গা', 'ঘা', 'ঙা', 'চা', 'ছা', 'জা', 'ঝা', 'ঞা', 'টা', 'ঠা', 'ডা', 'ঢা', 'ণা', 'তা', 'থা', 'দা', 'ধা', 'না', 'পা', 'ফা', 'বা', 'ভা', 'মা', 'যা', 'রা', 'লা', 'শা', 'ষা', 'সা', 'হা', 'ড়া', 'ঢ়া', 'য়া'],
+            example_words: ['মা', 'বাবা', 'ঢাকা']
         },
         {
-            letter : 'ই',
-            kar : ' ি',
-            examples : ['কি', 'খি', 'গি', 'ঘি', 'ঙি', 'চি', 'ছি', 'জি', 'ঝি', 'ঞি', 'টি','ঠি', 'ডি', 'ঢি', 'ণি', 'তি', 'থি', 'দি', 'ধি', 'নি', 'পি', 'ফি', 'বি', 'ভি', 'মি', 'যি', 'রি', 'লি', 'শি', 'ষি', 'সি', 'হি', 'ড়ু', 'ঢ়ি', 'য়ি'],
-            example_words : ['কিনি', 'চিনি', 'মিনি']
+            letter: 'ই',
+            kar: ' ি',
+            examples: ['কি', 'খি', 'গি', 'ঘি', 'ঙি', 'চি', 'ছি', 'জি', 'ঝি', 'ঞি', 'টি', 'ঠি', 'ডি', 'ঢি', 'ণি', 'তি', 'থি', 'দি', 'ধি', 'নি', 'পি', 'ফি', 'বি', 'ভি', 'মি', 'যি', 'রি', 'লি', 'শি', 'ষি', 'সি', 'হি', 'ড়ু', 'ঢ়ি', 'য়ি'],
+            example_words: ['কিনি', 'চিনি', 'মিনি']
         },
         {
-            letter : 'ঈ',
-            kar : ' ী',
-            examples : ['কী', 'খী', 'গী', 'ঘী', 'ঙী', 'চী', 'ছী', 'জী', 'ঝী', 'ঞী', 'টী', 'ঠী', 'ডী', 'ঢী', 'ণী', 'তী', 'থী', 'দী', 'ধী', 'নী', 'পী', 'ফী', 'বী', 'ভী', 'মী', 'যী', 'রী', 'লী', 'শী', 'ষী', 'সী', 'হী', 'ড়ী', 'ঢ়ী', 'য়ী'],
-            example_words : ['শশী', 'সীমানা', 'রীতি']
+            letter: 'ঈ',
+            kar: ' ী',
+            examples: ['কী', 'খী', 'গী', 'ঘী', 'ঙী', 'চী', 'ছী', 'জী', 'ঝী', 'ঞী', 'টী', 'ঠী', 'ডী', 'ঢী', 'ণী', 'তী', 'থী', 'দী', 'ধী', 'নী', 'পী', 'ফী', 'বী', 'ভী', 'মী', 'যী', 'রী', 'লী', 'শী', 'ষী', 'সী', 'হী', 'ড়ী', 'ঢ়ী', 'য়ী'],
+            example_words: ['শশী', 'সীমানা', 'রীতি']
         },
         {
-            letter : 'উ',
-            kar : ' ু',
-            examples : ['কু', 'খু', 'ঘু', 'ঙু', 'চু', 'ছু', 'জু', 'ঝু', 'ঞু', 'টু', 'ঠু', 'ডু', 'ঢু', 'ণু', 'তু', 'থু', 'দু', 'ধু', 'নু', 'পু', 'ফু', 'বু', 'ভু', 'মু', 'যু', 'রু', 'লু',  'ষু', 'সু', 'ড়ু', 'ঢ়ু', 'য়ু'],
-            example_words : ['কুকুর', 'পুকুর', 'দুপুর']
+            letter: 'উ',
+            kar: ' ু',
+            examples: ['কু', 'খু', 'ঘু', 'ঙু', 'চু', 'ছু', 'জু', 'ঝু', 'ঞু', 'টু', 'ঠু', 'ডু', 'ঢু', 'ণু', 'তু', 'থু', 'দু', 'ধু', 'নু', 'পু', 'ফু', 'বু', 'ভু', 'মু', 'যু', 'রু', 'লু', 'ষু', 'সু', 'ড়ু', 'ঢ়ু', 'য়ু'],
+            example_words: ['কুকুর', 'পুকুর', 'দুপুর']
         },
         {
-            letter : 'ঊ',
-            kar : ' ূ',
-            examples : ['কূ', 'খূ', 'গূ', 'ঘূ', 'ঙূ', 'চূ', 'ছূ', 'জূ', 'ঝূ', 'ঞূ', 'টূ', 'ঠূ', 'ডূ', 'ঢূ', 'ণূ', 'তূ', 'থূ', 'দূ', 'ধূ', 'নূ', 'পূ', 'ফূ', 'বূ', 'ভূ', 'মূ', 'যূ', 'লূ',  'ষূ', 'সূ', 'ড়ূ', 'ঢ়ূ', 'য়ূ', 'হূ'],
-            example_words : ['ভূত', 'মূল্য', 'সূচি']
+            letter: 'ঊ',
+            kar: ' ূ',
+            examples: ['কূ', 'খূ', 'গূ', 'ঘূ', 'ঙূ', 'চূ', 'ছূ', 'জূ', 'ঝূ', 'ঞূ', 'টূ', 'ঠূ', 'ডূ', 'ঢূ', 'ণূ', 'তূ', 'থূ', 'দূ', 'ধূ', 'নূ', 'পূ', 'ফূ', 'বূ', 'ভূ', 'মূ', 'যূ', 'লূ', 'ষূ', 'সূ', 'ড়ূ', 'ঢ়ূ', 'য়ূ', 'হূ'],
+            example_words: ['ভূত', 'মূল্য', 'সূচি']
         },
         {
-            letter : 'ঋ',
-            kar : ' ৃ',
-            examples : ['কৃ', 'খৃ', 'গৃ', 'ঘৃ', 'ঙৃ', 'চৃ', 'ছৃ', 'জৃ', 'ঝৃ', 'ঞৃ', 'টৃ', 'ঠৃ', 'ডৃ', 'ঢৃ', 'ণৃ', 'তৃ', 'থৃ', 'দৃ', 'ধৃ', 'নৃ', 'পৃ', 'ফৃ','বৃ', 'ভৃ', 'মৃ', 'যৃ', 'লৃ',  'ষৃ', 'সৃ', 'ড়ৃ', 'ঢ়ৃ', 'য়ৃ'],
-            example_words : ['কৃষক', 'তৃণ', 'পৃথিবী']
+            letter: 'ঋ',
+            kar: ' ৃ',
+            examples: ['কৃ', 'খৃ', 'গৃ', 'ঘৃ', 'ঙৃ', 'চৃ', 'ছৃ', 'জৃ', 'ঝৃ', 'ঞৃ', 'টৃ', 'ঠৃ', 'ডৃ', 'ঢৃ', 'ণৃ', 'তৃ', 'থৃ', 'দৃ', 'ধৃ', 'নৃ', 'পৃ', 'ফৃ', 'বৃ', 'ভৃ', 'মৃ', 'যৃ', 'লৃ', 'ষৃ', 'সৃ', 'ড়ৃ', 'ঢ়ৃ', 'য়ৃ'],
+            example_words: ['কৃষক', 'তৃণ', 'পৃথিবী']
         },
         {
-            letter : 'এ',
-            kar : 'ে',
-            examples : ['কে', 'খে', 'গে', 'ঘে', 'ঙে', 'চে', 'ছে', 'জে', 'ঝে', 'ঞে', 'টে', 'ঠে', 'ডে', 'ঢে', 'ণে', 'তে', 'থে', 'দে', 'ধে', 'নে', 'পে', 'ফে', 'বে', 'ভে', 'মে', 'যে', 'রে', 'লে', 'শে', 'ষে', 'সে', 'হে', 'ড়ে', 'ঢ়ে', 'য়ে'],
-            example_words : ['চেয়ার', 'টেবিল', 'মেয়ে']
+            letter: 'এ',
+            kar: 'ে',
+            examples: ['কে', 'খে', 'গে', 'ঘে', 'ঙে', 'চে', 'ছে', 'জে', 'ঝে', 'ঞে', 'টে', 'ঠে', 'ডে', 'ঢে', 'ণে', 'তে', 'থে', 'দে', 'ধে', 'নে', 'পে', 'ফে', 'বে', 'ভে', 'মে', 'যে', 'রে', 'লে', 'শে', 'ষে', 'সে', 'হে', 'ড়ে', 'ঢ়ে', 'য়ে'],
+            example_words: ['চেয়ার', 'টেবিল', 'মেয়ে']
         },
         {
-            letter : 'ঐ',
-            kar : 'ৈ',
-            examples : [ 'কৈ', 'খৈ', 'গৈ', 'ঘৈ', 'ঙৈ', 'চৈ', 'ছৈ', 'জৈ', 'ঝৈ', 'ঞৈ', 'টৈ', 'ঠৈ', 'ডৈ', 'ঢৈ', 'ণৈ', 'তৈ', 'থৈ', 'দৈ', 'ধৈ', 'নৈ', 'পৈ', 'ফৈ', 'বৈ', 'ভৈ', 'মৈ', 'যৈ', 'রৈ', 'লৈ', 'শৈ', 'ষৈ', 'সৈ', 'হৈ', 'ড়ৈ', 'ঢ়ৈ', 'য়ৈ'],
-            example_words : ['তৈরি', 'বৈরী', 'নৈঋত']
+            letter: 'ঐ',
+            kar: 'ৈ',
+            examples: ['কৈ', 'খৈ', 'গৈ', 'ঘৈ', 'ঙৈ', 'চৈ', 'ছৈ', 'জৈ', 'ঝৈ', 'ঞৈ', 'টৈ', 'ঠৈ', 'ডৈ', 'ঢৈ', 'ণৈ', 'তৈ', 'থৈ', 'দৈ', 'ধৈ', 'নৈ', 'পৈ', 'ফৈ', 'বৈ', 'ভৈ', 'মৈ', 'যৈ', 'রৈ', 'লৈ', 'শৈ', 'ষৈ', 'সৈ', 'হৈ', 'ড়ৈ', 'ঢ়ৈ', 'য়ৈ'],
+            example_words: ['তৈরি', 'বৈরী', 'নৈঋত']
         },
         {
-            letter : 'ও',
-            kar : ' ো',
-            examples : ['কো', 'খো', 'গো', 'ঘো', 'ঙো', 'চো', 'ছো', 'জো', 'ঝো', 'ঞো', 'টো', 'ঠো', 'ডো', 'ঢো', 'ণো', 'তো', 'থো', 'দো', 'ধো', 'নো', 'পো', 'ফো', 'বো', 'ভো', 'মো', 'যো', 'রো', 'লো', 'শো', 'ষো', 'সো', 'হো', 'ড়ো', 'ঢ়ো', 'য়ো'],
-            example_words : ['খোকা', 'পোকা', 'বোকা']
+            letter: 'ও',
+            kar: ' ো',
+            examples: ['কো', 'খো', 'গো', 'ঘো', 'ঙো', 'চো', 'ছো', 'জো', 'ঝো', 'ঞো', 'টো', 'ঠো', 'ডো', 'ঢো', 'ণো', 'তো', 'থো', 'দো', 'ধো', 'নো', 'পো', 'ফো', 'বো', 'ভো', 'মো', 'যো', 'রো', 'লো', 'শো', 'ষো', 'সো', 'হো', 'ড়ো', 'ঢ়ো', 'য়ো'],
+            example_words: ['খোকা', 'পোকা', 'বোকা']
         },
         {
-            letter : 'ঔ',
-            kar : ' ৌ',
-            examples : ['কৌ', 'খৌ', 'গৌ', 'ঘৌ', 'ঙৌ', 'চৌ', 'ছৌ', 'জৌ', 'ঝৌ', 'ঞৌ', 'টৌ', 'ঠৌ', 'ডৌ', 'ঢৌ', 'ণৌ', 'তৌ', 'থৌ', 'দৌ', 'ধৌ', 'নৌ', 'পৌ', 'ফৌ', 'বৌ', 'ভৌ', 'মৌ', 'যৌ', 'রৌ', 'লৌ', 'শৌ', 'ষৌ', 'সৌ', 'হৌ', 'ড়ৌ', 'ঢ়ৌ', 'য়ৌ'],
-            example_words : ['নৌকা', 'মৌসুমি', 'পৌষ']
+            letter: 'ঔ',
+            kar: ' ৌ',
+            examples: ['কৌ', 'খৌ', 'গৌ', 'ঘৌ', 'ঙৌ', 'চৌ', 'ছৌ', 'জৌ', 'ঝৌ', 'ঞৌ', 'টৌ', 'ঠৌ', 'ডৌ', 'ঢৌ', 'ণৌ', 'তৌ', 'থৌ', 'দৌ', 'ধৌ', 'নৌ', 'পৌ', 'ফৌ', 'বৌ', 'ভৌ', 'মৌ', 'যৌ', 'রৌ', 'লৌ', 'শৌ', 'ষৌ', 'সৌ', 'হৌ', 'ড়ৌ', 'ঢ়ৌ', 'য়ৌ'],
+            example_words: ['নৌকা', 'মৌসুমি', 'পৌষ']
         },
     ],
-    arabicborno : [
-        
+    arabicborno: [
+
         {
-            letter : 'ا',
-            word : '',
-            sentence : '',
-            banglaPunctuation : 'আলিফ',
-            position : {
-                start : 'ا',
-                center : 'ـا',
-                end : 'ـا'
+            letter: 'ا',
+            word: '',
+            sentence: '',
+            banglaPunctuation: 'আলিফ',
+            position: {
+                start: 'ا',
+                center: 'ـا',
+                end: 'ـا'
             }
         },
         {
-            letter : 'ب',
-            word : '',
-            sentence : '',
-            banglaPunctuation : 'বা',
-            position : {
-                start : 'بـ',
-                center : 'ـبـ',
-                end : 'ـب'
+            letter: 'ب',
+            word: '',
+            sentence: '',
+            banglaPunctuation: 'বা',
+            position: {
+                start: 'بـ',
+                center: 'ـبـ',
+                end: 'ـب'
             }
         },
         {
-            letter : 'ت',
-            word : '',
-            sentence : '',
-            banglaPunctuation : 'তা',
-            position : {
-                start : 'تـ',
-                center : 'ـت',
-                end : 'ـت'
+            letter: 'ت',
+            word: '',
+            sentence: '',
+            banglaPunctuation: 'তা',
+            position: {
+                start: 'تـ',
+                center: 'ـت',
+                end: 'ـت'
             }
         },
         {
-            letter : 'ث',
-            word : '',
-            sentence : '',
-            banglaPunctuation : 'ছা',
-            position : {
-                start : 'ثـ',
-                center : 'ـث',
-                end : 'ـث'
+            letter: 'ث',
+            word: '',
+            sentence: '',
+            banglaPunctuation: 'ছা',
+            position: {
+                start: 'ثـ',
+                center: 'ـث',
+                end: 'ـث'
             }
         },
         {
-            letter : 'ج',
-            word : '',
-            sentence : '',
-            banglaPunctuation : 'জীম',
-            position : {
-                start : 'جـ',
-                center : 'ـجـ',
-                end : 'ـج'
+            letter: 'ج',
+            word: '',
+            sentence: '',
+            banglaPunctuation: 'জীম',
+            position: {
+                start: 'جـ',
+                center: 'ـجـ',
+                end: 'ـج'
             }
         },
         {
-            letter : 'ح',
-            word : '',
-            sentence : '',
-            banglaPunctuation : 'হা',
-            position : {
-                start : 'حـ',
-                center : 'ـحـ',
-                end : 'ـح'
+            letter: 'ح',
+            word: '',
+            sentence: '',
+            banglaPunctuation: 'হা',
+            position: {
+                start: 'حـ',
+                center: 'ـحـ',
+                end: 'ـح'
             }
         },
         {
-            letter : 'خ',
-            word : '',
-            sentence : '',
-            banglaPunctuation : 'খ',
-            position : {
-                start : 'خـ',
-                center : 'ـخـ',
-                end : 'ـخ'
+            letter: 'خ',
+            word: '',
+            sentence: '',
+            banglaPunctuation: 'খ',
+            position: {
+                start: 'خـ',
+                center: 'ـخـ',
+                end: 'ـخ'
             }
         },
         {
-            letter : 'د',
-            word : '',
-            sentence : '',
-            banglaPunctuation : 'দাল',
-            position : {
-                start : 'د',
-                center : 'ـد',
-                end : 'ـد'
+            letter: 'د',
+            word: '',
+            sentence: '',
+            banglaPunctuation: 'দাল',
+            position: {
+                start: 'د',
+                center: 'ـد',
+                end: 'ـد'
             }
         },
         {
-            letter : 'ذ',
-            word : '',
-            sentence : '',
-            banglaPunctuation : 'যাল',
-            position : {
-                start : 'ذ',
-                center : 'ـذ',
-                end : 'ـذ'
+            letter: 'ذ',
+            word: '',
+            sentence: '',
+            banglaPunctuation: 'যাল',
+            position: {
+                start: 'ذ',
+                center: 'ـذ',
+                end: 'ـذ'
             }
         },
         {
-            letter : 'ر',
-            word : '',
-            sentence : '',
-            banglaPunctuation : 'র',
-            position : {
-                start : 'ر',
-                center : 'ـر',
-                end : 'ـر'
+            letter: 'ر',
+            word: '',
+            sentence: '',
+            banglaPunctuation: 'র',
+            position: {
+                start: 'ر',
+                center: 'ـر',
+                end: 'ـر'
             }
         },
         {
-            letter : 'ز',
-            word : '',
-            sentence : '',
-            banglaPunctuation : 'জা',
-            position : {
-                start : 'ز',
-                center : 'ـز',
-                end : 'ـز'
+            letter: 'ز',
+            word: '',
+            sentence: '',
+            banglaPunctuation: 'জা',
+            position: {
+                start: 'ز',
+                center: 'ـز',
+                end: 'ـز'
             }
         },
         {
-            letter : 'س',
-            word : '',
-            sentence : '',
-            banglaPunctuation : 'সীন',
-            position : {
-                start : 'سـ',
-                center : 'ـسـ',
-                end : 'ـس'
+            letter: 'س',
+            word: '',
+            sentence: '',
+            banglaPunctuation: 'সীন',
+            position: {
+                start: 'سـ',
+                center: 'ـسـ',
+                end: 'ـس'
             }
         },
         {
-            letter : 'ش',
-            word : '',
-            sentence : '',
-            banglaPunctuation : 'শীন',
-            position : {
-                start : 'شـ',
-                center : 'ـشـ',
-                end : 'ـش'
+            letter: 'ش',
+            word: '',
+            sentence: '',
+            banglaPunctuation: 'শীন',
+            position: {
+                start: 'شـ',
+                center: 'ـشـ',
+                end: 'ـش'
             }
         },
         {
-            letter : 'ص	',
-            word : '',
-            sentence : '',
-            banglaPunctuation : 'ছ্ব-দ',
-            position : {
-                start : 'صـ',
-                center : 'ـصـ',
-                end : 'ـص'
+            letter: 'ص	',
+            word: '',
+            sentence: '',
+            banglaPunctuation: 'ছ্ব-দ',
+            position: {
+                start: 'صـ',
+                center: 'ـصـ',
+                end: 'ـص'
             }
         },
 
         {
-            letter : 'ض',
-            word : '',
-            sentence : '',
-            banglaPunctuation : 'দ্ব-দ',
-            position : {
-                start : 'ضـ',
-                center : 'ـضـ',
-                end : 'ـض'
+            letter: 'ض',
+            word: '',
+            sentence: '',
+            banglaPunctuation: 'দ্ব-দ',
+            position: {
+                start: 'ضـ',
+                center: 'ـضـ',
+                end: 'ـض'
             }
         },
         {
-            letter : 'ط',
-            word : '',
-            sentence : '',
-            banglaPunctuation : 'ত্ব',
-            position : {
-                start : 'طـ',
-                center : 'ـطـ',
-                end : 'ـط'
+            letter: 'ط',
+            word: '',
+            sentence: '',
+            banglaPunctuation: 'ত্ব',
+            position: {
+                start: 'طـ',
+                center: 'ـطـ',
+                end: 'ـط'
             }
         },
         {
-            letter : 'ظ',
-            word : '',
-            sentence : '',
-            banglaPunctuation : 'জ্ব',
-            position : {
-                start : 'ظـ',
-                center : 'ـظـ',
-                end : 'ـظ'
+            letter: 'ظ',
+            word: '',
+            sentence: '',
+            banglaPunctuation: 'জ্ব',
+            position: {
+                start: 'ظـ',
+                center: 'ـظـ',
+                end: 'ـظ'
             }
         },
         {
-            letter : 'ع',
-            word : '',
-            sentence : '',
-            banglaPunctuation : 'আঈন',
-            position : {
-                start : 'عـ',
-                center : 'ـعـ',
-                end : 'ـع'
+            letter: 'ع',
+            word: '',
+            sentence: '',
+            banglaPunctuation: 'আঈন',
+            position: {
+                start: 'عـ',
+                center: 'ـعـ',
+                end: 'ـع'
             }
         },
 
         {
-            letter : 'غ',
-            word : '',
-            sentence : '',
-            banglaPunctuation : 'গঈন',
-            position : {
-                start : 'غـ',
-                center : 'ـغـ',
-                end : 'ـغ'
+            letter: 'غ',
+            word: '',
+            sentence: '',
+            banglaPunctuation: 'গঈন',
+            position: {
+                start: 'غـ',
+                center: 'ـغـ',
+                end: 'ـغ'
             }
         },
         {
-            letter : 'ف',
-            word : '',
-            sentence : '',
-            banglaPunctuation : 'ফা',
-            position : {
-                start : 'فـ',
-                center : 'ـفـ',
-                end : 'ـف'
+            letter: 'ف',
+            word: '',
+            sentence: '',
+            banglaPunctuation: 'ফা',
+            position: {
+                start: 'فـ',
+                center: 'ـفـ',
+                end: 'ـف'
             }
         },
         {
-            letter : 'ق',
-            word : '',
-            sentence : '',
-            banglaPunctuation : 'ক্ব-ফ',
-            position : {
-                start : 'قـ',
-                center : 'ـقـ',
-                end : 'ـق'
+            letter: 'ق',
+            word: '',
+            sentence: '',
+            banglaPunctuation: 'ক্ব-ফ',
+            position: {
+                start: 'قـ',
+                center: 'ـقـ',
+                end: 'ـق'
             }
         },
         {
-            letter : 'ك',
-            word : '',
-            sentence : '',
-            banglaPunctuation : 'কা-ফ',
-            position : {
-                start : 'كـ',
-                center : 'ك',
-                end : 'ـك'
+            letter: 'ك',
+            word: '',
+            sentence: '',
+            banglaPunctuation: 'কা-ফ',
+            position: {
+                start: 'كـ',
+                center: 'ك',
+                end: 'ـك'
             }
         },
         {
-            letter : 'ل',
-            word : '',
-            sentence : '',
-            banglaPunctuation : 'লা-ম',
-            position : {
-                start : 'لـ',
-                center : 'ـلـ',
-                end : 'ـل'
+            letter: 'ل',
+            word: '',
+            sentence: '',
+            banglaPunctuation: 'লা-ম',
+            position: {
+                start: 'لـ',
+                center: 'ـلـ',
+                end: 'ـل'
             }
         },
         {
-            letter : 'م',
-            word : '',
-            sentence : '',
-            banglaPunctuation : 'মীম',
-            position : {
-                start : 'مـ',
-                center : 'ـمـ',
-                end : 'ـم'
+            letter: 'م',
+            word: '',
+            sentence: '',
+            banglaPunctuation: 'মীম',
+            position: {
+                start: 'مـ',
+                center: 'ـمـ',
+                end: 'ـم'
             }
         },
         {
-            letter : 'ن',
-            word : '',
-            sentence : '',
-            banglaPunctuation : 'নূন',
-            position : {
-                start : 'نـ',
-                center : 'ـنـ',
-                end : 'ـن'
+            letter: 'ن',
+            word: '',
+            sentence: '',
+            banglaPunctuation: 'নূন',
+            position: {
+                start: 'نـ',
+                center: 'ـنـ',
+                end: 'ـن'
             }
         },
         {
-            letter : 'ه',
-            word : '',
-            sentence : '',
-            banglaPunctuation : 'হা',
-            position : {
-                start : 'هـ',
-                center : 'ـهـ',
-                end : 'ـه'
+            letter: 'ه',
+            word: '',
+            sentence: '',
+            banglaPunctuation: 'হা',
+            position: {
+                start: 'هـ',
+                center: 'ـهـ',
+                end: 'ـه'
             }
         },
         {
-            letter : 'و',
-            word : '',
-            sentence : '',
-            banglaPunctuation : 'ওয়াও',
-            position : {
-                start : 'و',
-                center : 'ـو',
-                end : 'ـو'
+            letter: 'و',
+            word: '',
+            sentence: '',
+            banglaPunctuation: 'ওয়াও',
+            position: {
+                start: 'و',
+                center: 'ـو',
+                end: 'ـو'
             }
         },
         {
-            letter : 'ء',
-            word : '',
-            sentence : '',
-            banglaPunctuation : 'হাম্‌জাহ্',
-            position : {
-                start : 'ء',
-                center : 'ء',
-                end : 'ء'
+            letter: 'ء',
+            word: '',
+            sentence: '',
+            banglaPunctuation: 'হাম্‌জাহ্',
+            position: {
+                start: 'ء',
+                center: 'ء',
+                end: 'ء'
             }
         },
         {
-            letter : 'ى',
-            word : '',
-            sentence : '',
-            banglaPunctuation : 'ইয়া',
-            position : {
-                start : 'يـ',
-                center : 'ـيـ',
-                end : 'ـي'
+            letter: 'ى',
+            word: '',
+            sentence: '',
+            banglaPunctuation: 'ইয়া',
+            position: {
+                start: 'يـ',
+                center: 'ـيـ',
+                end: 'ـي'
             }
         },
     ],
-    englishborno : [
+    englishborno: [
         {
-            capital : 'A',
-            small : 'a',
-            word : '',
-            sentence : '',
+            capital: 'A',
+            small: 'a',
+            word: '',
+            sentence: '',
         },
         {
-            capital : 'B',
-            small : 'b',
-            word : '',
-            sentence : '',
+            capital: 'B',
+            small: 'b',
+            word: '',
+            sentence: '',
         },
         {
-            capital : 'C',
-            small : 'c',
-            word : '',
-            sentence : '',
+            capital: 'C',
+            small: 'c',
+            word: '',
+            sentence: '',
         },
         {
-            capital : 'D',
-            small : 'd',
-            word : '',
-            sentence : '',
+            capital: 'D',
+            small: 'd',
+            word: '',
+            sentence: '',
         },
         {
-            capital : 'E',
-            small : 'e',
-            word : '',
-            sentence : '',
+            capital: 'E',
+            small: 'e',
+            word: '',
+            sentence: '',
         },
         {
-            capital : 'F',
-            small : 'f',
-            word : '',
-            sentence : '',
+            capital: 'F',
+            small: 'f',
+            word: '',
+            sentence: '',
         },
         {
-            capital : 'G',
-            small : 'g',
-            word : '',
-            sentence : '',
+            capital: 'G',
+            small: 'g',
+            word: '',
+            sentence: '',
         },
         {
-            capital : 'H',
-            small : 'h',
-            word : '',
-            sentence : '',
+            capital: 'H',
+            small: 'h',
+            word: '',
+            sentence: '',
         },
         {
-            capital : 'I',
-            small : 'i',
-            word : '',
-            sentence : '',
+            capital: 'I',
+            small: 'i',
+            word: '',
+            sentence: '',
         },
         {
-            capital : 'J',
-            small : 'j',
-            word : '',
-            sentence : '',
+            capital: 'J',
+            small: 'j',
+            word: '',
+            sentence: '',
         },
         {
-            capital : 'K',
-            small : 'k',
-            word : '',
-            sentence : '',
+            capital: 'K',
+            small: 'k',
+            word: '',
+            sentence: '',
         },
         {
-            capital : 'L',
-            small : 'l',
-            word : '',
-            sentence : '',
+            capital: 'L',
+            small: 'l',
+            word: '',
+            sentence: '',
         },
         {
-            capital : 'M',
-            small : 'm',
-            word : '',
-            sentence : '',
+            capital: 'M',
+            small: 'm',
+            word: '',
+            sentence: '',
         },
         {
-            capital : 'N',
-            small : 'n',
-            word : '',
-            sentence : '',
+            capital: 'N',
+            small: 'n',
+            word: '',
+            sentence: '',
         },
         {
-            capital : 'O',
-            small : 'o',
-            word : '',
-            sentence : '',
+            capital: 'O',
+            small: 'o',
+            word: '',
+            sentence: '',
         },
         {
-            capital : 'P',
-            small : 'p',
-            word : '',
-            sentence : '',
+            capital: 'P',
+            small: 'p',
+            word: '',
+            sentence: '',
         },
         {
-            capital : 'Q',
-            small : 'q',
-            word : '',
-            sentence : '',
+            capital: 'Q',
+            small: 'q',
+            word: '',
+            sentence: '',
         },
         {
-            capital : 'R',
-            small : 'r',
-            word : '',
-            sentence : '',
+            capital: 'R',
+            small: 'r',
+            word: '',
+            sentence: '',
         },
         {
-            capital : 'S',
-            small : 's',
-            word : '',
-            sentence : '',
+            capital: 'S',
+            small: 's',
+            word: '',
+            sentence: '',
         },
         {
-            capital : 'T',
-            small : 't',
-            word : '',
-            sentence : '',
+            capital: 'T',
+            small: 't',
+            word: '',
+            sentence: '',
         },
         {
-            capital : 'U',
-            small : 'u',
-            word : '',
-            sentence : '',
+            capital: 'U',
+            small: 'u',
+            word: '',
+            sentence: '',
         },
         {
-            capital : 'V',
-            small : 'v',
-            word : '',
-            sentence : '',
+            capital: 'V',
+            small: 'v',
+            word: '',
+            sentence: '',
         },
         {
-            capital : 'W',
-            small : 'w',
-            word : '',
-            sentence : '',
+            capital: 'W',
+            small: 'w',
+            word: '',
+            sentence: '',
         },
         {
-            capital : 'X',
-            small : 'x',
-            word : '',
-            sentence : '',
+            capital: 'X',
+            small: 'x',
+            word: '',
+            sentence: '',
         },
         {
-            capital : 'Y',
-            small : 'y',
-            word : '',
-            sentence : '',
+            capital: 'Y',
+            small: 'y',
+            word: '',
+            sentence: '',
         },
         {
-            capital : 'Z',
-            small : 'z',
-            word : '',
-            sentence : '',
+            capital: 'Z',
+            small: 'z',
+            word: '',
+            sentence: '',
         }
     ],
-    math_bangla : [
+    math_bangla: [
         {
-            letter : '০',
-            punctuation : 'শূন্য',
+            letter: '০',
+            punctuation: 'শূন্য',
         },
         {
-            letter : '১',
-            punctuation : 'এক',
+            letter: '১',
+            punctuation: 'এক',
         },
         {
-            letter : '২',
-            punctuation : 'দুই',
-            
+            letter: '২',
+            punctuation: 'দুই',
+
         },
         {
-            letter : '৩',
-            punctuation : 'তিন',
+            letter: '৩',
+            punctuation: 'তিন',
         },
         {
-            letter : '৪',
-            punctuation : 'চার',
+            letter: '৪',
+            punctuation: 'চার',
         },
         {
-            letter : '৫',
-            punctuation : 'পাঁচ',
+            letter: '৫',
+            punctuation: 'পাঁচ',
         },
         {
-            letter : '৬',
-            punctuation : 'ছয়',
+            letter: '৬',
+            punctuation: 'ছয়',
         },
         {
-            letter : '৭',
-            punctuation : 'সাত',
+            letter: '৭',
+            punctuation: 'সাত',
         },
         {
-            letter : '৮',
-            punctuation : 'আট',
+            letter: '৮',
+            punctuation: 'আট',
         },
         {
-            letter : '৯',
-            punctuation : 'নয়',
+            letter: '৯',
+            punctuation: 'নয়',
         },
         {
-            letter : '১০',
-            punctuation : 'দশ',
+            letter: '১০',
+            punctuation: 'দশ',
         },
         {
-            letter : '১১',
-            punctuation : 'এগার',
+            letter: '১১',
+            punctuation: 'এগার',
         },
         {
-            letter : '১২',
-            punctuation : 'বার',
+            letter: '১২',
+            punctuation: 'বার',
         },
         {
-            letter : '১৩',
-            punctuation : 'তের',
+            letter: '১৩',
+            punctuation: 'তের',
         },
         {
-            letter : '১৪',
-            punctuation : 'চোদ্দ',
+            letter: '১৪',
+            punctuation: 'চোদ্দ',
         },
         {
-            letter : '১৫',
-            punctuation : 'পনের',
+            letter: '১৫',
+            punctuation: 'পনের',
         },
         {
-            letter : '১৬',
-            punctuation : 'ষোল',
+            letter: '১৬',
+            punctuation: 'ষোল',
         },
         {
-            letter : '১৭',
-            punctuation : 'সতের',
+            letter: '১৭',
+            punctuation: 'সতের',
         },
         {
-            letter : '১৮',
-            punctuation : 'আঠার',
+            letter: '১৮',
+            punctuation: 'আঠার',
         },
         {
-            letter : '১৯',
-            punctuation : 'উনিশ',
+            letter: '১৯',
+            punctuation: 'উনিশ',
         },
         {
-            letter : '২০',
-            punctuation : 'বিশ',
+            letter: '২০',
+            punctuation: 'বিশ',
         },
         {
-            letter : '২১',
-            punctuation : 'একুশ',
+            letter: '২১',
+            punctuation: 'একুশ',
         },
         {
-            letter : '২২',
-            punctuation : 'বাইশ',
+            letter: '২২',
+            punctuation: 'বাইশ',
         },
         {
-            letter : '২৩',
-            punctuation : 'তেইশ',
+            letter: '২৩',
+            punctuation: 'তেইশ',
         },
         {
-            letter : '২৪',
-            punctuation : 'চব্বিশ',
+            letter: '২৪',
+            punctuation: 'চব্বিশ',
         },
         {
-            letter : '২৫',
-            punctuation : 'পচিশ',
+            letter: '২৫',
+            punctuation: 'পঁচিশ',
         },
         {
-            letter : '২৬',
-            punctuation : 'ছাব্বিশ',
+            letter: '২৬',
+            punctuation: 'ছাব্বিশ',
         },
         {
-            letter : '২৭',
-            punctuation : 'সাতাইশ',
+            letter: '২৭',
+            punctuation: 'সাতাইশ',
         },
         {
-            letter : '২৮',
-            punctuation : 'আটাইশ',
+            letter: '২৮',
+            punctuation: 'আটাইশ',
         },
         {
-            letter : '২৯',
-            punctuation : 'উনত্রিশ',
+            letter: '২৯',
+            punctuation: 'উনত্রিশ',
         },
         {
-            letter : '৩০',
-            punctuation : 'ত্রিশ',
+            letter: '৩০',
+            punctuation: 'ত্রিশ',
         },
         {
-            letter : '৩১',
-            punctuation : '',
+            letter: '৩১',
+            punctuation: 'একত্রিশ',
         },
         {
-            letter : '৩২',
-            punctuation : '',
+            letter: '৩২',
+            punctuation: 'বত্রিশ',
         },
         {
-            letter : '৩৩',
-            punctuation : '',
+            letter: '৩৩',
+            punctuation: 'তেত্রিশ',
         },
         {
-            letter : '৩৪',
-            punctuation : '',
+            letter: '৩৪',
+            punctuation: 'চৌত্রিশ',
         },
         {
-            letter : '৩৫',
-            punctuation : '',
+            letter: '৩৫',
+            punctuation: 'পয়ত্রিশ',
         },
         {
-            letter : '৩৬',
-            punctuation : '',
+            letter: '৩৬',
+            punctuation: 'ছত্রিশ',
         },
         {
-            letter : '৩৭',
-            punctuation : '',
+            letter: '৩৭',
+            punctuation: 'সাইত্রিশ',
         },
         {
-            letter : '৩৮',
-            punctuation : '',
+            letter: '৩৮',
+            punctuation: 'আটত্রিশ',
         },
         {
-            letter : '৩৯',
-            punctuation : '',
+            letter: '৩৯',
+            punctuation: 'উনচল্লিশ',
         },
         {
-            letter : '৪০',
-            punctuation : '',
+            letter: '৪০',
+            punctuation: 'চল্লিশ',
         },
         {
-            letter : '৪১',
-            punctuation : '',
+            letter: '৪১',
+            punctuation: 'একচল্লিশ',
         },
         {
-            letter : '৪২',
-            punctuation : '',
+            letter: '৪২',
+            punctuation: 'বিয়াল্লিশ',
         },
         {
-            letter : '৪৩',
-            punctuation : '',
+            letter: '৪৩',
+            punctuation: 'তেতাল্লিশ',
         },
         {
-            letter : '৪৪',
-            punctuation : '',
+            letter: '৪৪',
+            punctuation: 'চুয়াল্লিশ',
         },
         {
-            letter : '৪৫',
-            punctuation : '',
+            letter: '৪৫',
+            punctuation: 'পঁয়তাল্লিশ',
         },
         {
-            letter : '৪৬',
-            punctuation : '',
+            letter: '৪৬',
+            punctuation: 'ছেচল্লিশ',
         },
         {
-            letter : '৪৭',
-            punctuation : '',
+            letter: '৪৭',
+            punctuation: 'সাতচল্লিশ',
         },
         {
-            letter : '৪৮',
-            punctuation : '',
+            letter: '৪৮',
+            punctuation: 'আটচল্লিশ',
         },
         {
-            letter : '৪৯',
-            punctuation : '',
+            letter: '৪৯',
+            punctuation: 'ঊনপঞ্চাশ',
         },
         {
-            letter : '৫০',
-            punctuation : '',
+            letter: '৫০',
+            punctuation: 'পঞ্চাশ',
         },
         {
-            letter : '৫১',
-            punctuation : '',
+            letter: '৫১',
+            punctuation: 'একান্ন',
         },
         {
-            letter : '৫২',
-            punctuation : '',
+            letter: '৫২',
+            punctuation: 'বাহান্ন',
         },
         {
-            letter : '৫৩',
-            punctuation : '',
+            letter: '৫৩',
+            punctuation: 'তিপ্পান্ন',
         },
         {
-            letter : '৫৪',
-            punctuation : '',
+            letter: '৫৪',
+            punctuation: 'চুয়ান্ন',
         },
         {
-            letter : '৫৫',
-            punctuation : '',
+            letter: '৫৫',
+            punctuation: 'পঞ্চান্ন',
         },
         {
-            letter : '৫৬',
-            punctuation : '',
+            letter: '৫৬',
+            punctuation: 'ছাপ্পান্ন',
         },
         {
-            letter : '৫৭',
-            punctuation : '',
+            letter: '৫৭',
+            punctuation: 'সাতান্ন',
         },
         {
-            letter : '৫৮',
-            punctuation : '',
+            letter: '৫৮',
+            punctuation: 'আটান্ন',
         },
         {
-            letter : '৫৯',
-            punctuation : '',
+            letter: '৫৯',
+            punctuation: 'ঊনষাট',
         },
         {
-            letter : '৬০',
-            punctuation : '',
+            letter: '৬০',
+            punctuation: 'ষাট',
         },
         {
-            letter : '৬১',
-            punctuation : '',
+            letter: '৬১',
+            punctuation: 'একষট্টি',
         },
         {
-            letter : '৬২',
-            punctuation : '',
+            letter: '৬২',
+            punctuation: 'বাষট্টি',
         },
         {
-            letter : '৬৩',
-            punctuation : '',
+            letter: '৬৩',
+            punctuation: 'তেষট্টি',
         },
         {
-            letter : '৬৪',
-            punctuation : '',
+            letter: '৬৪',
+            punctuation: 'চৌষট্টি',
         },
         {
-            letter : '৬৫',
-            punctuation : '',
+            letter: '৬৫',
+            punctuation: 'পঁয়ষট্টি',
         },
         {
-            letter : '৬৬',
-            punctuation : '',
+            letter: '৬৬',
+            punctuation: 'ছেষট্টি',
         },
         {
-            letter : '৬৭',
-            punctuation : '',
+            letter: '৬৭',
+            punctuation: 'সাতষট্টি',
         },
         {
-            letter : '৬৮',
-            punctuation : '',
+            letter: '৬৮',
+            punctuation: 'আটষট্টি',
         },
         {
-            letter : '৬৯',
-            punctuation : '',
+            letter: '৬৯',
+            punctuation: 'ঊনসত্তর',
         },
         {
-            letter : '৭০',
-            punctuation : '',
+            letter: '৭০',
+            punctuation: 'সত্তর',
         },
         {
-            letter : '৭১',
-            punctuation : '',
+            letter: '৭১',
+            punctuation: 'একাত্তর',
         },
         {
-            letter : '৭৩',
-            punctuation : '',
+            letter: '৭২',
+            punctuation: 'বাহাত্তর',
         },
         {
-            letter : '৭৪',
-            punctuation : '',
+            letter: '৭৩',
+            punctuation: 'তিয়াত্তর',
         },
         {
-            letter : '৭৫',
-            punctuation : '',
+            letter: '৭৪',
+            punctuation: 'চুয়াত্তর',
         },
         {
-            letter : '৭৬',
-            punctuation : '',
+            letter: '৭৫',
+            punctuation: 'পঁচাত্তর',
         },
         {
-            letter : '৭৭',
-            punctuation : '',
+            letter: '৭৬',
+            punctuation: 'ছিয়াত্তর',
         },
         {
-            letter : '৭৮',
-            punctuation : '',
+            letter: '৭৭',
+            punctuation: 'সাতাত্তর',
         },
         {
-            letter : '৭৯',
-            punctuation : '',
+            letter: '৭৮',
+            punctuation: 'আটাত্তর',
         },
         {
-            letter : '৮০',
-            punctuation : '',
+            letter: '৭৯',
+            punctuation: 'ঊনআশি',
         },
         {
-            letter : '৮১',
-            punctuation : '',
+            letter: '৮০',
+            punctuation: 'আশি',
         },
         {
-            letter : '৮২',
-            punctuation : '',
+            letter: '৮১',
+            punctuation: 'একাশি',
         },
         {
-            letter : '৮৩',
-            punctuation : '',
+            letter: '৮২',
+            punctuation: 'বিরাশি',
         },
         {
-            letter : '৮৪',
-            punctuation : '',
+            letter: '৮৩',
+            punctuation: 'তিরাশি',
         },
         {
-            letter : '৮৫',
-            punctuation : '',
+            letter: '৮৪',
+            punctuation: 'চুরাশি',
         },
         {
-            letter : '৮৬',
-            punctuation : '',
+            letter: '৮৫',
+            punctuation: 'পঁচাশি',
         },
         {
-            letter : '৮৭',
-            punctuation : '',
+            letter: '৮৬',
+            punctuation: 'ছিয়াশি',
         },
         {
-            letter : '৮৮',
-            punctuation : '',
+            letter: '৮৭',
+            punctuation: 'সাতাশি',
         },
         {
-            letter : '৮৯',
-            punctuation : '',
+            letter: '৮৮',
+            punctuation: 'অষ্টআশি',
         },
         {
-            letter : '৯০',
-            punctuation : '',
+            letter: '৮৯',
+            punctuation: 'ঊননব্বই',
         },
         {
-            letter : '৯১',
-            punctuation : '',
+            letter: '৯০',
+            punctuation: 'নব্বই',
         },
         {
-            letter : '৯২',
-            punctuation : '',
+            letter: '৯১',
+            punctuation: 'একানব্বই',
         },
         {
-            letter : '৯৩',
-            punctuation : '',
+            letter: '৯২',
+            punctuation: 'বিরানব্বই',
         },
         {
-            letter : '৯৪',
-            punctuation : '',
+            letter: '৯৩',
+            punctuation: 'তিরানব্বই',
         },
         {
-            letter : '৯৫',
-            punctuation : '',
+            letter: '৯৪',
+            punctuation: 'চুরানব্বই',
         },
         {
-            letter : '৯৬',
-            punctuation : '',
+            letter: '৯৫',
+            punctuation: 'পঁচানব্বই',
         },
         {
-            letter : '৯৭',
-            punctuation : '',
+            letter: '৯৬',
+            punctuation: 'ছিয়ানব্বই',
         },
         {
-            letter : '৯৮',
-            punctuation : '',
+            letter: '৯৭',
+            punctuation: 'সাতানব্বই',
         },
         {
-            letter : '৯৯',
-            punctuation : '',
+            letter: '৯৮',
+            punctuation: 'আটানব্বই',
         },
         {
-            letter : '১০০',
-            punctuation : '',
+            letter: '৯৯',
+            punctuation: 'নিরানব্বই',
+        },
+        {
+            letter: '১০০',
+            punctuation: 'একশ',
         }
     ],
-    math_english : [
+    math_english: [
         {
-            letter : '0',
-            punctuation : 'Zero',
+            letter: '0',
+            punctuation: 'Zero',
         },
         {
-            letter : '1',
-            punctuation : 'One',
+            letter: '1',
+            punctuation: 'One',
         },
         {
-            letter : '2',
-            punctuation : 'Two',
+            letter: '2',
+            punctuation: 'Two',
         },
         {
-            letter : '3',
-            punctuation : 'Three',
+            letter: '3',
+            punctuation: 'Three',
         },
         {
-            letter : '4',
-            punctuation : 'Four',
-            lang : 'EN'
+            letter: '4',
+            punctuation: 'Four',
+            lang: 'EN'
         },
         {
-            letter : '5',
-            punctuation : 'Five',
+            letter: '5',
+            punctuation: 'Five',
         },
         {
-            letter : '6',
-            punctuation : 'Six',
+            letter: '6',
+            punctuation: 'Six',
         },
         {
-            letter : '7',
-            punctuation : 'Seven',
+            letter: '7',
+            punctuation: 'Seven',
         },
         {
-            letter : '8',
-            punctuation : 'Eight',
+            letter: '8',
+            punctuation: 'Eight',
         },
         {
-            letter : '9',
-            punctuation : 'Nine',
+            letter: '9',
+            punctuation: 'Nine',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '10',
+            punctuation: 'Ten',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '11',
+            punctuation: 'eleven',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '12',
+            punctuation: 'twelve',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '13',
+            punctuation: 'thirteen',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '14',
+            punctuation: 'fourteen',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '15',
+            punctuation: 'fifteen',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '16',
+            punctuation: 'sixteen',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '17',
+            punctuation: 'seventeen',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '18',
+            punctuation: 'eighteen',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '19',
+            punctuation: 'nineteen',
         },
-                {
-            letter : '',
-            punctuation : '',
-        },
-        {
-            letter : '',
-            punctuation : '',
-        },
         {
-            letter : '',
-            punctuation : '',
+            letter: '20',
+            punctuation: 'Twenty ',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '21',
+            punctuation: 'Twenty One',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '22',
+            punctuation: 'Twenty ',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '23',
+            punctuation: 'Twenty ',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '24',
+            punctuation: 'Twenty Four',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '25',
+            punctuation: 'Twenty Five',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '26',
+            punctuation: 'Twenty Six',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '27',
+            punctuation: 'Twenty Seven',
         },
-                {
-            letter : '',
-            punctuation : '',
-        },
         {
-            letter : '',
-            punctuation : '',
+            letter: '28',
+            punctuation: 'Twenty Eight',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '29',
+            punctuation: 'Twenty Nine',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '30',
+            punctuation: 'Thirty ',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '31',
+            punctuation: 'Thirty One',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '32',
+            punctuation: 'Thirty Two',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '33',
+            punctuation: 'Thirty Three',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '34',
+            punctuation: 'Thirty Four',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '35',
+            punctuation: 'Thirty Five',
         },
         {
-            letter : '',
-            punctuation : '',
-        },
-                {
-            letter : '',
-            punctuation : '',
+            letter: '36',
+            punctuation: 'Thirty Six',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '37',
+            punctuation: 'Thirty Seven',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '38',
+            punctuation: 'Thirty Eight',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '39',
+            punctuation: 'Thirty Nine',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '40',
+            punctuation: 'Fourty ',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '41',
+            punctuation: 'Fourty One',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '42',
+            punctuation: 'Fourty Two',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '43',
+            punctuation: 'Fourty Three',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '44',
+            punctuation: 'Fourty Four',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '45',
+            punctuation: 'Fourty Five',
         },
-                {
-            letter : '',
-            punctuation : '',
-        },
         {
-            letter : '',
-            punctuation : '',
+            letter: '46',
+            punctuation: 'Fourty Six',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '47',
+            punctuation: 'Fourty Seven',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '48',
+            punctuation: 'Fourty Eight',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '49',
+            punctuation: 'Fourty Nine',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '50',
+            punctuation: 'Fifety ',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '51',
+            punctuation: 'Fifety One',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '52',
+            punctuation: 'Fifety Two',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '53',
+            punctuation: 'Fifety Three',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '54',
+            punctuation: 'Fifety Four',
         },
-                {
-            letter : '',
-            punctuation : '',
-        },
         {
-            letter : '',
-            punctuation : '',
+            letter: '55',
+            punctuation: 'Fifety Five',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '56',
+            punctuation: 'Fifety Six',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '57',
+            punctuation: 'Fifety Seven',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '58',
+            punctuation: 'Fifety Eight',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '59',
+            punctuation: 'Fifety Nine',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '60',
+            punctuation: 'Sixty ',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '61',
+            punctuation: 'Sixty One',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '62',
+            punctuation: 'Sixty Two',
         },
         {
-            letter : '',
-            punctuation : '',
-        },
-                {
-            letter : '',
-            punctuation : '',
+            letter: '63',
+            punctuation: 'Sixty Three',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '64',
+            punctuation: 'Sixty Four',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '65',
+            punctuation: 'Sixty Five',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '66',
+            punctuation: 'Sixty Six',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '67',
+            punctuation: 'Sixty Seven',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '68',
+            punctuation: 'Sixty Eight',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '69',
+            punctuation: 'Sixty Nine',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '70',
+            punctuation: 'Seventy ',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '71',
+            punctuation: 'Seventy One',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '72',
+            punctuation: 'Seventy Two',
         },
-                {
-            letter : '',
-            punctuation : '',
-        },
         {
-            letter : '',
-            punctuation : '',
+            letter: '73',
+            punctuation: 'Seventy Three',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '74',
+            punctuation: 'Seventy Four',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '75',
+            punctuation: 'Seventy Five',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '76',
+            punctuation: 'Seventy Six',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '77',
+            punctuation: 'Seventy Seven',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '78',
+            punctuation: 'Seventy Eight',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '79',
+            punctuation: 'Seventy Nine',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '80',
+            punctuation: 'Eighty ',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '81',
+            punctuation: 'Eighty One',
         },
-                {
-            letter : '',
-            punctuation : '',
-        },
         {
-            letter : '',
-            punctuation : '',
+            letter: '82',
+            punctuation: 'Eighty Two',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '83',
+            punctuation: 'Eighty Three',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '84',
+            punctuation: 'Eighty Four',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '85',
+            punctuation: 'Eighty Five',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '86',
+            punctuation: 'Eighty Six',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '87',
+            punctuation: 'Eighty Seven',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '88',
+            punctuation: 'Eighty Eight',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '89',
+            punctuation: 'Eighty Nine',
         },
         {
-            letter : '',
-            punctuation : '',
-        },
-                {
-            letter : '',
-            punctuation : '',
+            letter: '90',
+            punctuation: 'Ninety ',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '91',
+            punctuation: 'Ninety One',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '92',
+            punctuation: 'Ninety Two',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '93',
+            punctuation: 'Ninety Three',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '94',
+            punctuation: 'Ninety Four',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '95',
+            punctuation: 'Ninety Five',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '96',
+            punctuation: 'Ninety Six',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '97',
+            punctuation: 'Ninety Seven',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '98',
+            punctuation: 'Ninety Eight',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '99',
+            punctuation: 'Ninety Nine',
         },
         {
-            letter : '',
-            punctuation : '',
+            letter: '100',
+            punctuation: 'One Hundred',
         }
     ],
-    day_bangla : [],
-    day_english : [],
-    month_bangla : [],
-    month_english : [],
+    day_bangla: [
+        {
+            name : 'শনিবার',
+            audio : ''
+        },
+        {
+            name : 'রবিবার',
+            audio : ''
+        },
+        {
+            name : 'সোমবার',
+            audio : ''
+        },
+        {
+            name : 'মঙ্গলবার',
+            audio : ''
+        },
+        {
+            name : 'বুধবার',
+            audio : ''
+        },
+        {
+            name : 'বৃহস্পতিবার',
+            audio : ''
+        },
+        {
+            name : 'শুক্রবার',
+            audio : ''
+        },
+    ],
+    day_english: [
+        {
+            name : 'Saturday',
+            audio : ''
+        },
+        {
+            name : 'Sunday',
+            audio : ''
+        },
+        {
+            name : 'Monday',
+            audio : ''
+        },
+        {
+            name : 'Tuesday',
+            audio : ''
+        },
+        {
+            name : 'Wednesday',
+            audio : ''
+        },
+        {
+            name : 'Thursday',
+            audio : ''
+        },
+        {
+            name : 'Friday',
+            audio : ''
+        },
+    ],
+    month_bangla: [
+        {
+            name : 'বৈশাখ',
+            audio : ''
+        },
+        {
+            name : 'জ্যৈষ্ঠ',
+            audio : ''
+        },
+        {
+            name : 'আষাঢ়',
+            audio : ''
+        },
+        {
+            name : 'শ্রাবণ',
+            audio : ''
+        },
+        {
+            name : 'ভাদ্র',
+            audio : ''
+        },
+        {
+            name : 'আশ্বিন',
+            audio : ''
+        },
+        {
+            name : 'কার্তিক',
+            audio : ''
+        },
+        {
+            name : 'অগ্রহায়ণ',
+            audio : ''
+        },
+        {
+            name : 'পৌষ',
+            audio : ''
+        },
+        {
+            name : 'মাঘ',
+            audio : ''
+        },
+        {
+            name : 'ফাল্গুন',
+            audio : ''
+        },
+        {
+            name : 'চৈত্র',
+            audio : ''
+        }
+    ],
+    month_english: [
+        {
+            name : 'January',
+            name_bangla : 'জানুয়ারি',
+            audio : ''
+        },
+        {
+            name : 'February',
+            name_bangla : 'ফেব্রুয়ারী',
+            audio : ''
+        },
+        {
+            name : 'March',
+            name_bangla : 'মার্চ',
+            audio : ''
+        },
+        {
+            name : 'April',
+            name_bangla : 'এপ্রিল',
+            audio : ''
+        },
+        {
+            name : 'May',
+            name_bangla : 'মে',
+            audio : ''
+        },
+        {
+            name : 'June',
+            name_bangla : 'জুন',
+            audio : ''
+        },
+        {
+            name : 'July',
+            name_bangla : 'জুলাই',
+            audio : ''
+        },
+        {
+            name : 'August',
+            name_bangla : 'আগস্ট',
+            audio : ''
+        },
+        {
+            name : 'September',
+            name_bangla : 'সেপ্টেম্বর',
+            audio : ''
+        },
+        {
+            name : 'October',
+            name_bangla : 'অক্টোবর',
+            audio : ''
+        },
+        {
+            name : 'November',
+            name_bangla : 'নভেম্বর',
+            audio : ''
+        },
+        {
+            name : 'December',
+            name_bangla : 'ডিসেম্বর',
+            audio : ''
+        }
+    ],
+    season_bangla : [
+        {
+            name : 'গ্রীষ্মকাল',
+            audio : ''
+        },
+        {
+            name : 'বর্ষাকাল',
+            audio : ''
+        },
+        {
+            name : 'শরৎকাল',
+            audio : ''
+        },
+        {
+            name : 'হেমন্তকাল',
+            audio : ''
+        },
+        {
+            name : 'শীতকাল',
+            audio : ''
+        },
+        {
+            name : 'বসন্তকাল',
+            audio : ''
+        }
+    ],
+    season_english : [
+        {
+            name : 'Summer',
+            audio : ''
+        },
+        {
+            name : 'Rainy',
+            audio : ''
+        },
+        {
+            name : 'Autumn',
+            audio : ''
+        },
+        {
+            name : 'Late Autumn',
+            audio : ''
+        },
+        {
+            name : 'Winter',
+            audio : ''
+        },
+        {
+            name : 'Spring',
+            audio : ''
+        }
+    ]
 }
 
 export default banglaOkkor
