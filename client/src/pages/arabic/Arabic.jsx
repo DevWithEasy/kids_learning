@@ -1,16 +1,16 @@
-import { motion } from 'framer-motion';
 import { useState } from "react";
-import banglaOkkor from "../assets/banglaOkkor";
-import BanglaWordDetails from "../components/details/BanglaWordDetails";
+import banglaOkkor from "../../assets/banglaOkkor";
+import {motion} from 'framer-motion'
+import ArabicWordDetails from "../components/ArabicWordDetails";
 
-const Bangla = () => {
+const Arabic = () => {
     const [view,setView] = useState(false)
     const [selectedId,setSelectedId] = useState(false)
     const [letter,setLetter] = useState({})
-    const [data,setData] = useState([...banglaOkkor.bangla])
+    const [data,setData] = useState([...banglaOkkor.arabicborno])
     return (
         <div
-            className={`font-kalpurush bg-gradient-to-r from-pink-500 to-pink-300 p-4 grid grid-cols-4 md:grid-cols-5 gap-4 }`}
+            className={`bg-gradient-to-r from-pink-500 to-pink-300 p-4 grid grid-cols-5 gap-4 }`}
         >
             {
                 data.map((letter,i)=>
@@ -22,21 +22,26 @@ const Bangla = () => {
                             setSelectedId(i)
                             setLetter(letter)
                         }}
-                        className="p-4 flex justify-center items-center bg-white rounded-2xl shadow-md cursor-pointer"
+                        className="p-4 space-y-3 bg-white rounded-2xl shadow-md cursor-pointer"
                     >
                         <p
-                            className="text-4xl md:text-8xl text-center font-extrabold"
+                            className="font-uthemi text-8xl text-center font-extrabold"
                         >
                             {letter.letter}
+                        </p>
+                        <p
+                            className="font-kalpurush py-2 text-3xl"
+                        >
+                            {letter.banglaPunctuation}
                         </p>
                     </motion.div>
                 )
             }
             {view &&
-                <BanglaWordDetails {...{id: selectedId,data,letter,view,setView}}/>
+                <ArabicWordDetails {...{id: selectedId,data,letter,view,setView}}/>
             }
         </div>
     );
 };
 
-export default Bangla;
+export default Arabic;

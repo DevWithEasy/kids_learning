@@ -1,7 +1,6 @@
-import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
-import { next, previous } from "../../utils/slideHandler";
-import SlideHandler from "../SlideHandler";
+import { AnimatePresence, motion } from "framer-motion"
+import { useState } from "react"
+import SlideHandler from "../SlideHandler"
 
 const BanglaWordDetails = ({ id, data, letter, view, setView }) => {
     const [targetLetter, setTargetLetter] = useState(letter)
@@ -13,7 +12,7 @@ const BanglaWordDetails = ({ id, data, letter, view, setView }) => {
             <AnimatePresence>
                 <motion.div
                     layoutId={id}
-                    className="relative w-full md:w-4/12 pt-5 font-kalpurush bg-white rounded-3xl shadow-md"
+                    className="relative w-full md:w-4/12 pt-5 font-kalpurush bg-white rounded-3xl shadow-md overflow-hidden"
                 >
                     <div
                         onClick={() => setView(!view)}
@@ -24,21 +23,50 @@ const BanglaWordDetails = ({ id, data, letter, view, setView }) => {
                     <div
                         className="p-4"
                     >
-                        <p
+                        <motion.p
+                            initial={{
+                                y: -200
+                            }}
+                            animate={{
+                                y: 0,
+                            }}
+                            transition={{
+                                duration: 0.5
+                            }}
                             className="text-9xl text-center text-pink-500 font-extrabold"
                         >
                             {targetLetter.letter}
-                        </p>
-                        <p
+                        </motion.p>
+                        <motion.p
+                            initial={{
+                                y: 200
+                            }}
+                            animate={{
+                                y: 0,
+                            }}
+                            transition={{
+                                duration: 0.5,
+                                delay: 0.7
+                            }}
                             className="py-2 text-4xl"
                         >
                             {targetLetter.word}
-                        </p>
-                        <p
+                        </motion.p>
+                        <motion.p
+                            initial={{
+                                y: 200
+                            }}
+                            animate={{
+                                y: 0,
+                            }}
+                            transition={{
+                                duration: 0.5,
+                                delay: 1.5
+                            }}
                             className="py-2 text-4xl"
                         >
                             {targetLetter.sentence}
-                        </p>
+                        </motion.p>
                     </div>
                     <SlideHandler {...{
                         data,

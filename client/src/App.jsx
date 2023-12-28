@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
-import Home from './pages/Home'
+import Layout_Admin from './pages/Layout_Admin'
+import { Dashboard, Home } from './pages/Index'
 
 function App() {
 
@@ -8,6 +9,9 @@ function App() {
       className='h-screen'
     >
       <Routes>
+        <Route path='/dashboard' element={<Layout_Admin>
+          <Dashboard />
+        </Layout_Admin>} />
         <Route path='/' element={<Home />} />
       </Routes>
     </div>

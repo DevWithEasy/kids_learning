@@ -1,6 +1,5 @@
 import React from "react";
-import Draw from "../components/Draw";
-import Bangla from "./Bangla";
+import Bangla from "./bangla/Bangla";
 
 const Home = () => {
     

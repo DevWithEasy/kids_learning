@@ -1,13 +1,13 @@
 import { useState } from "react";
-import banglaOkkor from "../assets/banglaOkkor";
+import banglaOkkor from "../../assets/banglaOkkor";
 import {motion} from 'framer-motion'
-import ArabicWordDetails from "../components/ArabicWordDetails";
+import EnglishWordDetails from "../components/EnglishWordDetails";
 
-const Arabic = () => {
+const English = () => {
     const [view,setView] = useState(false)
     const [selectedId,setSelectedId] = useState(false)
     const [letter,setLetter] = useState({})
-    const [data,setData] = useState([...banglaOkkor.arabicborno])
+    const [data,setData] = useState([...banglaOkkor.englishborno])
     return (
         <div
             className={`bg-gradient-to-r from-pink-500 to-pink-300 p-4 grid grid-cols-5 gap-4 }`}
@@ -27,21 +27,22 @@ const Arabic = () => {
                         <p
                             className="font-uthemi text-8xl text-center font-extrabold"
                         >
-                            {letter.letter}
+                            {letter.capital}
                         </p>
-                        <p
+                        {/* <p
                             className="font-kalpurush py-2 text-3xl"
                         >
                             {letter.banglaPunctuation}
-                        </p>
+                        </p> */}
+                        
                     </motion.div>
                 )
             }
             {view &&
-                <ArabicWordDetails {...{id: selectedId,data,letter,view,setView}}/>
+                <EnglishWordDetails {...{id: selectedId,data,letter,view,setView}}/>
             }
         </div>
     );
 };
 
-export default Arabic;
+export default English;

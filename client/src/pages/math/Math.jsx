@@ -1,5 +1,5 @@
 import { useState } from "react";
-import banglaOkkor from "../assets/banglaOkkor";
+import banglaOkkor from "../../assets/banglaOkkor";
 import { motion } from 'framer-motion'
 import MathWordDetails from "../components/MathWordDetails";
 
