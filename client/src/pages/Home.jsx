@@ -1,11 +1,11 @@
-import React from "react";
-import Bangla from "./bangla/Bangla";
+import React from "react"
+import WordGame from "./WordGame";
 
 const Home = () => {
     
     return (
         <div>
-            <Bangla/>
+            <WordGame/>
         </div>
     );
 };
