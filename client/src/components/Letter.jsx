@@ -3,7 +3,7 @@ import { useDrag } from 'react-dnd';
 
 const Letter = ({ letter, id }) => {
     const [{ isDragging }, drag] = useDrag({
-        type: 'LETTER',
+        type: 'letter',
         item: { id, letter },
         collect: (monitor) => ({
             isDragging: !!monitor.isDragging(),
@@ -13,18 +13,9 @@ const Letter = ({ letter, id }) => {
     return (
         <div
             ref={drag}
-            style={{
-                opacity: isDragging ? 0.5 : 1,
-                cursor: 'move',
-                position: 'absolute',
-                width: '50px',
-                height: '50px',
-                backgroundColor: 'lightblue',
-                textAlign: 'center',
-                lineHeight: '50px',
-            }}
+            className={`w-10 h-10 p-2 flex justify-center items-center bg-sky-100 rounded-full`}
         >
-            {letter}
+            <span>{letter}</span>
         </div>
     );
 };

@@ -1,5 +1,5 @@
-import React from "react"
-import WordGame from "./WordGame";
+import React from "react";
+import WordGame from "./WordGame/WordGame";
 
 const Home = () => {
     
