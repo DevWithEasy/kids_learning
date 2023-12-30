@@ -25,11 +25,11 @@ const AnsAlert = ({type,ansView,setAnsView}) => {
             className={`fixed top-0 left-0 h-screen w-full flex justify-center items-center ${type === 'yes' ? 'bg-blue-500/50' : 'bg-red-500/50'}`}
         >
             <div
-                className="bg-white p-4"
+                className="bg-white p-4 rounded-md shadow-md"
             >
                 <img
                     src={type === 'yes' ? correct : wrong}
-                    className=""
+                    className="h-[200px]"
                 />
                 
             </div>
