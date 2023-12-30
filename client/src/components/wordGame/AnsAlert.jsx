@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import {motion} from 'framer-motion'
+import correct from '../../assets/correct.png'
+import wrong from '../../assets/wrong.png'
 
 const AnsAlert = ({type,ansView,setAnsView}) => {
     useEffect(()=>{
@@ -25,7 +27,11 @@ const AnsAlert = ({type,ansView,setAnsView}) => {
             <div
                 className="bg-white p-4"
             >
-                {type === 'yes' ? 'Correct answer' : 'Wrong answer'}
+                <img
+                    src={type === 'yes' ? correct : wrong}
+                    className=""
+                />
+                
             </div>
         </motion.div>
     );
