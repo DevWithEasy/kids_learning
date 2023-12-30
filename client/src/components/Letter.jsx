@@ -13,7 +13,7 @@ const Letter = ({ letter, id }) => {
     return (
         <div
             ref={drag}
-            className={`w-10 h-10 p-2 flex justify-center items-center bg-sky-100 rounded-full`}
+            className={`w-10 h-10 p-2 flex justify-center items-center bg-sky-100 rounded-full shadow-md ${isDragging ? 'opacity-50' : 'opacity-100'}`}
         >
             <span>{letter}</span>
         </div>

@@ -9,7 +9,7 @@ const WordGame = () => {
     return (
         <DndProvider backend={HTML5Backend}>
             <div
-                className='h-screen bg-sky-500'
+                className='h-screen'
             >
                 <Ans_Area/>
                 <QN_Area {...{word}}/>
