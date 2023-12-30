@@ -2,12 +2,16 @@ import { useEffect } from "react";
 import {motion} from 'framer-motion'
 import correct from '../../assets/correct.png'
 import wrong from '../../assets/wrong.png'
+import correctAudio from '../../assets/correct.mp3'
+import wrongAudio from '../../assets/wrong.mp3'
 
 const AnsAlert = ({type,ansView,setAnsView}) => {
     useEffect(()=>{
+        const audio = new Audio(type === 'yes' ? correctAudio : wrongAudio)
+        audio.play()
         setTimeout(()=>{
             setAnsView(!ansView)
-        },2000)
+        },3000)
     })
     return (
         <motion.div
