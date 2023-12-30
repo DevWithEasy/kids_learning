@@ -6,8 +6,8 @@ const Home = () => {
     
     return (
         <div>
-            {/* <WordGame/> */}
-            <Words/>
+            <WordGame/>
+            {/* <Words/> */}
         </div>
     );
 };

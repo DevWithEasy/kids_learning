@@ -1,24 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Letter from '../../components/Letter';
-import shuffleWord from '../../utils/shuffleWord';
 
-const QN_Area = ({ word }) => {
-    const [letters, setLetters] = useState([])
-
-    useEffect(() => {
-        setLetters(shuffleWord(word))
-    }, [word])
-
+const QN_Area = ({ word,letters }) => {
+    
     return (
         <div
             className=''
         >
             <div
-                className=''
+                className='flex space-x-2'
             >
                 {letters &&
                     letters.map((letter, i) => <Letter
                         key={i}
+                        value={i}
                         letter={letter}
                     />)
                 }
