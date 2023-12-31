@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import WordGame from "./WordGame/WordGame";
-import Welcome from "../components/Welcome";
 
 const Home = () => {
-    
+    const [view, setView] = useState(true)
+    useEffect(()=>{
+        setTimeout(()=>{
+
+        },2500)
+    })
     return (
         <div>
-            {/* <WordGame/> */}
-            <Welcome/>
+            <WordGame/>
         </div>
     );
 };
