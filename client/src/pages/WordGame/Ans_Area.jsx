@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDrop } from 'react-dnd';
 import AnsAlert from '../../components/wordGame/AnsAlert';
-import { AnimatePresence } from 'framer-motion'
 
 const Ans_Area = ({ word, letters, setLetters, ans_letters, setAns_letters, clientHeight }) => {
     const [{ isOver }, drop] = useDrop(() => ({
@@ -12,8 +11,8 @@ const Ans_Area = ({ word, letters, setLetters, ans_letters, setAns_letters, clie
         })
     }))
     const [ansView, setAnsView] = useState(false)
-    const [type, setType] = useState('')
-    const [blink,setBlink] = useState(0)
+    const [type, setType] = useState('yes')
+    const [blink, setBlink] = useState(0)
     const addLetter = (letter) => {
         setAns_letters(prevState => {
             return [...prevState, letter]
@@ -21,7 +20,7 @@ const Ans_Area = ({ word, letters, setLetters, ans_letters, setAns_letters, clie
         setLetters(prevState => {
             return prevState.filter(item => item !== letter)
         })
-        setBlink(preValue=>preValue+1)
+        setBlink(preValue => preValue + 1)
     }
 
     const removeLetter = (letter) => {
@@ -31,7 +30,7 @@ const Ans_Area = ({ word, letters, setLetters, ans_letters, setAns_letters, clie
         setLetters(prevState => {
             return [...prevState, letter]
         })
-        setBlink(preValue=>preValue-1)
+        setBlink(preValue => preValue - 1)
     }
     useEffect(() => {
         if (word.length === ans_letters.length) {
@@ -115,13 +114,11 @@ const Ans_Area = ({ word, letters, setLetters, ans_letters, setAns_letters, clie
                 </div>
             </div>
             {ansView &&
-                <AnimatePresence>
-                    <AnsAlert {...{
-                        type,
-                        ansView,
-                        setAnsView
-                    }} />
-                </AnimatePresence>
+                <AnsAlert {...{
+                    type,
+                    ansView,
+                    setAnsView
+                }} />
             }
         </div>
     );
