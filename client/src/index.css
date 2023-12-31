@@ -20,3 +20,7 @@
     font-family: 'uthemi';
     src: url('./assets/fonts/arabic_uthemi.otf');
 }
+
+.active{
+    @apply bg-teal-50 text-teal-500 rounded-md
+}
