@@ -5,7 +5,7 @@ const QN_Area = ({ word,letters }) => {
     
     return (
         <div
-            className='bg-gray-500'
+            className='h-[200px] flex flex-col justify-center items-center bg-gray-200'
         >
             <div
                 className='flex space-x-2'

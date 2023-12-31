@@ -27,7 +27,7 @@ const Letter = ({ letter, value }) => {
             drag
             dragConstraints ={{}}
             ref={drag}
-            className={`w-10 h-10 p-2 flex justify-center items-center bg-sky-100 rounded-full shadow-md hover:cursor-move ${isDragging ? 'opacity-50' : 'opacity-100'}`}
+            className={`w-10  h-10  p-2 flex justify-center items-center bg-sky-100 rounded-full shadow-md hover:cursor-move ${isDragging ? 'opacity-50' : 'opacity-100'} md:w-16 md:h-16 md:text-3xl`}
         >
             <span>{letter}</span>
         </motion.div>
