@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const daySchema = mongoose.Schema({
+    order_no:{
+        type: Number,
+        required:true
+    },
     name:{
         type: String,
         required:true

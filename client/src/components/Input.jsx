@@ -1,3 +1,5 @@
+import handleChange from "../utils/handleChange";
+
 const Input = ({ label,type, name, currentValue, value, setValue }) => {
     return (
         <div

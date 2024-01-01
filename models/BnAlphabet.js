@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const bnSchema = mongoose.Schema({
     order_no:{
         type: Number,
-        // required:true
+        required:true
     },
     letter:{
         type: String,

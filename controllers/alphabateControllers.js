@@ -1,25 +1,30 @@
 const ArAlphabet = require("../models/ArAlphabet")
 const BnAlphabet = require("../models/BnAlphabet")
+const Day = require("../models/Day")
 const EnAlphabet = require("../models/EnAlphabet")
+const Kar = require("../models/Kar")
+const Month = require("../models/Month")
+const Season = require("../models/Season")
 
 exports.getAll=async(req,res,next) =>{
     try {
         const {lang} = req.params
-        const collection = lang == 'bn' ? BnAlphabet : lang == 'en' ? EnAlphabet : ArAlphabet
+        const collection = lang == 'bn' ?
+            BnAlphabet : lang == 'en' ? 
+            EnAlphabet : lang == 'ar' ? 
+            ArAlphabet : lang == 'kar' ?
+            Kar : lang == 'day' ?
+            Day : lang == 'month' ?
+            Month : Season
 
-        collection.updateMany({},{
-            $set : {
-                order_no : 0
-            }
+        const data = await collection.find({}).sort({'order_no' : 1})
+
+        return res.status(200).json({
+            success : true,
+            status : 200,
+            message : 'Successfully find.',
+            data
         })
-        // const data = await collection.find({}).sort({letter : -1})
-
-        // return res.status(200).json({
-        //     success : true,
-        //     status : 200,
-        //     message : 'Successfully completed the proccess',
-        //     data
-        // })
     } catch (error) {
         return res.status(500).json({
             success : false,
@@ -29,13 +34,19 @@ exports.getAll=async(req,res,next) =>{
     }
 }
 
-exports.update=async(req,res,next) =>{
+exports.bnAlphabetUpdate=async(req,res,next) =>{
     try {
+        
+        await BnAlphabet.findByIdAndUpdate(req.params.id,{
+            $set : {
+                order_no : req.body.order_no
+            }
+        })
         
         return res.status(200).json({
             success : true,
             status : 200,
-            message : 'Successfully completed the proccess'
+            message : 'Successfully updated.'
         })
     } catch (error) {
         return res.status(500).json({

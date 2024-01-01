@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const seasonSchema = mongoose.Schema({
+    order_no:{
+        type: Number,
+        required:true
+    },
     name:{
         type: String,
         required:true

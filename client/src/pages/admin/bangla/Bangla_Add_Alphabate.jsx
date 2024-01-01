@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Input} from '../../components/Index';
+import {Input} from '../../../components/Index';
 
 const Bangla_Add_Alphabate = () => {
     const [value,setValue] = useState({
@@ -19,7 +19,7 @@ const Bangla_Add_Alphabate = () => {
             </h2>
             <form
                 onSubmit={()=>{}}
-                className='space-y-2 ms:space-y-0 md:grid md:grid-cols-2 md:gap-4'
+                className='space-y-2 md:space-y-0 md:grid md:grid-cols-2 md:gap-4'
             >
                 <Input {...{
                     label : 'Letter',

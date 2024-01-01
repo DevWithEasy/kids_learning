@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const enSchema = mongoose.Schema({
+    order_no:{
+        type: Number,
+        required:true
+    },
     capital:{
         type: String,
         required:true
