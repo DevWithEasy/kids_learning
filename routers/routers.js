@@ -1,4 +1,4 @@
-const demoRouter = require('./demoRouters')
+const demoRouter = require('./Alphabet')
 
 const routers = [
     {
