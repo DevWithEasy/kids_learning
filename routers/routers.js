@@ -1,9 +1,9 @@
-const demoRouter = require('./Alphabet')
+const alphabateRouter = require('./Alphabet')
 
 const routers = [
     {
-        path : '/api/demo',
-        handler : demoRouter
+        path : '/api/alphabet',
+        handler : alphabateRouter
     },
     {
         path : '/',

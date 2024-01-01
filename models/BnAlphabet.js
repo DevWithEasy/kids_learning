@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const bnSchema = mongoose.Schema({
+    order_no:{
+        type: Number,
+        // required:true
+    },
     letter:{
         type: String,
         required:true,
