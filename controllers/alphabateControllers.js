@@ -1,22 +1,27 @@
+const ArAlphabet = require('../models/ArAlphabet')
 const BnAlphabet = require('../models/BnAlphabet')
+const Number = require('../models/BnNumber')
+const Day = require('../models/Day')
+const EnAlphabet = require('../models/EnAlphabet')
+const Month = require('../models/Month')
+const Season = require('../models/Season')
 const data = require('./banglaOkkor')
 
 exports.demo=async(req,res,next) =>{
     try {
-        // data.bangla
-        // .filter(a=>a.vowel == false)
-        // .forEach(async(a,i)=>{
-        //     const newAlphabate = new BnAlphabet({
-        //         ...a,
-        //         image : `/image/bn_b_${i+1}.png`,
-        //         audio : `/audio/bn_b_${i+1}.mp3`,
-        //         video : `/video/bn_b_${i+1}.mp4`
-        //     })
-        //     await newAlphabate.save()
-        // })
-        console.log(data.bangla.filter(a=>a.vowel == false))
+        data.month_english
+        .forEach(async(a,i)=>{
+            const newAlphabate = new Month({
+                ...a,
+                lang : 'en',
+                image : `/image/month_${i+1}.png`,
+                audio : `/audio/en_month_${i+1}.mp3`,
+                // video : `/video/en_num${i+1}.mp4`
+            })
+            newAlphabate.save()
+        })
         return res.status(200).json({
-            success : false,
+            success : true,
             status : 200,
             message : 'Successfully completed the proccess'
         })

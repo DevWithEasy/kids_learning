@@ -258,13 +258,7 @@ const banglaOkkor = {
             sentence: '',
             vowel : false
         },
-        {
-            letter: 'য়',
-            word: '',
-            sentence: '',
-            vowel : false
-        },
-        {
+                {
             letter: 'ড়',
             word: '',
             sentence: '',
@@ -275,7 +269,37 @@ const banglaOkkor = {
             word: '',
             sentence: '',
             vowel : false
-        }
+        },
+        {
+            letter: 'য়',
+            word: '',
+            sentence: '',
+            vowel : false
+        },
+        {
+            letter: 'ৎ',
+            word: '',
+            sentence: '',
+            vowel : false
+        },
+        {
+            letter: ' ং',
+            word: '',
+            sentence: '',
+            vowel : false
+        },
+        {
+            letter: ' ঃ',
+            word: '',
+            sentence: '',
+            vowel : false
+        },
+        {
+            letter: ' ঁ',
+            word: '',
+            sentence: '',
+            vowel : false
+        },
     ],
     kar_bangla: [
         {
@@ -822,10 +846,6 @@ const banglaOkkor = {
         }
     ],
     math_bangla: [
-        {
-            letter: '০',
-            punctuation: 'শূন্য',
-        },
         {
             letter: '১',
             punctuation: 'এক',
@@ -1698,113 +1718,101 @@ const banglaOkkor = {
     month_bangla: [
         {
             name : 'বৈশাখ',
-            audio : ''
+            punctuation : ''
         },
         {
             name : 'জ্যৈষ্ঠ',
-            audio : ''
+            punctuation : ''
         },
         {
             name : 'আষাঢ়',
-            audio : ''
+            punctuation : ''
         },
         {
             name : 'শ্রাবণ',
-            audio : ''
+            punctuation : ''
         },
         {
             name : 'ভাদ্র',
-            audio : ''
+            punctuation : ''
         },
         {
             name : 'আশ্বিন',
-            audio : ''
+            punctuation : ''
         },
         {
             name : 'কার্তিক',
-            audio : ''
+            punctuation : ''
         },
         {
             name : 'অগ্রহায়ণ',
-            audio : ''
+            punctuation : ''
         },
         {
             name : 'পৌষ',
-            audio : ''
+            punctuation : ''
         },
         {
             name : 'মাঘ',
-            audio : ''
+            punctuation : ''
         },
         {
             name : 'ফাল্গুন',
-            audio : ''
+            punctuation : ''
         },
         {
             name : 'চৈত্র',
-            audio : ''
+            punctuation : ''
         }
     ],
     month_english: [
         {
             name : 'January',
-            name_bangla : 'জানুয়ারি',
-            audio : ''
+            punctuation : 'জানুয়ারি'
         },
         {
             name : 'February',
-            name_bangla : 'ফেব্রুয়ারী',
-            audio : ''
+            punctuation : 'ফেব্রুয়ারী'
         },
         {
             name : 'March',
-            name_bangla : 'মার্চ',
-            audio : ''
+            punctuation : 'মার্চ'
         },
         {
             name : 'April',
-            name_bangla : 'এপ্রিল',
-            audio : ''
+            punctuation : 'এপ্রিল'
         },
         {
             name : 'May',
-            name_bangla : 'মে',
-            audio : ''
+            punctuation : 'মে'
         },
         {
             name : 'June',
-            name_bangla : 'জুন',
-            audio : ''
+            punctuation : 'জুন'
         },
         {
             name : 'July',
-            name_bangla : 'জুলাই',
-            audio : ''
+            punctuation : 'জুলাই'
         },
         {
             name : 'August',
-            name_bangla : 'আগস্ট',
-            audio : ''
+            punctuation : 'আগস্ট'
         },
         {
             name : 'September',
-            name_bangla : 'সেপ্টেম্বর',
-            audio : ''
+            punctuation : 'সেপ্টেম্বর'
         },
         {
             name : 'October',
-            name_bangla : 'অক্টোবর',
-            audio : ''
+            punctuation : 'অক্টোবর'
         },
         {
             name : 'November',
-            name_bangla : 'নভেম্বর',
-            audio : ''
+            punctuation : 'নভেম্বর'
         },
         {
             name : 'December',
-            name_bangla : 'ডিসেম্বর',
-            audio : ''
+            punctuation : 'ডিসেম্বর'
         }
     ],
     season_bangla : [
