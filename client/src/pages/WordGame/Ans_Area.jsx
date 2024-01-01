@@ -76,7 +76,7 @@ const Ans_Area = ({ word, letters, setLetters, ans_letters, setAns_letters, clie
                                 new Array(word.length).fill('')
                                     .map((item, i) =>
                                         <p
-                                            className='p-2 w-10 h-10 flex justify-center items-center text-center bg-white text-gray-200 border md:w-16 md:h-16 md:text-3xl'
+                                            className='p-2 w-12 h-12 flex justify-center items-center text-center bg-white text-gray-200 border md:w-16 md:h-16 md:text-3xl'
                                         >
                                             <span
                                                 className={`${i == blink ? 'animate-pulse' : ''}`}
@@ -94,7 +94,7 @@ const Ans_Area = ({ word, letters, setLetters, ans_letters, setAns_letters, clie
                                 ans_letters.map((letter, i) => <p
                                     key={i}
                                     onClick={() => removeLetter(letter)}
-                                    className='relative p-2 w-10 h-10 flex justify-center bg-white items-center text-center border cursor-pointer group hover:bg-red-500 hover:text-white hover:border-none hover:rounded-full hover:flex-row-reverse transition-all duration-300 md:w-16 md:h-16 md:text-3xl'
+                                    className='relative p-2 w-12 h-12 flex justify-center bg-white items-center text-center border cursor-pointer group hover:bg-red-500 hover:text-white hover:border-none hover:rounded-full hover:flex-row-reverse transition-all duration-300 md:w-16 md:h-16 md:text-3xl'
                                 >
                                     <span
                                         className='group-hover:invisible'
