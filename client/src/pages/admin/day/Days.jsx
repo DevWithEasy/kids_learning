@@ -5,8 +5,8 @@ import useAlphabetStore from '../../../store/alphabateStore';
 import apiurl from '../../../utils/apiurl';
 
 const Days = () => {
-    const {addLetters,letters} = useAlphabetStore()
-    const getData=async()=>{
+    const { addLetters, letters } = useAlphabetStore()
+    const getData = async () => {
         try {
             const res = await axios.get(`${apiurl}/api/alphabet/day`)
             addLetters(res.data.data)
@@ -15,26 +15,35 @@ const Days = () => {
         }
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         getData()
-    },[])
-    
+    }, [])
+
     return (
         <div
-            className='grid grid-cols-8 gap-4'
+            className='space-y-3'
         >
-            {letters &&
-            letters.map(l=>
-                <Link
-                    key={l._id}
-                    to={`/day/update/${l._id}`}
-                    className='p-4 bg-gray-50'
-                >
-                    {l.name} {l.order_no}
-                </Link>
-            )
-                
-            }
+            <h2
+                className=' py-2 text-2xl font-bold border-b-2'
+            >
+                সকল দিন
+            </h2>
+            <div
+                className='grid grid-cols-8 gap-4'
+            >
+                {letters &&
+                    letters.map(l =>
+                        <Link
+                            key={l._id}
+                            to={`/day/update/${l._id}`}
+                            className='p-4 bg-gray-50 text-center border'
+                        >
+                            {l.name}
+                        </Link>
+                    )
+
+                }
+            </div>
         </div>
     );
 };

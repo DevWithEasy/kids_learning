@@ -55,7 +55,7 @@ const Layout_Admin = ({children}) => {
     ]
     return (
         <div
-            className='h-screen flex'
+            className='h-screen flex font-kalpurush'
         >
             <div
                 className='h-screen w-2/12 p-2 overflow-y-auto shadow-lg'
@@ -64,62 +64,62 @@ const Layout_Admin = ({children}) => {
                     to='/dashboard'
                     className='block p-2'
                 >
-                    Dashboard
+                    ড্যাশবোর্ড
                 </NavLink>
 
                 <NavLink
                     to='/bn/add/alphabet'
                     className='block p-2'
                 >
-                    Add Bangla
+                    বাংলা বর্ণ যোগ
                 </NavLink>
                 <NavLink
                     to='/bn/all/alphabet'
                     className='block p-2'
                 >
-                    All
+                    সব বাংলা বর্ণ
                 </NavLink>
                 <NavLink
                     to='/en/add/alphabet'
                     className='block p-2'
                 >
-                    Add english
+                    ইংরেজি বর্ণ যোগ
                 </NavLink>
                 <NavLink
                     to='/en/all/alphabet'
                     className='block p-2'
                 >
-                    All
+                    সব ইংরেজি বর্ণ
                 </NavLink>
                 <NavLink
                     to='/ar/add/alphabet'
                     className='block p-2'
                 >
-                    Add arabic
+                    আরবি বর্ণ যোগ
                 </NavLink>
                 <NavLink
                     to='/ar/all/alphabet'
                     className='block p-2'
                 >
-                    ar All
+                    সব আরবি বর্ণ
                 </NavLink>
                 <NavLink
                     to='/day/all'
                     className='block p-2'
                 >
-                    day All
+                    দিন
                 </NavLink>
                 <NavLink
                     to='/month/all'
                     className='block p-2'
                 >
-                    month All
+                    মাস
                 </NavLink>
                 <NavLink
                     to='/season/all'
                     className='block p-2'
                 >
-                    season All
+                    ঋতু
                 </NavLink>
             </div>
             <div

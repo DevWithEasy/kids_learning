@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams,useNavigate } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import useAlphabetStore from '../../../store/alphabateStore';
 import Input from '../../../components/Input';
 import axios from 'axios';
@@ -9,11 +9,11 @@ const MonthUpdate = () => {
     const { letters } = useAlphabetStore()
     const { id } = useParams()
     const [value, setValue] = useState(letters.find(l => l._id == id))
-    const handleUpdate=async(e)=>{
+    const handleUpdate = async (e) => {
         e.preventDefault()
         try {
-            const res = await axios.put(`${apiurl}/api/alphabet/month/update/${id}`,value)
-            if(res.data.success){
+            const res = await axios.put(`${apiurl}/api/alphabet/month/update/${id}`, value)
+            if (res.data.success) {
                 navigate('/month/all/')
             }
         } catch (error) {
@@ -22,14 +22,21 @@ const MonthUpdate = () => {
     }
     console.log(value)
     return (
-        <div>
+        <div
+            className='space-y-3'
+        >
+            <h2
+                className=' py-2 text-2xl font-bold border-b-2'
+            >
+                মাস আপডেট করুনঃ
+            </h2>
             <form
                 onSubmit={handleUpdate}
                 className='space-y-2'
             >
                 <Input {...{
                     label: 'Order no',
-                    type : 'number',
+                    type: 'number',
                     name: 'order_no',
                     currentValue: value.order_no,
                     value, setValue

@@ -1,61 +1,61 @@
 import React, { useState } from 'react';
-import {Input} from '../../../components/Index';
+import { Input } from '../../../components/Index';
 
 const Bangla_Add_Alphabate = () => {
-    const [value,setValue] = useState({
-        letter : '',
-        word : '',
-        sentence : '',
+    const [value, setValue] = useState({
+        letter: '',
+        word: '',
+        sentence: '',
     })
 
     return (
         <div
-            className='space-y-2'
+            className='space-y-3'
         >
             <h2
-                className='py-2 text-2xl border-b-2'
+                className=' py-2 text-2xl font-bold border-b-2'
             >
-                Add Bangla Alphbate
+                অক্ষর যোগ করুন
             </h2>
             <form
-                onSubmit={()=>{}}
+                onSubmit={() => { }}
                 className='space-y-2 md:space-y-0 md:grid md:grid-cols-2 md:gap-4'
             >
                 <Input {...{
-                    label : 'Letter',
-                    name : 'letter',
-                    currentValue : value.letter,
-                    value,setValue
-                }}/>
+                    label: 'Letter',
+                    name: 'letter',
+                    currentValue: value.letter,
+                    value, setValue
+                }} />
                 <Input {...{
-                    label : 'Word',
-                    name : 'word',
-                    currentValue : value.word,
-                    value,setValue
-                }}/>
+                    label: 'Word',
+                    name: 'word',
+                    currentValue: value.word,
+                    value, setValue
+                }} />
                 <Input {...{
-                    label : 'Sentence',
-                    name : 'sentence',
-                    currentValue : value.sentence,
-                    value,setValue
-                }}/>
+                    label: 'Sentence',
+                    name: 'sentence',
+                    currentValue: value.sentence,
+                    value, setValue
+                }} />
                 <div
                     className='space-y-2'
                 >
-                <label htmlFor="">Image : </label>
-                <input 
-                    type='file'
-                    className='px-2 py-1 w-full border rounded'
-                />
+                    <label htmlFor="">Image : </label>
+                    <input
+                        type='file'
+                        className='px-2 py-1 w-full border rounded'
+                    />
                 </div>
                 <div
                     className='space-y-2'
                 >
-                <label htmlFor="">Audio : </label>
-                <input 
-                    type='file'
-                    className='px-2 py-1 w-full border rounded'
-                />
+                    <label htmlFor="">Audio : </label>
+                    <input
+                        type='file'
+                        className='px-2 py-1 w-full border rounded'
+                    />
                 </div>
             </form>
         </div>
