@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import WordGame from "./WordGame/WordGame";
 
 const Home = () => {
     const [view, setView] = useState(true)
@@ -9,8 +8,10 @@ const Home = () => {
         },2500)
     })
     return (
-        <div>
-            <WordGame/>
+        <div
+            className=""
+        >
+            
         </div>
     );
 };
