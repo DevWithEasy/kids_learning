@@ -12,7 +12,7 @@ const ArUpdateAlphabet = () => {
     const handleUpdate=async(e)=>{
         e.preventDefault()
         try {
-            const res = await axios.put(`http://localhost:8080/api/alphabet/ar/update/${id}`,value)
+            const res = await axios.put(`${apiurl}/api/alphabet/ar/update/${id}`,value)
             if(res.data.success){
                 navigate('/ar/all/alphabet')
             }

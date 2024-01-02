@@ -12,7 +12,7 @@ const SeasonUpdate = () => {
     const handleUpdate=async(e)=>{
         e.preventDefault()
         try {
-            const res = await axios.put(`http://localhost:8080/api/alphabet/season/update/${id}`,value)
+            const res = await axios.put(`${apiurl}/api/alphabet/season/update/${id}`,value)
             if(res.data.success){
                 navigate('/season/all/')
             }

@@ -12,7 +12,7 @@ const BnUpdateAlphabet = () => {
     const handleUpdate=async(e)=>{
         e.preventDefault()
         try {
-            const res = await axios.put(`http://localhost:8080/api/alphabet/bn/update/${id}`,value)
+            const res = await axios.put(`${apiurl}/api/alphabet/bn/update/${id}`,value)
             if(res.data.success){
                 navigate('/bn/all/alphabet')
             }

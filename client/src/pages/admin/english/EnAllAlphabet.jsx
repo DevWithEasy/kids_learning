@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 import { Link } from 'react-router-dom';
 import useAlphabetStore from '../../../store/alphabateStore';
+import apiurl from '../../../utils/apiurl';
 
 const EnAllAlphabet = () => {
     const {addLetters,letters} = useAlphabetStore()
     const getData=async()=>{
         try {
-            const res = await axios.get('http://localhost:8080/api/alphabet/en')
+            const res = await axios.get(`${apiurl}/api/alphabet/en`)
             addLetters(res.data.data)
         } catch (error) {
             console.log(error)
