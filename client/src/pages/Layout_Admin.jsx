@@ -71,7 +71,7 @@ const Layout_Admin = ({children}) => {
                     to='/bn/add/alphabet'
                     className='block p-2'
                 >
-                    Add Bangla Alphabate
+                    Add Bangla
                 </NavLink>
                 <NavLink
                     to='/bn/all/alphabet'
@@ -83,7 +83,7 @@ const Layout_Admin = ({children}) => {
                     to='/en/add/alphabet'
                     className='block p-2'
                 >
-                    Add english Alphabate
+                    Add english
                 </NavLink>
                 <NavLink
                     to='/en/all/alphabet'
@@ -95,7 +95,7 @@ const Layout_Admin = ({children}) => {
                     to='/ar/add/alphabet'
                     className='block p-2'
                 >
-                    Add arabic Alphabate
+                    Add arabic
                 </NavLink>
                 <NavLink
                     to='/ar/all/alphabet'
