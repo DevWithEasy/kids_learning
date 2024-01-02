@@ -8,6 +8,7 @@ const dbConnection = require("./config/dbConnection");
 const app = express();
 
 app.use(express.static(path.join(__dirname,'public')))
+app.use(express.static(path.join(__dirname, './client/dist')))
 
 applyMidleware(app)
 
@@ -16,6 +17,10 @@ applyRouter(app)
 dbConnection()
 
 errorHandler(app)
+
+app.get('*',(req,res)=>{
+    res.sendFile(path.join(__dirname, './client/dist/index.html'))
+})
 
 app.listen(process.env.PORT || 8080,()=>{
     console.log('Express server listening on port 8080')
