@@ -56,3 +56,117 @@ exports.bnAlphabetUpdate=async(req,res,next) =>{
         })
     }
 }
+exports.enAlphabetUpdate=async(req,res,next) =>{
+    try {
+        
+        await EnAlphabet.findByIdAndUpdate(req.params.id,{
+            $set : {
+                order_no : req.body.order_no
+            }
+        })
+        
+        return res.status(200).json({
+            success : true,
+            status : 200,
+            message : 'Successfully updated.'
+        })
+    } catch (error) {
+        return res.status(500).json({
+            success : false,
+            status : 500,
+            message : error.message
+        })
+    }
+}
+
+exports.arAlphabetUpdate=async(req,res,next) =>{
+    try {
+        
+        await ArAlphabet.findByIdAndUpdate(req.params.id,{
+            $set : {
+                order_no : req.body.order_no
+            }
+        })
+        
+        return res.status(200).json({
+            success : true,
+            status : 200,
+            message : 'Successfully updated.'
+        })
+    } catch (error) {
+        return res.status(500).json({
+            success : false,
+            status : 500,
+            message : error.message
+        })
+    }
+}
+
+exports.dayUpdate=async(req,res,next) =>{
+    try {
+        
+        await Day.findByIdAndUpdate(req.params.id,{
+            $set : {
+                order_no : req.body.order_no
+            }
+        })
+        
+        return res.status(200).json({
+            success : true,
+            status : 200,
+            message : 'Successfully updated.'
+        })
+    } catch (error) {
+        return res.status(500).json({
+            success : false,
+            status : 500,
+            message : error.message
+        })
+    }
+}
+
+exports.monthUpdate=async(req,res,next) =>{
+    try {
+        
+        await Month.findByIdAndUpdate(req.params.id,{
+            $set : {
+                order_no : req.body.order_no
+            }
+        })
+        
+        return res.status(200).json({
+            success : true,
+            status : 200,
+            message : 'Successfully updated.'
+        })
+    } catch (error) {
+        return res.status(500).json({
+            success : false,
+            status : 500,
+            message : error.message
+        })
+    }
+}
+
+exports.seasonUpdate=async(req,res,next) =>{
+    try {
+        
+        await Season.findByIdAndUpdate(req.params.id,{
+            $set : {
+                order_no : req.body.order_no
+            }
+        })
+        
+        return res.status(200).json({
+            success : true,
+            status : 200,
+            message : 'Successfully updated.'
+        })
+    } catch (error) {
+        return res.status(500).json({
+            success : false,
+            status : 500,
+            message : error.message
+        })
+    }
+}

@@ -4,7 +4,7 @@ import useAlphabetStore from '../../../store/alphabateStore';
 import Input from '../../../components/Input';
 import axios from 'axios';
 
-const EnUpdateAlphabet = () => {
+const ArUpdateAlphabet = () => {
     const navigate = useNavigate()
     const { letters } = useAlphabetStore()
     const { id } = useParams()
@@ -12,9 +12,9 @@ const EnUpdateAlphabet = () => {
     const handleUpdate=async(e)=>{
         e.preventDefault()
         try {
-            const res = await axios.put(`http://localhost:8080/api/alphabet/bn/update/${id}`,value)
+            const res = await axios.put(`http://localhost:8080/api/alphabet/ar/update/${id}`,value)
             if(res.data.success){
-                navigate('/bn/all/alphabet')
+                navigate('/ar/all/alphabet')
             }
         } catch (error) {
             console.log(error)
@@ -28,23 +28,15 @@ const EnUpdateAlphabet = () => {
                 className='space-y-2'
             >
                 <Input {...{
-                    label: 'Letter',
-                    type : 'number',
+                    label: 'Order no',
                     name: 'order_no',
                     currentValue: value.order_no,
                     value, setValue
                 }} />
-
                 <Input {...{
                     label: 'Letter',
                     name: 'letter',
-                    currentValue: value.capital,
-                    value, setValue
-                }} />
-                <Input {...{
-                    label: 'Letter',
-                    name: 'letter',
-                    currentValue: value.small,
+                    currentValue: value.letter,
                     value, setValue
                 }} />
                 <Input {...{
@@ -69,4 +61,4 @@ const EnUpdateAlphabet = () => {
     );
 };
 
-export default EnUpdateAlphabet;
+export default ArUpdateAlphabet;

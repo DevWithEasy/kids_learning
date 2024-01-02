@@ -3,11 +3,11 @@ import axios from 'axios'
 import { Link } from 'react-router-dom';
 import useAlphabetStore from '../../../store/alphabateStore';
 
-const EnAllAlphabet = () => {
+const Seasons = () => {
     const {addLetters,letters} = useAlphabetStore()
     const getData=async()=>{
         try {
-            const res = await axios.get('http://localhost:8080/api/alphabet/en')
+            const res = await axios.get('http://localhost:8080/api/alphabet/season')
             addLetters(res.data.data)
         } catch (error) {
             console.log(error)
@@ -26,10 +26,10 @@ const EnAllAlphabet = () => {
             letters.map(l=>
                 <Link
                     key={l._id}
-                    to={`/en/update/alphabet/${l._id}`}
+                    to={`/season/update/${l._id}`}
                     className='p-4 bg-gray-50'
                 >
-                    {l.capital} {l.order_no}
+                    {l.name} {l.order_no}
                 </Link>
             )
                 
@@ -38,4 +38,4 @@ const EnAllAlphabet = () => {
     );
 };
 
-export default EnAllAlphabet;
+export default Seasons;

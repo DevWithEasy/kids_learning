@@ -4,7 +4,7 @@ import useAlphabetStore from '../../../store/alphabateStore';
 import Input from '../../../components/Input';
 import axios from 'axios';
 
-const EnUpdateAlphabet = () => {
+const DaysUpdate = () => {
     const navigate = useNavigate()
     const { letters } = useAlphabetStore()
     const { id } = useParams()
@@ -12,9 +12,9 @@ const EnUpdateAlphabet = () => {
     const handleUpdate=async(e)=>{
         e.preventDefault()
         try {
-            const res = await axios.put(`http://localhost:8080/api/alphabet/en/update/${id}`,value)
+            const res = await axios.put(`http://localhost:8080/api/alphabet/day/update/${id}`,value)
             if(res.data.success){
-                navigate('/en/all/alphabet')
+                navigate('/day/all/')
             }
         } catch (error) {
             console.log(error)
@@ -28,14 +28,14 @@ const EnUpdateAlphabet = () => {
                 className='space-y-2'
             >
                 <Input {...{
-                    label: 'Letter',
+                    label: 'Order no',
                     type : 'number',
                     name: 'order_no',
                     currentValue: value.order_no,
                     value, setValue
                 }} />
 
-                <Input {...{
+                {/* <Input {...{
                     label: 'Letter',
                     name: 'letter',
                     currentValue: value.capital,
@@ -58,7 +58,7 @@ const EnUpdateAlphabet = () => {
                     name: 'sentence',
                     currentValue: value.sentence,
                     value, setValue
-                }} />
+                }} /> */}
                 <button
                     className='px-6 py-2 bg-gray-100'
                 >
@@ -69,4 +69,4 @@ const EnUpdateAlphabet = () => {
     );
 };
 
-export default EnUpdateAlphabet;
+export default DaysUpdate;
