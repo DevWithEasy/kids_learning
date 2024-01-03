@@ -1,14 +1,14 @@
 import { useState } from "react";
 import banglaOkkor from "../../assets/banglaOkkor";
 import { motion } from 'framer-motion'
-import MathWordDetails from "../components/MathWordDetails";
+import {MathWordDetails} from "../../components/Index";
 
-const Math = () => {
+const Mathematics = () => {
     const [view, setView] = useState(false)
     const [selectedId, setSelectedId] = useState(false)
     const [letter, setLetter] = useState({})
     const [query,setQuery] = useState('BN')
-    const [data,setData] = useState([...banglaOkkor.songkha])
+    const [data,setData] = useState([])
     return (
         <div
             className="font-kalpurush p-4 space-y-2 bg-gradient-to-r from-pink-500 to-pink-300"
@@ -39,7 +39,7 @@ const Math = () => {
                 className={`grid grid-cols-5 gap-4 }`}
             >
 
-                {
+                {data &&
                     data.filter(letter=>letter.lang === query).map((letter, i) =>
                         <motion.div
                             key={i}
@@ -73,4 +73,4 @@ const Math = () => {
     );
 };
 
-export default Math;
+export default Mathematics;

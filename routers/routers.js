@@ -1,5 +1,8 @@
 const adminRouter = require('./AdminRouters')
 const banglaRouter = require('./banglaRouters')
+const englisRouter = require('./englishRouters')
+const mathRouter = require('./mathRouters')
+const arabicRouter = require('./arabicRouters')
 
 const routers = [
     {
@@ -7,8 +10,20 @@ const routers = [
         handler : adminRouter
     },
     {
+        path : '/api/arabic',
+        handler : arabicRouter
+    },
+    {
         path : '/api/bangla',
         handler : banglaRouter
+    },
+    {
+        path : '/api/english',
+        handler : englisRouter
+    },
+    {
+        path : '/api/math',
+        handler : mathRouter
     },
     // {
     //     path : '/',

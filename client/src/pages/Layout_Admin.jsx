@@ -66,57 +66,38 @@ const Layout_Admin = ({children}) => {
                 >
                     ড্যাশবোর্ড
                 </NavLink>
-
                 <NavLink
-                    to='/bn/add/alphabet'
-                    className='block p-2'
-                >
-                    বাংলা বর্ণ যোগ
-                </NavLink>
-                <NavLink
-                    to='/bn/all/alphabet'
+                    to='/alphabet/bn'
                     className='block p-2'
                 >
                     সব বাংলা বর্ণ
                 </NavLink>
                 <NavLink
-                    to='/en/add/alphabet'
-                    className='block p-2'
-                >
-                    ইংরেজি বর্ণ যোগ
-                </NavLink>
-                <NavLink
-                    to='/en/all/alphabet'
+                    to='/alphabet/en'
                     className='block p-2'
                 >
                     সব ইংরেজি বর্ণ
                 </NavLink>
                 <NavLink
-                    to='/ar/add/alphabet'
-                    className='block p-2'
-                >
-                    আরবি বর্ণ যোগ
-                </NavLink>
-                <NavLink
-                    to='/ar/all/alphabet'
+                    to='/alphabet/ar'
                     className='block p-2'
                 >
                     সব আরবি বর্ণ
                 </NavLink>
                 <NavLink
-                    to='/day/all'
+                    to='/days'
                     className='block p-2'
                 >
                     দিন
                 </NavLink>
                 <NavLink
-                    to='/month/all'
+                    to='/months'
                     className='block p-2'
                 >
                     মাস
                 </NavLink>
                 <NavLink
-                    to='/season/all'
+                    to='/seasons'
                     className='block p-2'
                 >
                     ঋতু

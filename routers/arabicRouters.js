@@ -1,4 +1,4 @@
-const { demo } = require('../controllers/adminControllers')
+const { demo } = require('../controllers/arabicControllers')
 
 const router = require('express').Router()
 

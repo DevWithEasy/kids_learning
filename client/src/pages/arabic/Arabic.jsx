@@ -1,7 +1,7 @@
 import { useState } from "react";
 import banglaOkkor from "../../assets/banglaOkkor";
 import {motion} from 'framer-motion'
-import ArabicWordDetails from "../components/ArabicWordDetails";
+import {ArabicWordDetails} from "../../components/Index";
 
 const Arabic = () => {
     const [view,setView] = useState(false)
