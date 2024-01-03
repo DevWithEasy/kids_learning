@@ -1,4 +1,4 @@
-const { getAll, bnAlphabetUpdate, enAlphabetUpdate, arAlphabetUpdate, dayUpdate, monthUpdate, seasonUpdate, apply } = require('../controllers/alphabateControllers')
+const { getAll, bnAlphabetUpdate, enAlphabetUpdate, arAlphabetUpdate, dayUpdate, monthUpdate, seasonUpdate, apply } = require('../controllers/adminControllers')
 
 const router = require('express').Router()
 

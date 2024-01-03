@@ -59,6 +59,7 @@ exports.bnAlphabetUpdate=async(req,res,next) =>{
         })
     }
 }
+
 exports.enAlphabetUpdate=async(req,res,next) =>{
     try {
         

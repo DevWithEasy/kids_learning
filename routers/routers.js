@@ -1,9 +1,14 @@
-const alphabateRouter = require('./Alphabet')
+const adminRouter = require('./AdminRouters')
+const banglaRouter = require('./banglaRouters')
 
 const routers = [
     {
-        path : '/api/alphabet',
-        handler : alphabateRouter
+        path : '/api/admin',
+        handler : adminRouter
+    },
+    {
+        path : '/api/bangla',
+        handler : banglaRouter
     },
     // {
     //     path : '/',

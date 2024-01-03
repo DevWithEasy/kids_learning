@@ -31,6 +31,11 @@ function App() {
           }
         />
         <Route
+          path='/alphabet/:query'
+          element={<Layout_Admin>
+            <BnAllAlphabet />
+          </Layout_Admin>} />
+        <Route
           path='/bn/all/alphabet'
           element={<Layout_Admin>
             <BnAllAlphabet />
