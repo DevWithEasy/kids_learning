@@ -2,9 +2,12 @@ const ArAlphabet = require("../models/ArAlphabet")
 const BnAlphabet = require("../models/BnAlphabet")
 const Day = require("../models/Day")
 const EnAlphabet = require("../models/EnAlphabet")
+const Fola = require("../models/Fola")
 const Kar = require("../models/Kar")
 const Month = require("../models/Month")
+const PuncuationMark = require("../models/PuncuationMark")
 const Season = require("../models/Season")
+const banglaOkkor = require("./banglaOkkor")
 
 exports.getAll=async(req,res,next) =>{
     try {
@@ -157,6 +160,29 @@ exports.seasonUpdate=async(req,res,next) =>{
             }
         })
         
+        return res.status(200).json({
+            success : true,
+            status : 200,
+            message : 'Successfully updated.'
+        })
+    } catch (error) {
+        return res.status(500).json({
+            success : false,
+            status : 500,
+            message : error.message
+        })
+    }
+}
+
+exports.apply=async(req,res,next)=>{
+    try {
+        // banglaOkkor.fola
+        // .forEach(async(p)=>{
+        //     const new_punc = new Fola({
+        //         ...p
+        //     })
+        //     await new_punc.save()
+        // })
         return res.status(200).json({
             success : true,
             status : 200,
