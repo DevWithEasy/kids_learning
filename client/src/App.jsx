@@ -31,7 +31,7 @@ function App() {
           }
         />
         <Route
-          path='/alphabet/:query'
+          path='/alphabet/bn'
           element={<Layout_Admin>
             <BnAllAlphabet />
           </Layout_Admin>} />

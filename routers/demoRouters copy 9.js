@@ -1,8 +1,8 @@
-const { demo } = require('../controllers/alphabateControllers')
+// const { demo } = require('../controllers/alphabateControllers')
 
-const router = require('express').Router()
+// const router = require('express').Router()
 
-router.get('/',demo)
+// router.get('/',demo)
 
 
-module.exports = router
+// module.exports = router
