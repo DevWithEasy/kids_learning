@@ -1,7 +1,9 @@
 import React from 'react';
 // import bg from '../assets/image/note_template.png'
+import {useNavigate} from 'react-router-dom'
 
 const Menu = ({ view, setView }) => {
+    const navigate = useNavigate()
     return (
         <div
             className='fixed top-0 left-0 h-screen w-full py-10 flex justify-center bg-gray-500/50 font-kalpurush'
@@ -18,6 +20,20 @@ const Menu = ({ view, setView }) => {
                 <div
                     className='w-9/12 mx-auto pt-10 text-lg'
                 >
+                    <button
+                        onClick={()=>{
+                            navigate(-1)
+                            setView(!view)
+                        }}
+                        className='pl-2 pr-6 py-2 text-left flex items-center space-x-3 border-b text-green-500'
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
+                        </svg>
+
+                        <span>পিছনে যান</span>
+
+                    </button>
                     <button
                         className='pl-2 pr-6 py-2 text-left flex items-center space-x-3 border-b text-green-500'
                     >

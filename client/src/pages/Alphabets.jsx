@@ -5,6 +5,7 @@ import { getData } from '../utils/api_crud';
 import getPath from '../utils/pathGenerate';
 import { motion } from 'framer-motion'
 import apiurl from '../utils/apiurl';
+import getTitle from '../utils/titleHeadGenerate';
 
 const Alphabets = () => {
     const { lan } = useParams()
@@ -17,6 +18,8 @@ const Alphabets = () => {
         audio.play()
     }
 
+    const title = getTitle({ lan, searchParams })
+
     useEffect(() => {
         setPath(getPath({ lan, searchParams }))
     }, [path])
@@ -27,33 +30,66 @@ const Alphabets = () => {
             setData: addLetters
         })
     }, [path])
-
     console.log(path)
-
     return (
         <div
-            className='h-screen space-y-3 font-kalpurush bg-gradient-to-r from-pink-500 to-pink-300 overflow-y-auto'
+            className='h-screen space-y-3 font-kalpurush overflow-y-auto'
         >
             <h2
-                className='px-4 py-3 text-4xl text-white font-semibold border-b-2'
+                className='px-4 py-3 text-4xl font-semibold border-b-2'
             >
-                বাংলা স্বরবর্ণ
+                {title}
             </h2>
             <div
-                className={`p-2 grid grid-cols-4 md:grid-cols-5 gap-4`}
+                className={`p-2 grid ${lan === 'bangla_kar' || lan === 'bangla_fola' ? 'grid-cols-2' : 'grid-cols-4'} md:grid-cols-5 gap-4`}
             >
                 {letters &&
                     letters.map((letter, i) =>
                         <motion.div
                             key={i}
                             onClick={() => play(letter.audio)}
-                            className="p-4 flex justify-center items-center bg-white rounded-2xl shadow-md cursor-pointer"
+                            className="p-4 flex flex-col justify-center items-center space-y-3 rounded-2xl border cursor-pointer"
                         >
                             <p
                                 className="text-4xl md:text-8xl text-center font-extrabold"
                             >
-                                {letter.letter}
+                                {lan === 'bangla_kar' ?
+                                    letter.kar
+                                    :
+                                    letter.letter
+                                }
                             </p>
+                            {lan === 'bangla_kar' &&
+                                <p
+                                    className='text-xl'
+                                >
+                                    {letter.letter} তে {letter.kar} কার 
+                                </p>
+                            }
+                            {lan === 'bangla_fola' &&
+                                <p
+                                    className='text-xl'
+                                >
+                                    {letter.name}
+                                </p>
+                            }
+                            {
+                                lan === 'bangla_fola' &&
+                                <div
+                                    className='text-xl'
+                                >
+                                    {
+                                        letter?.examples?.map((f,i)=>
+                                            <span
+                                                key={i}
+                                                className='m-1 px-2 py-0.5 border rounded'
+                                            >
+                                                {f}
+                                            </span>
+                                        )
+                                    }
+                                </div>
+                            }
                         </motion.div>
                     )
                 }

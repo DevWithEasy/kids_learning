@@ -8,8 +8,12 @@ const getPath=(data)=>{
         return `bangla/vowel`
     }else if(lan === 'bn' && query === 'non_vowel'){
         return `bangla/non_vowel`
-    }else if(lan === 'en'){
-        return `english`
+    }else if(lan === 'bangla_kar'){
+        return `bangla/kar`
+    }else if(lan === 'bangla_fola'){
+        return `bangla/fola`
+    }else if(lan === 'punctuation_mark'){
+        return `bangla/punctuation_mark`
     }
 }
 
