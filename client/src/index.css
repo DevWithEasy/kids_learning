@@ -3,24 +3,39 @@
 @tailwind utilities;
 
 @layer utilities {
-    .animation-delay-2000{
+    .animation-delay-2000 {
         animation-delay: 2s;
     }
-    .animation-delay-4000{
+
+    .animation-delay-4000 {
         animation-delay: 4s;
     }
 }
 
 @font-face {
-    font-family: 'kalpurush';
-    src: url('./assets/fonts/kalpurush.ttf');
+    font-family: "kalpurush";
+    src: url("./assets/fonts/kalpurush.ttf");
 }
 
 @font-face {
-    font-family: 'uthemi';
-    src: url('./assets/fonts/arabic_uthemi.otf');
+    font-family: "uthemi";
+    src: url("./assets/fonts/arabic_uthemi.otf");
 }
 
-.active{
-    @apply bg-teal-50 text-teal-500 rounded-md
+.active {
+    @apply bg-teal-50 text-teal-500 rounded-md;
+}
+
+#slider::-webkit-scrollbar {
+    @apply w-5 bg-gray-50
+}
+
+#slider::-webkit-scrollbar-thumb {
+    @apply bg-gray-200 hover:bg-pink-200
+}
+
+/* For Internet Explorer */
+#slider {
+    scrollbar-width: thin;
+    scrollbar-color: #3498db #f1f1f1;
 }

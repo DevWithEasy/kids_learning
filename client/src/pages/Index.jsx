@@ -22,7 +22,8 @@ import Arabic from "./arabic/Arabic";
 import Bangla from "./bangla/Bangla";
 import English from "./english/English";
 import Mathematics from "./math/Math";
-import Writting_Board from "./writting_board/Writting_Board";
+import AlphabetsDetails from "./AlphabetsDetails";
+import WritingBoard from "./WritingBoard";
 
-export { Alphabets,Layout,Bangla,English,Mathematics,Arabic,ArAllAlphabet, ArUpdateAlphabet, BnAllAlphabet, BnUpdateAlphabet, Dashboard, Days, DaysUpdate, EnAllAlphabet, EnUpdateAlphabet, Home, Layout_Admin, MonthUpdate, Months, SeasonUpdate, Seasons, SignIn, Signup, Welcome, Writting_Board };
+export { Alphabets,Layout,Bangla,English,Mathematics,Arabic,ArAllAlphabet, ArUpdateAlphabet, BnAllAlphabet, BnUpdateAlphabet, Dashboard, Days, DaysUpdate, EnAllAlphabet, EnUpdateAlphabet, Home, Layout_Admin, MonthUpdate, Months, SeasonUpdate, Seasons, SignIn, Signup, Welcome,AlphabetsDetails,WritingBoard };
 

@@ -1,6 +1,6 @@
 import React from 'react';
-// import bg from '../assets/image/note_template.png'
 import {useNavigate} from 'react-router-dom'
+import {motion} from 'framer-motion'
 
 const Menu = ({ view, setView }) => {
     const navigate = useNavigate()
@@ -20,7 +20,13 @@ const Menu = ({ view, setView }) => {
                 <div
                     className='w-9/12 mx-auto pt-10 text-lg'
                 >
-                    <button
+                    <motion.button
+                        whileHover={{
+                            x : 10
+                        }}
+                        transition={{
+                            duration : 0.2
+                        }}
                         onClick={()=>{
                             navigate(-1)
                             setView(!view)
@@ -33,8 +39,18 @@ const Menu = ({ view, setView }) => {
 
                         <span>পিছনে যান</span>
 
-                    </button>
-                    <button
+                    </motion.button>
+                    <motion.button
+                        whileHover={{
+                            x : 10
+                        }}
+                        transition={{
+                            duration : 0.5
+                        }}
+                        onClick={()=>{
+                            navigate('/')
+                            setView(!view)
+                        }}
                         className='pl-2 pr-6 py-2 text-left flex items-center space-x-3 border-b text-green-500'
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -43,7 +59,7 @@ const Menu = ({ view, setView }) => {
 
                         <span>শুরুতে ফিরে যান</span>
 
-                    </button>
+                    </motion.button>
                 </div>
             </div>
         </div>

@@ -1,5 +1,5 @@
 import { useRoutes } from 'react-router-dom'
-import { Alphabets, ArAllAlphabet, ArUpdateAlphabet, Arabic, Bangla, BnAllAlphabet, BnUpdateAlphabet, Dashboard, Days, DaysUpdate, EnAllAlphabet, EnUpdateAlphabet, English, Home, Layout, Layout_Admin, Mathematics, Months, SeasonUpdate, Seasons, Welcome } from './pages/Index'
+import { Alphabets, AlphabetsDetails, ArAllAlphabet, ArUpdateAlphabet, Arabic, Bangla, BnAllAlphabet, BnUpdateAlphabet, Dashboard, Days, DaysUpdate, EnAllAlphabet, EnUpdateAlphabet, English, Home, Layout, Layout_Admin, Mathematics, Months, SeasonUpdate, Seasons, Welcome, WritingBoard } from './pages/Index'
 
 function App() {
   const routes = useRoutes([
@@ -34,6 +34,14 @@ function App() {
         {
           path: '/alphabets/:lan',
           element: <Alphabets />
+        },
+        {
+          path: '/alphabets/details/:lan',
+          element: <AlphabetsDetails />
+        },
+        {
+          path: '/alphabets/write/:lan',
+          element: <WritingBoard />
         },
         {
           path: '/dashboard',

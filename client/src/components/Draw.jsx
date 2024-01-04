@@ -33,16 +33,16 @@ const Draw = ({ letter }) => {
 
     return (
         <div
-            className='p-10 space-y-2'
+            className='space-y-2'
         >
             <div
                 ref={board}
-                className='relative w-48 h-48 flex justify-center items-center border overflow-hidden'
+                className='relative w-full h-62 flex justify-center items-center border overflow-hidden rounded'
             >
                 <span
-                    className='text-[175px] font-extrabold opacity-5'
+                    className={`text-[200px] font-extrabold ${wordVisible ? 'opacity-5' : 'opacity-0'}`}
                 >
-                    {wordVisible ? letter : ''}
+                    {letter.letter}
                 </span>
                 <div
                     className='absolute top-0 w-full h-full ring-2 overflow-hidden'
@@ -60,13 +60,13 @@ const Draw = ({ letter }) => {
             </div>
 
             <div
-                className='w-48 flex items-center justify-between text-sm'
+                className='flex items-center space-x-2 text-sm'
             >
                 <label
                     htmlFor='color'
-                    className={`w-10 border text-[${brushColor}]`}
+                    className={`p-1 border text-[${brushColor}] rounded`}
                 >
-                    Color
+                    রঙ পরিবর্তন 
                 </label>
                 <input
                     id='color'
@@ -81,19 +81,25 @@ const Draw = ({ letter }) => {
                     max={20}
                     value={brushRadius}
                     onChange={(e) => handleUpdateBrushSize(e)}
-                    className='w-10 border focus:outline-none'
+                    className='p-1 border rounded focus:outline-none text-center'
                 />
                 <button
                     onClick={() => canvasRef?.current.clear()}
-                    className='w-10 border '
+                    className='p-1 border rounded'
                 >
-                    Clear
+                    মুছে ফেলুন
                 </button>
                 <button
                     onClick={() => canvasRef?.current.undo()}
-                    className='w-10 border'
+                    className='p-1 border rounded'
                 >
-                    Undo
+                    ফিরে যান
+                </button>
+                <button
+                    onClick={() => setWordVisible(!wordVisible)}
+                    className='p-1 border rounded'
+                >
+                    {wordVisible ? 'অক্ষর দেখান' : 'অক্ষর লুকান'}
                 </button>
             </div>
         </div>
