@@ -1,5 +1,6 @@
 import { useRoutes } from 'react-router-dom'
 import { Alphabets, AlphabetsDetails, ArAllAlphabet, ArUpdateAlphabet, Arabic, Bangla, BnAllAlphabet, BnUpdateAlphabet, Dashboard, Days, DaysUpdate, EnAllAlphabet, EnUpdateAlphabet, English, Home, Layout, Layout_Admin, Mathematics, Months, SeasonUpdate, Seasons, Welcome, WritingBoard } from './pages/Index'
+import WordGame from './pages/WordGame/WordGame'
 
 function App() {
   const routes = useRoutes([
@@ -42,6 +43,10 @@ function App() {
         {
           path: '/alphabets/write/:lan',
           element: <WritingBoard />
+        },
+        {
+          path: '/game',
+          element: <WordGame />
         },
         {
           path: '/dashboard',

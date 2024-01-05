@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useSearchParams } from 'react-router-dom'
-import useAlphabetStore from '../store/alphabateStore';
 import { getData } from '../utils/api_crud';
 import getPath from '../utils/pathGenerate';
 import { motion } from 'framer-motion'
 import apiurl from '../utils/apiurl';
 import getTitle from '../utils/titleHeadGenerate';
+import Loading from '../components/Loading';
 
 const Alphabets = () => {
     const { lan } = useParams()
     const [searchParams] = useSearchParams()
-    const { addLetters, letters } = useAlphabetStore()
-    const [path,setPath] = useState('')
+    const [loading, setLoading] = useState(false)
+    const [letters, setLetters] = useState([])
+    const [path, setPath] = useState('')
 
-    const play=(path)=>{
+    const play = (path) => {
         const audio = new Audio(`${apiurl}${path}`)
         audio.play()
     }
@@ -27,10 +28,11 @@ const Alphabets = () => {
     useEffect(() => {
         path && getData({
             path: path,
-            setData: addLetters
+            setData: setLetters,
+            setLoading
         })
     }, [path])
-    console.log(path)
+
     return (
         <div
             className='h-screen space-y-3 font-kalpurush overflow-y-auto'
@@ -63,7 +65,7 @@ const Alphabets = () => {
                                 <p
                                     className='text-xl'
                                 >
-                                    {letter.letter} তে {letter.kar} কার 
+                                    {letter.letter} তে {letter.kar} কার
                                 </p>
                             }
                             {lan === 'bangla_fola' &&
@@ -79,7 +81,7 @@ const Alphabets = () => {
                                     className='text-xl'
                                 >
                                     {
-                                        letter?.examples?.map((f,i)=>
+                                        letter?.examples?.map((f, i) =>
                                             <span
                                                 key={i}
                                                 className='m-1 px-2 py-0.5 border rounded'
@@ -94,6 +96,9 @@ const Alphabets = () => {
                     )
                 }
             </div>
+            {loading &&
+                <Loading />
+            }
         </div>
 
     );

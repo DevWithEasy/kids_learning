@@ -5,15 +5,16 @@ import { getData } from '../utils/api_crud';
 import getPath from '../utils/pathGenerate';
 import apiurl from '../utils/apiurl';
 import getTitle from '../utils/titleHeadGenerate';
-import { SlideHandler } from '../components/Index';
+import { Loading, SlideHandler } from '../components/Index';
 
 const AlphabetsDetails = () => {
     const { lan } = useParams()
     const [searchParams] = useSearchParams()
-    const { addLetters, letters } = useAlphabetStore()
+    const [loading, setLoading] = useState(false)
+    const [letters, setLetters] = useState([])
     const [path, setPath] = useState('')
     const [id, setId] = useState(0)
-    const [letter, setLetter] = useState(letters[0])
+    const [letter, setLetter] = useState({})
 
     const play = () => {
         const audio = new Audio(`${apiurl}${letter?.audio}`)
@@ -34,12 +35,17 @@ const AlphabetsDetails = () => {
     useEffect(() => {
         path && getData({
             path: path,
-            setData: addLetters
+            setData: setLetters,
+            setLoading
         })
     }, [path])
     useEffect(() => {
         play()
     }, [id])
+
+    useEffect(() => {
+        letters && setLetter(letters[0])
+    }, [letters])
 
     return (
         <div
@@ -73,7 +79,7 @@ const AlphabetsDetails = () => {
                     </p>
                 </div>
                 <div
-                    id = 'slider'
+                    id='slider'
                     className='pb-2 flex justify-between space-x-2 overflow-y-auto'
                 >
                     {letters &&
@@ -93,6 +99,9 @@ const AlphabetsDetails = () => {
                     setId,
                     setLetter
                 }} />
+                {loading &&
+                    <Loading />
+                }
             </div>
         </div>
 
