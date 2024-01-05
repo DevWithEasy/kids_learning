@@ -6,7 +6,7 @@ import getPath from '../utils/pathGenerate';
 import apiurl from '../utils/apiurl';
 import getTitle from '../utils/titleHeadGenerate';
 import { SlideHandler } from '../components/Index';
-import Draw from '../components/Draw';
+import Draw from '../components/draw/Draw';
 
 const WritingBoard = () => {
     const { lan } = useParams()
@@ -41,30 +41,26 @@ const WritingBoard = () => {
 
     return (
         <div
-            className='h-screen space-y-3 font-kalpurush overflow-y-auto'
+            className='h-screen bg-gray-100 space-y-3 font-kalpurush overflow-y-auto'
         >
             <h2
-                className='px-4 py-3 text-4xl font-semibold border-b-2'
+                className='bg-white px-4 py-3 text-4xl font-semibold border-b-2'
             >
                 {title}
             </h2>
             <div
                 className='p-2 space-y-3'
             >
-                <div
-                    className=""
-                >
-                    <Draw {...{letter}}/>
-                </div>
+                <Draw {...{letter}}/>
                 <div
                     id = 'slider'
-                    className='pb-2 flex justify-between space-x-2 overflow-y-auto'
+                    className='pb-2 flex space-x-2 overflow-y-auto'
                 >
                     {letters &&
                         letters.map((letter, i) =>
                             <button
                                 onClick={() => handleChange(i)}
-                                className='px-4 text-center text-xl border-2 rounded '
+                                className='bg-white px-4 text-center text-xl border-2 rounded '
                             >
                                 {letter?.letter}
                             </button>

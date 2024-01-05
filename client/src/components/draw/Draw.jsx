@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import CanvasDraw from "react-canvas-draw";
+import { ReactSketchCanvas } from 'react-sketch-canvas';
 
 const Draw = ({ letter }) => {
     const canvasRef = useRef()
@@ -10,6 +10,9 @@ const Draw = ({ letter }) => {
     const [clientHeight, setClientHeight] = useState(192)
     const [wordVisible, setWordVisible] = useState(true)
 
+    const styles = {
+        border: "none",
+    };
 
     function handleUpdateBrushSize(e) {
         const value = Number(e.target.value);
@@ -37,7 +40,7 @@ const Draw = ({ letter }) => {
         >
             <div
                 ref={board}
-                className='relative w-full h-62 flex justify-center items-center border overflow-hidden rounded'
+                className='relative w-full h-64 flex justify-center items-center bg-white border overflow-hidden rounded'
             >
                 <span
                     className={`text-[200px] font-extrabold ${wordVisible ? 'opacity-5' : 'opacity-0'}`}
@@ -45,16 +48,16 @@ const Draw = ({ letter }) => {
                     {letter.letter}
                 </span>
                 <div
-                    className='absolute top-0 w-full h-full ring-2 overflow-hidden'
+                    className='absolute top-0 w-full h-full overflow-hidden'
                 >
-                    <CanvasDraw
+                    <ReactSketchCanvas
                         ref={canvasRef}
-                        canvasWidth={clientWidth}
-                        canvasHeight={clientHeight}
-                        brushColor={brushColor}
-                        brushRadius={brushRadius}
-                        backgroundColor='rgba(255, 250, 250,0)'
-                        hideGrid={true}
+                        width={clientWidth}
+                        height={clientHeight}
+                        strokeColor={brushColor}
+                        strokeWidth={brushRadius}
+                        canvasColor='rgba(255, 255, 255, 0)'
+                        style={styles}
                     />
                 </div>
             </div>
@@ -66,7 +69,7 @@ const Draw = ({ letter }) => {
                     htmlFor='color'
                     className={`p-1 border text-[${brushColor}] rounded`}
                 >
-                    রঙ পরিবর্তন 
+                    রঙ পরিবর্তন
                 </label>
                 <input
                     id='color'
@@ -84,7 +87,13 @@ const Draw = ({ letter }) => {
                     className='p-1 border rounded focus:outline-none text-center'
                 />
                 <button
-                    onClick={() => canvasRef?.current.clear()}
+                    onClick={() => canvasRef?.current.clearCanvas()}
+                    className='p-1 border rounded'
+                >
+                    মুছুন
+                </button>
+                <button
+                    onClick={() => canvasRef?.current.clearCanvas()}
                     className='p-1 border rounded'
                 >
                     মুছে ফেলুন
