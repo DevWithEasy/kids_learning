@@ -14,6 +14,12 @@ const getTitle=(data)=>{
         return `বাংলা ফলা`
     }else if(lan === 'punctuation_mark'){
         return `বাংলা যতিচিহ্ন`
+    }else if(lan === 'en' && query === 'capital'){
+        return `ইংরেজি বড় হাতের অক্ষর`
+    }else if(lan === 'en' && query === 'small'){
+        return `ইংরেজি ছোট হাতের অক্ষর`
+    }else if(lan === 'en' && query === 'number'){
+        return `ইংরেজি নাম্বার (1-100)`
     }
 }
 

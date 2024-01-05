@@ -1,46 +1,86 @@
-import { useState } from "react";
-import banglaOkkor from "../../assets/banglaOkkor";
-import {motion} from 'framer-motion'
-import {EnglishWordDetails} from '../../components/Index'
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom'
 
 const English = () => {
-    const [view,setView] = useState(false)
-    const [selectedId,setSelectedId] = useState(false)
-    const [letter,setLetter] = useState({})
-    const [data,setData] = useState([...banglaOkkor.englishborno])
+    const lists = [
+        {
+            path: '/alphabets/en?q=capital',
+            abr: 'A',
+            title: 'ইংরেজি বড় হাতের অক্ষর'
+        },
+        {
+            path: '/alphabets/write/en?q=capital',
+            abr: 'A',
+            title: 'ইংরেজি বড় হাতের লিখি ও শিখি'
+        },
+        {
+            path: '/alphabets/en?q=small',
+            abr: 'a',
+            title: 'ইংরেজি ছোট হাতের অক্ষর'
+        },
+        {
+            path: '/alphabets/write/en?q=small',
+            abr: 'A',
+            title: 'ইংরেজি ছোট হাতের লিখি ও শিখি'
+        },
+        {
+            path: '/alphabets/details/en',
+            abr: 'Aa',
+            title: 'ইংরেজি দেখি ও পড়ি'
+        },
+        {
+            path: '/alphabets/en?q=number',
+            abr: '1',
+            title: 'ইংরেজি নাম্বার (1-100)'
+        }
+    ]
+
     return (
         <div
-            className={`bg-gradient-to-r from-pink-500 to-pink-300 p-4 grid grid-cols-5 gap-4 }`}
+            className='h-screen bg-gray-100 space-y-3 font-kalpurush overflow-y-auto'
         >
-            {
-                data.map((letter,i)=>
-                    <motion.div
-                        key={i}
-                        layoutId={i}
-                        onClick={()=>{
-                            setView(!view)
-                            setSelectedId(i)
-                            setLetter(letter)
-                        }}
-                        className="p-4 space-y-3 bg-white rounded-2xl shadow-md cursor-pointer"
-                    >
-                        <p
-                            className="font-uthemi text-8xl text-center font-extrabold"
+            <h1
+                className='px-4 py-3 bg-white text-4xl font-semibold border-b-2'
+            >
+                বাংলা স্বরবর্ণ
+            </h1>
+            <div
+                className='p-2 pb-10 space-y-2'
+            >
+                {
+                    lists.map((list, i) =>
+                        <motion.div
+                            key={i}
+                            initial={{
+                                x : i % 2 === 0 ? -200 : 200
+                            }}
+                            animate={{
+                                x : 0
+                            }}
+                            transition={{
+                                duration : 0.5
+                            }}
                         >
-                            {letter.capital}
-                        </p>
-                        {/* <p
-                            className="font-kalpurush py-2 text-3xl"
-                        >
-                            {letter.banglaPunctuation}
-                        </p> */}
-                        
-                    </motion.div>
-                )
-            }
-            {view &&
-                <EnglishWordDetails {...{id: selectedId,data,letter,view,setView}}/>
-            }
+                            <Link
+                                to={list.path}
+                                className='p-2 flex items-center space-x-3 bg-white text-xl border rounded-md'
+                            >
+                                <div
+                                    className='w-10 h-10 flex justify-center items-center bg-blue-100 rounded-full'
+                                >
+                                    <span>
+                                        {list.abr}
+                                    </span>
+                                </div>
+                                <span>
+                                    {list.title}
+                                </span>
+                            </Link>
+                        </motion.div>
+                    )
+                }
+
+            </div>
         </div>
     );
 };

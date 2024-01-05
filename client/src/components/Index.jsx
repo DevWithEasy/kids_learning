@@ -6,5 +6,7 @@ import ArabicWordDetails from "./details/ArabicWordDetails";
 import BanglaWordDetails from "./details/BanglaWordDetails";
 import EnglishWordDetails from "./details/EnglishWordDetails";
 import MathWordDetails from "./details/MathWordDetails";
+import Board from "./draw/Board";
+import BoardControllers from "./draw/BoardControllers";
 
-export {Loading,Menu,Input,ArabicWordDetails,EnglishWordDetails,BanglaWordDetails,MathWordDetails,SlideHandler}
+export {Board,BoardControllers,Loading,Menu,Input,ArabicWordDetails,EnglishWordDetails,BanglaWordDetails,MathWordDetails,SlideHandler}

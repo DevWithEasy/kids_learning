@@ -22,7 +22,8 @@ const Menu = ({ view, setView }) => {
                 >
                     <motion.button
                         whileHover={{
-                            x : 10
+                            x : 10,
+                            color : 'red'
                         }}
                         transition={{
                             duration : 0.2

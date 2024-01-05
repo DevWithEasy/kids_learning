@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { useState } from "react";
 import { Link } from 'react-router-dom'
 
 const Bangla = () => {
@@ -31,7 +30,7 @@ const Bangla = () => {
         },
         {
             path: '/alphabets/write/bn?q=non_vowel',
-            abr: 'খ',
+            abr: 'গ',
             title: 'ব্যঞ্জনবর্ণ লিখি ও শিখি'
         },
         {
@@ -58,34 +57,46 @@ const Bangla = () => {
 
     return (
         <div
-            className='space-y-3 font-kalpurush'
+            className='h-screen bg-gray-100 space-y-3 font-kalpurush overflow-y-auto'
         >
             <h1
-                className='px-4 py-3 text-4xl font-semibold border-b-2'
+                className='px-4 py-3 bg-white text-4xl font-semibold border-b-2'
             >
                 বাংলা স্বরবর্ণ
             </h1>
             <div
-                className='p-2 space-y-2'
+                className='p-2 pb-10 space-y-2'
             >
                 {
                     lists.map((list, i) =>
-                        <Link
+                        <motion.div
                             key={i}
-                            to={list.path}
-                            className='p-2 flex items-center space-x-3 text-xl border rounded-md'
+                            initial={{
+                                x : i % 2 === 0 ? -200 : 200
+                            }}
+                            animate={{
+                                x : 0
+                            }}
+                            transition={{
+                                duration : 0.5
+                            }}
                         >
-                            <div
-                                className='w-10 h-10 flex justify-center items-center bg-blue-100 rounded-full'
+                            <Link
+                                to={list.path}
+                                className='p-2 flex items-center space-x-3 bg-white text-xl border rounded-md'
                             >
+                                <div
+                                    className='w-10 h-10 flex justify-center items-center bg-blue-100 rounded-full'
+                                >
+                                    <span>
+                                        {list.abr}
+                                    </span>
+                                </div>
                                 <span>
-                                    {list.abr}
+                                    {list.title}
                                 </span>
-                            </div>
-                            <span>
-                                {list.title}
-                            </span>
-                        </Link>
+                            </Link>
+                        </motion.div>
                     )
                 }
 

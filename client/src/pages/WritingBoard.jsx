@@ -62,23 +62,23 @@ const WritingBoard = () => {
                     className='pb-2 flex space-x-2 overflow-y-auto'
                 >
                     {letters &&
-                        letters.map((letter, i) =>
+                        letters.map((l, i) =>
                             <button
                             key={i}
                                 onClick={() => handleChange(i)}
-                                className='bg-white px-4 text-center text-xl border-2 rounded '
+                                className={`${letter?.letter === l?.letter ? 'bg-red-500 text-white' : 'bg-white'} px-4 text-center text-xl border-2 rounded`}
                             >
-                                {letter?.letter}
+                                {l?.letter}
                             </button>
                         )
                     }
                 </div>
-                <SlideHandler {...{
+                {/* <SlideHandler {...{
                     letters,
                     id,
                     setId,
                     setLetter
-                }} />
+                }} /> */}
                 {loading &&
                     <Loading/>
                 }

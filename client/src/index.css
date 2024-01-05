@@ -27,11 +27,11 @@
 }
 
 #slider::-webkit-scrollbar {
-    @apply w-5 bg-gray-50
+    @apply w-5 bg-gray-100
 }
 
 #slider::-webkit-scrollbar-thumb {
-    @apply bg-gray-200 hover:bg-pink-200
+    @apply bg-gray-100 hover:bg-pink-200
 }
 
 /* For Internet Explorer */

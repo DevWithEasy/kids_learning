@@ -26,7 +26,7 @@ const Board = ({canvasRef,letter,strokSize,strokColor,wordVisible}) => {
                 <span
                     className={`text-[200px] font-extrabold ${wordVisible ? 'opacity-5' : 'opacity-0'}`}
                 >
-                    {letter?.letter}
+                    {letter?.kar ? letter?.kar : letter?.letter}
                 </span>
                 <div
                     className='absolute top-0 w-full h-full overflow-hidden'
@@ -37,6 +37,7 @@ const Board = ({canvasRef,letter,strokSize,strokColor,wordVisible}) => {
                         height={height}
                         strokeColor={strokColor}
                         strokeWidth={strokSize}
+                        eraserWidth={strokSize}
                         canvasColor='rgba(255, 255, 255, 0)'
                         style={styles}
                     />

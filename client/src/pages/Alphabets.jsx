@@ -35,10 +35,10 @@ const Alphabets = () => {
 
     return (
         <div
-            className='h-screen space-y-3 font-kalpurush overflow-y-auto'
+            className='h-screen space-y-3 bg-gray-100 font-kalpurush overflow-y-auto'
         >
             <h2
-                className='px-4 py-3 text-4xl font-semibold border-b-2'
+                className='px-4 py-3 bg-white text-4xl font-semibold border-b-2'
             >
                 {title}
             </h2>
@@ -50,7 +50,7 @@ const Alphabets = () => {
                         <motion.div
                             key={i}
                             onClick={() => play(letter.audio)}
-                            className="p-4 flex flex-col justify-center items-center space-y-3 rounded-2xl border cursor-pointer"
+                            className="p-4 flex flex-col justify-center items-center space-y-3 bg-white rounded-2xl border cursor-pointer"
                         >
                             <p
                                 className="text-4xl md:text-8xl text-center font-extrabold"
@@ -91,6 +91,20 @@ const Alphabets = () => {
                                         )
                                     }
                                 </div>
+                            }
+                            {path === 'english/?q=capital' &&
+                                <p
+                                className="text-6xl md:text-8xl text-center font-extrabold"
+                            >
+                                {letter?.capital}
+                            </p>
+                            }
+                            {path === 'english/?q=small' &&
+                                <p
+                                className="text-6xl md:text-8xl text-center font-extrabold"
+                            >
+                                {letter?.small}
+                            </p>
                             }
                         </motion.div>
                     )

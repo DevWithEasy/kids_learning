@@ -1,8 +1,9 @@
-const { demo } = require('../controllers/englishControllers')
+const { getLetters, getEnNumber } = require('../controllers/englishControllers')
 
 const router = require('express').Router()
 
-router.get('/',demo)
+router.get('/',getLetters)
+    .get('/number',getEnNumber)
 
 
 module.exports = router

@@ -49,10 +49,10 @@ const AlphabetsDetails = () => {
 
     return (
         <div
-            className='h-screen space-y-3 font-kalpurush overflow-y-auto'
+            className='h-screen space-y-3 bg-gray-100 font-kalpurush overflow-y-auto'
         >
             <h2
-                className='px-4 py-3 text-4xl font-semibold border-b-2'
+                className='px-4 py-3 bg-white text-4xl font-semibold border-b-2'
             >
                 {title}
             </h2>
@@ -60,7 +60,7 @@ const AlphabetsDetails = () => {
                 className='p-2 space-y-3'
             >
                 <div
-                    className=""
+                    className="bg-white p-4 rounded-md"
                 >
                     <p
                         className="text-9xl text-center text-pink-500 font-extrabold"
@@ -68,12 +68,12 @@ const AlphabetsDetails = () => {
                         {letter?.letter}
                     </p>
                     <p
-                        className="py-2 text-4xl"
+                        className="py-2 text-4xl text-sky-500 font-bold"
                     >
                         {letter?.word}
                     </p>
                     <p
-                        className="py-2 text-4xl"
+                        className="py-2 text-2xl"
                     >
                         {letter?.sentence}
                     </p>
@@ -83,22 +83,23 @@ const AlphabetsDetails = () => {
                     className='pb-2 flex justify-between space-x-2 overflow-y-auto'
                 >
                     {letters &&
-                        letters.map((letter, i) =>
+                        letters.map((l, i) =>
                             <button
+                            key={i}
                                 onClick={() => handleChange(i)}
-                                className='px-4 text-center text-xl border-2 rounded '
+                                className={`${letter?.letter === l?.letter ? 'bg-red-500 text-white' : 'bg-white'} px-4 text-center text-xl border-2 rounded`}
                             >
-                                {letter?.letter}
+                                {l?.letter}
                             </button>
                         )
                     }
                 </div>
-                <SlideHandler {...{
+                {/* <SlideHandler {...{
                     letters,
                     id,
                     setId,
                     setLetter
-                }} />
+                }} /> */}
                 {loading &&
                     <Loading />
                 }
