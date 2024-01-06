@@ -38,7 +38,7 @@ const Alphabets = () => {
             className='h-screen space-y-3 bg-gray-100 font-kalpurush overflow-y-auto'
         >
             <h2
-                className='px-4 py-3 bg-white text-4xl font-semibold border-b-2'
+                className='px-4 py-3 bg-white text-2xl font-semibold border-b-2'
             >
                 {title}
             </h2>

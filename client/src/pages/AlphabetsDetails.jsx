@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useSearchParams } from 'react-router-dom'
-import useAlphabetStore from '../store/alphabateStore';
 import { getData } from '../utils/api_crud';
 import getPath from '../utils/pathGenerate';
 import apiurl from '../utils/apiurl';
 import getTitle from '../utils/titleHeadGenerate';
 import { Loading, SlideHandler } from '../components/Index';
+import getLetter from '../utils/letterGenerate';
 
 const AlphabetsDetails = () => {
     const { lan } = useParams()
@@ -52,7 +52,7 @@ const AlphabetsDetails = () => {
             className='h-screen space-y-3 bg-gray-100 font-kalpurush overflow-y-auto'
         >
             <h2
-                className='px-4 py-3 bg-white text-4xl font-semibold border-b-2'
+                className='px-4 py-3 bg-white text-2xl font-semibold border-b-2'
             >
                 {title}
             </h2>
@@ -65,7 +65,18 @@ const AlphabetsDetails = () => {
                     <p
                         className="text-9xl text-center text-pink-500 font-extrabold"
                     >
-                        {letter?.letter}
+                        {lan === 'en' ?
+                            <>
+                                <span>{letter?.capital}</span>
+                                <span
+                                    className='text-blue-500'
+                                >
+                                    {letter?.small}
+                                </span>
+                            </>
+                            :
+                            <span>{letter?.letter}</span>
+                        }
                     </p>
                     <p
                         className="py-2 text-4xl text-sky-500 font-bold"
@@ -85,11 +96,11 @@ const AlphabetsDetails = () => {
                     {letters &&
                         letters.map((l, i) =>
                             <button
-                            key={i}
+                                key={i}
                                 onClick={() => handleChange(i)}
-                                className={`${letter?.letter === l?.letter ? 'bg-red-500 text-white' : 'bg-white'} px-4 text-center text-xl border-2 rounded`}
+                                className={`${getLetter({ lan, searchParams, letter }) === getLetter({ lan, searchParams, letter: l }) ? 'bg-red-500 text-white' : 'bg-white'} px-4 text-center text-xl border-2 rounded`}
                             >
-                                {l?.letter}
+                                {getLetter({ lan, searchParams, letter: l })}
                             </button>
                         )
                     }

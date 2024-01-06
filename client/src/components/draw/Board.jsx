@@ -18,6 +18,7 @@ const Board = ({canvasRef,letter,strokSize,strokColor,wordVisible}) => {
             setHeight(height)
         }
     }, [])
+
     return (
         <div
                 ref={board}
@@ -26,7 +27,7 @@ const Board = ({canvasRef,letter,strokSize,strokColor,wordVisible}) => {
                 <span
                     className={`text-[200px] font-extrabold ${wordVisible ? 'opacity-5' : 'opacity-0'}`}
                 >
-                    {letter?.kar ? letter?.kar : letter?.letter}
+                    {letter}
                 </span>
                 <div
                     className='absolute top-0 w-full h-full overflow-hidden'

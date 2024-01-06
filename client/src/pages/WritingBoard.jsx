@@ -6,12 +6,13 @@ import apiurl from '../utils/apiurl';
 import getTitle from '../utils/titleHeadGenerate';
 import { Loading, SlideHandler } from '../components/Index';
 import Draw from '../components/draw/Draw';
+import getLetter from '../utils/letterGenerate';
 
 const WritingBoard = () => {
     const { lan } = useParams()
     const [searchParams] = useSearchParams()
-    const [loading,setLoading] = useState(false)
-    const [letters,setLetters] = useState([])
+    const [loading, setLoading] = useState(false)
+    const [letters, setLetters] = useState([])
     const [path, setPath] = useState('')
     const [id, setId] = useState(0)
     const [letter, setLetter] = useState({})
@@ -49,26 +50,26 @@ const WritingBoard = () => {
             className='h-screen bg-gray-100 space-y-3 font-kalpurush overflow-y-auto'
         >
             <h2
-                className='bg-white px-4 py-3 text-4xl font-semibold border-b-2'
+                className='bg-white px-4 py-3 text-2xl font-semibold border-b-2'
             >
                 {title}
             </h2>
             <div
                 className='p-2 space-y-3'
             >
-                <Draw {...{letter}}/>
+                <Draw {...{ letter: getLetter({ lan, searchParams, letter }) }} />
                 <div
-                    id = 'slider'
+                    id='slider'
                     className='pb-2 flex space-x-2 overflow-y-auto'
                 >
                     {letters &&
                         letters.map((l, i) =>
                             <button
-                            key={i}
+                                key={i}
                                 onClick={() => handleChange(i)}
-                                className={`${letter?.letter === l?.letter ? 'bg-red-500 text-white' : 'bg-white'} px-4 text-center text-xl border-2 rounded`}
+                                className={`${getLetter({ lan, searchParams, letter }) === getLetter({ lan, searchParams, letter: l }) ? 'bg-red-500 text-white' : 'bg-white'} px-4 text-center text-xl border-2 rounded`}
                             >
-                                {l?.letter}
+                                {getLetter({ lan, searchParams, letter: l })}
                             </button>
                         )
                     }
@@ -80,7 +81,7 @@ const WritingBoard = () => {
                     setLetter
                 }} /> */}
                 {loading &&
-                    <Loading/>
+                    <Loading />
                 }
             </div>
         </div>

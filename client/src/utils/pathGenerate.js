@@ -14,6 +14,8 @@ const getPath=(data)=>{
         return `bangla/fola`
     }else if(lan === 'punctuation_mark'){
         return `bangla/punctuation_mark`
+    }else if(lan === 'en'){
+        return `english`
     }else if(lan === 'en' && query === 'capital'){
         return `english/?q=capital`
     }else if(lan === 'en' && query === 'small'){
