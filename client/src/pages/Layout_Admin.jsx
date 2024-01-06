@@ -102,6 +102,12 @@ const Layout_Admin = ({children}) => {
                 >
                     ঋতু
                 </NavLink>
+                <NavLink
+                    to='/numbers'
+                    className='block p-2'
+                >
+                    নাম্বারস
+                </NavLink>
             </div>
             <div
                 className='h-screen w-10/12 px-4 py-2 overflow-y-auto'

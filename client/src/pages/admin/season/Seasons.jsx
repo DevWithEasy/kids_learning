@@ -8,7 +8,7 @@ const Seasons = () => {
     const { addLetters, letters } = useAlphabetStore()
     const getData = async () => {
         try {
-            const res = await axios.get(`${apiurl}/api/alphabet/season`)
+            const res = await axios.get(`${apiurl}/api/admin/season`)
             addLetters(res.data.data)
         } catch (error) {
             console.log(error)

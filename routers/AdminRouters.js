@@ -1,4 +1,4 @@
-const { getAll, bnAlphabetUpdate, enAlphabetUpdate, arAlphabetUpdate, dayUpdate, monthUpdate, seasonUpdate, apply } = require('../controllers/adminControllers')
+const { getAll, bnAlphabetUpdate, enAlphabetUpdate, arAlphabetUpdate, dayUpdate, monthUpdate, seasonUpdate, apply, getNumber, numberUpdate } = require('../controllers/adminControllers')
 
 const router = require('express').Router()
 
@@ -10,6 +10,8 @@ router.get('/server/method',apply)
     .put('/day/update/:id',dayUpdate)
     .put('/month/update/:id',monthUpdate)
     .put('/season/update/:id',seasonUpdate)
+    .get('/number/en',getNumber)
+    .put('/number/en/update/:id',numberUpdate)
     
 
 

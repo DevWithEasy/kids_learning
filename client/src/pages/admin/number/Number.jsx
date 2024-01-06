@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 import useAlphabetStore from '../../../store/alphabateStore';
 import apiurl from '../../../utils/apiurl';
 
-const EnAllAlphabet = () => {
+const Number = () => {
     const { addLetters, letters } = useAlphabetStore()
     const getData = async () => {
         try {
-            const res = await axios.get(`${apiurl}/api/admin/en`)
+            const res = await axios.get(`${apiurl}/api/admin/number/en`)
             addLetters(res.data.data)
         } catch (error) {
             console.log(error)
@@ -26,7 +26,7 @@ const EnAllAlphabet = () => {
             <h2
                 className=' py-2 text-2xl font-bold border-b-2'
             >
-                সকল অক্ষর
+                ইংরেজি নাম্বার
             </h2>
             <div
                 className='grid grid-cols-8 gap-4'
@@ -35,10 +35,10 @@ const EnAllAlphabet = () => {
                     letters.map(l =>
                         <Link
                             key={l._id}
-                            to={`/en/update/alphabet/${l._id}`}
-                            className='p-4 bg-gray-50 text-center text-xl border'
+                            to={`/numbers/update/${l._id}`}
+                            className='p-4 bg-gray-50 text-center'
                         >
-                            {l.capital}
+                            {l.letter}
                         </Link>
                     )
 
@@ -48,4 +48,4 @@ const EnAllAlphabet = () => {
     );
 };
 
-export default EnAllAlphabet;
+export default Number;

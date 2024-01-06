@@ -12,7 +12,7 @@ const EnUpdateAlphabet = () => {
     const handleUpdate = async (e) => {
         e.preventDefault()
         try {
-            const res = await axios.put(`${apiurl}/api/alphabet/en/update/${id}`, value)
+            const res = await axios.put(`${apiurl}/api/admin/en/update/${id}`, value)
             if (res.data.success) {
                 navigate('/en/all/alphabet')
             }

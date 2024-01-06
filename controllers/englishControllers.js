@@ -1,3 +1,4 @@
+const BnToEn= require('banglanumber-to-englishnumber')
 const EnAlphabet = require("../models/EnAlphabet")
 const Number = require("../models/Number")
 
@@ -21,11 +22,12 @@ exports.getLetters=async(req,res,next) =>{
 exports.getEnNumber=async(req,res,next) =>{
     try {
         const data = await Number.find({lang : 'en'}).sort({letter : 1})
+        
         return res.status(200).json({
             success : true,
             status : 200,
             message : '',
-            data : data
+            data : data.sort((a,b)=> a.letter - b.letter)
         })
     } catch (error) {
         return res.status(500).json({

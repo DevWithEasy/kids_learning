@@ -5,6 +5,7 @@ const EnAlphabet = require("../models/EnAlphabet")
 const Fola = require("../models/Fola")
 const Kar = require("../models/Kar")
 const Month = require("../models/Month")
+const Number = require("../models/Number")
 const PuncuationMark = require("../models/PuncuationMark")
 const Season = require("../models/Season")
 const banglaOkkor = require("./banglaOkkor")
@@ -158,6 +159,49 @@ exports.seasonUpdate=async(req,res,next) =>{
         await Season.findByIdAndUpdate(req.params.id,{
             $set : {
                 order_no : req.body.order_no
+            }
+        })
+        
+        return res.status(200).json({
+            success : true,
+            status : 200,
+            message : 'Successfully updated.'
+        })
+    } catch (error) {
+        return res.status(500).json({
+            success : false,
+            status : 500,
+            message : error.message
+        })
+    }
+}
+
+exports.getNumber=async(req,res,next) =>{
+    try {
+        
+        const numbers = await Number.find({lang : 'en'})
+        
+        return res.status(200).json({
+            success : true,
+            status : 200,
+            message : 'Successfully updated.',
+            data : numbers
+        })
+    } catch (error) {
+        return res.status(500).json({
+            success : false,
+            status : 500,
+            message : error.message
+        })
+    }
+}
+exports.numberUpdate=async(req,res,next) =>{
+    try {
+        
+        await Number.findByIdAndUpdate(req.params.id,{
+            $set : {
+                letter : req.body.letter,
+                punctuation : req.body.punctuation
             }
         })
         

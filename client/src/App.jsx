@@ -1,6 +1,8 @@
 import { useRoutes } from 'react-router-dom'
 import { Alphabets, AlphabetsDetails, ArAllAlphabet, ArUpdateAlphabet, Arabic, Bangla, BnAllAlphabet, BnUpdateAlphabet, Dashboard, Days, DaysUpdate, EnAllAlphabet, EnUpdateAlphabet, English, Home, Layout, Layout_Admin, Mathematics, Months, SeasonUpdate, Seasons, Welcome, WritingBoard } from './pages/Index'
 import WordGame from './pages/WordGame/WordGame'
+import Number from './pages/admin/number/Number'
+import NumberUpdate from './pages/admin/number/NumberUpdate'
 
 function App() {
   const routes = useRoutes([
@@ -124,6 +126,18 @@ function App() {
           path: '/seasons/update/:id',
           element: <Layout_Admin>
             <SeasonUpdate />
+          </Layout_Admin>
+        },
+        {
+          path: '/numbers',
+          element: <Layout_Admin>
+            <Number />
+          </Layout_Admin>
+        },
+        {
+          path: '/numbers/update/:id',
+          element: <Layout_Admin>
+            <NumberUpdate />
           </Layout_Admin>
         },
       ]

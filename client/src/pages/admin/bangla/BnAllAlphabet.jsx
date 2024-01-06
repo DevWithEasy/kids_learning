@@ -8,7 +8,7 @@ const BnAllAlphabet = () => {
     const { addLetters, letters } = useAlphabetStore()
     const getData = async () => {
         try {
-            const res = await axios.get(`${apiurl}/api/alphabet/bn`)
+            const res = await axios.get(`${apiurl}/api/admin/bn`)
             addLetters(res.data.data)
         } catch (error) {
             console.log(error)

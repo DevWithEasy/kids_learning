@@ -3,8 +3,9 @@ import { useParams, useNavigate } from 'react-router-dom'
 import useAlphabetStore from '../../../store/alphabateStore';
 import Input from '../../../components/Input';
 import axios from 'axios';
+import apiurl from '../../../utils/apiurl';
 
-const SeasonUpdate = () => {
+const NumberUpdate = () => {
     const navigate = useNavigate()
     const { letters } = useAlphabetStore()
     const { id } = useParams()
@@ -12,15 +13,15 @@ const SeasonUpdate = () => {
     const handleUpdate = async (e) => {
         e.preventDefault()
         try {
-            const res = await axios.put(`${apiurl}/api/admin/season/update/${id}`, value)
+            const res = await axios.put(`${apiurl}/api/admin/number/en/update/${id}`, value)
             if (res.data.success) {
-                navigate('/season/all/')
+                navigate('/numbers/')
             }
         } catch (error) {
             console.log(error)
         }
     }
-
+    console.log(value)
     return (
         <div
             className='space-y-3'
@@ -28,44 +29,25 @@ const SeasonUpdate = () => {
             <h2
                 className=' py-2 text-2xl font-bold border-b-2'
             >
-                ঋতু আপডেট করুনঃ
+                নাম্বার আপডেট করুনঃ
             </h2>
             <form
                 onSubmit={handleUpdate}
                 className='space-y-2'
             >
-                <Input {...{
-                    label: 'Order no',
-                    type: 'number',
-                    name: 'order_no',
-                    currentValue: value.order_no,
-                    value, setValue
-                }} />
 
-                {/* <Input {...{
-                    label: 'Letter',
-                    name: 'letter',
-                    currentValue: value.capital,
-                    value, setValue
-                }} />
                 <Input {...{
                     label: 'Letter',
                     name: 'letter',
-                    currentValue: value.small,
+                    currentValue: value.letter,
                     value, setValue
                 }} />
                 <Input {...{
-                    label: 'Word',
-                    name: 'word',
-                    currentValue: value.word,
+                    label: 'Punctuation',
+                    name: 'punctuation',
+                    currentValue: value.punctuation,
                     value, setValue
                 }} />
-                <Input {...{
-                    label: 'Sentence',
-                    name: 'sentence',
-                    currentValue: value.sentence,
-                    value, setValue
-                }} /> */}
                 <button
                     className='px-6 py-2 bg-gray-100'
                 >
@@ -76,4 +58,4 @@ const SeasonUpdate = () => {
     );
 };
 
-export default SeasonUpdate;
+export default NumberUpdate;
