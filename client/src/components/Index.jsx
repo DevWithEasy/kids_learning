@@ -8,6 +8,8 @@ import EnglishWordDetails from "./details/EnglishWordDetails";
 import MathWordDetails from "./details/MathWordDetails";
 import Board from "./draw/Board";
 import BoardControllers from "./draw/BoardControllers";
+import Header from "./whiteboard/Header";
 import Controller from "./whiteboard/controller";
 
-export { ArabicWordDetails, BanglaWordDetails, Board, BoardControllers, Controller, EnglishWordDetails, Input, Loading, MathWordDetails, Menu, SlideHandler };
+export { ArabicWordDetails, BanglaWordDetails, Board, BoardControllers, Controller, EnglishWordDetails, Header, Input, Loading, MathWordDetails, Menu, SlideHandler };
+

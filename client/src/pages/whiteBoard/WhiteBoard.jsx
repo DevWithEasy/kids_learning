@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ReactSketchCanvas } from 'react-sketch-canvas';
-import { Controller } from '../../components/Index';
+import { Controller, Header } from '../../components/Index';
 
 const WhiteBoard = () => {
     const board = useRef()
@@ -8,12 +8,13 @@ const WhiteBoard = () => {
     const [height, setHeight] = useState(0)
     const canvasRef = useRef()
     const [strokSize, setStrokSize] = useState(12)
+    const [eraserSize, setEraserSize] = useState(12)
     const [strokColor, setStrokColor] = useState('#000000')
-    const [wordVisible, setWordVisible] = useState(true)
+    const [canvasColor, setCanvasColor] = useState('rgba(255, 255, 255, 0)')
     const [earse,setEarse] = useState(false)
 
     const styles = {
-        border: "none",
+        border: "none"
     };
 
     useEffect(() => {
@@ -27,10 +28,11 @@ const WhiteBoard = () => {
     return (
         <div
             ref={board}
-            className='relative h-screen pl-16 pt-12 pb-2 pr-2 bg-gray-200 overflow-hidden'
+            className='relative h-screen pl-16 pt-12 pb-3 pr-3 bg-gray-200 overflow-hidden'
         >
+            <Header/>
             <div
-                className='h-full bg-white   rounded-md'
+                className='whiteboard_pen h-full w-full bg-white rounded-xl overflow-hidden'
             >
                 <ReactSketchCanvas
                     ref={canvasRef}
@@ -39,11 +41,22 @@ const WhiteBoard = () => {
                     strokeColor={strokColor}
                     strokeWidth={strokSize}
                     eraserWidth={strokSize}
-                    canvasColor='rgba(255, 255, 255, 0)'
+                    canvasColor={canvasColor}
                     style={styles}
                 />
             </div>
-            <Controller/>
+            
+            <Controller {...{
+                canvasRef,
+                strokSize,
+                setStrokSize,
+                eraserSize, 
+                setEraserSize,
+                setStrokColor,
+                setCanvasColor,
+                earse,
+                setEarse
+            }}/>
         </div>
     );
 };
