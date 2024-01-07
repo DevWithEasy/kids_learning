@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 import apiurl from '../utils/apiurl';
 import getTitle from '../utils/titleHeadGenerate';
 import Loading from '../components/Loading';
+import getLetter from '../utils/letterGenerate';
 
 const Alphabets = () => {
     const { lan } = useParams()
@@ -55,11 +56,7 @@ const Alphabets = () => {
                             <p
                                 className="text-4xl md:text-8xl text-center font-extrabold"
                             >
-                                {lan === 'bangla_kar' ?
-                                    letter.kar
-                                    :
-                                    letter.letter
-                                }
+                                {getLetter({ lan, searchParams, letter })}
                             </p>
                             {lan === 'bangla_kar' &&
                                 <p
@@ -68,43 +65,31 @@ const Alphabets = () => {
                                     {letter.letter} তে {letter.kar} কার
                                 </p>
                             }
-                            {lan === 'bangla_fola' &&
-                                <p
-                                    className='text-xl'
-                                >
-                                    {letter.name}
-                                </p>
-                            }
                             {
                                 lan === 'bangla_fola' &&
                                 <div
-                                    className='text-xl'
+                                    className='w-full space-y-2'
                                 >
+                                    <p
+                                        className='text-center text-2xl font-semibold'
+                                    >
+                                        {letter?.name}
+                                    </p>
+                                    <div
+                                        className='grid grid-cols-2 text-xl'
+                                    >
                                     {
                                         letter?.examples?.map((f, i) =>
-                                            <span
+                                            <p
                                                 key={i}
                                                 className='m-1 px-2 py-0.5 border rounded'
                                             >
                                                 {f}
-                                            </span>
+                                            </p>
                                         )
                                     }
+                                    </div>
                                 </div>
-                            }
-                            {path === 'english/?q=capital' &&
-                                <p
-                                className="text-6xl md:text-8xl text-center font-extrabold"
-                            >
-                                {letter?.capital}
-                            </p>
-                            }
-                            {path === 'english/?q=small' &&
-                                <p
-                                className="text-6xl md:text-8xl text-center font-extrabold"
-                            >
-                                {letter?.small}
-                            </p>
                             }
                         </motion.div>
                     )
