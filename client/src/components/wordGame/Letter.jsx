@@ -12,25 +12,12 @@ const Letter = ({ letter, value }) => {
     });
     const isOdd = value % 2 === 0
     return (
-        <motion.div
-            initial={{
-                scale : 0
-            }}
-            animate = {{
-                scale : 1,
-                y : isOdd ? 0 : -20
-            }}
-            transition={{
-                delay : 0.1 * value,
-                duration : 0.1 * value
-            }}
-            drag
-            dragConstraints ={{}}
+        <div
             ref={drag}
             className={`w-12 h-12 p-2 flex justify-center items-center bg-green-100 text-2xl rounded-full shadow-md hover:cursor-move ${isDragging ? 'opacity-50' : 'opacity-100'} md:w-16 md:h-16 md:text-3xl`}
         >
             <span>{letter}</span>
-        </motion.div>
+        </div>
     );
 };
 

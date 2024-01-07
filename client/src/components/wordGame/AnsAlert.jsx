@@ -39,7 +39,7 @@ const AnsAlert = ({ type, ansView, setAnsView }) => {
             className={`fixed bottom-0 left-0 w-full flex ${type === 'yes' ? 'bg-[#b4ff7b]' : 'bg-red-200'} z-10`}
         >
             <div
-                className={`w-11/12 mx-auto h-[150px] flex p-4 ${type === 'yes' ? 'bg-[#b4ff7b]' : 'bg-red-200'}`}
+                className={`w-11/12 mx-auto h-[200px] flex p-4 ${type === 'yes' ? 'bg-[#b4ff7b]' : 'bg-red-200'}`}
             >
                 <motion.img
                     initial={{

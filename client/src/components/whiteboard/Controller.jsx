@@ -58,11 +58,11 @@ const Controller = ({
     console.log(strokSize)
     return (
         <div
-            className='absolute top-0 left-0 w-16 h-full pt-16 flex flex-col items-center space-y-2 font-kalpurush'
+            className='absolute top-0 left-0 w-10 md:w-16 h-full pt-16 flex flex-col items-center space-y-2 font-kalpurush'
         >
             <button
                 onClick={() => setBgColor(!bgColor)}
-                className='p-1 text-white border border-gray-300 rounded relative group cursor'
+                className='p-1 bg-white text-white border border-gray-300 rounded relative group cursor'
             >
                 <span
                     className='absolute hidden group-hover:block w-16 p-0.5 top-1 left-9 z-10 text-center bg-slate-500 text-white text-xs rounded'
@@ -71,7 +71,7 @@ const Controller = ({
                 </span>
                 <img
                     src={bg_palette}
-                    className='w-6 h-6 rounded-full'
+                    className='w-4 h-4 md:w-6 md:h-6 rounded-full'
                 />
                 {bgColor &&
                     <div
@@ -89,7 +89,7 @@ const Controller = ({
             </button>
             <button
                 onClick={() => setPenColor(!penColor)}
-                className='p-1 text-white border border-gray-300 rounded relative group cursor'
+                className='p-1 bg-white text-white border border-gray-300 rounded relative group cursor'
             >
                 <span
                     className='absolute hidden group-hover:block w-16 p-0.5 top-1 left-9 text-center bg-slate-500 text-white text-xs rounded'
@@ -98,7 +98,7 @@ const Controller = ({
                 </span>
                 <img
                     src={color_palette}
-                    className='w-6 h-6 rounded-full'
+                    className='w-4 h-4 md:w-6 md:h-6 rounded-full'
                 />
                 {penColor &&
                     <div
@@ -116,7 +116,7 @@ const Controller = ({
             </button>
             <button
                 onClick={() => pen()}
-                className='p-1 text-white border border-gray-300 rounded relative group cursor'
+                className='p-1 bg-white text-white border border-gray-300 rounded relative group cursor'
             >
                 <span
                     className='absolute hidden group-hover:block w-16 p-0.5 top-1 left-9 text-center bg-slate-500 text-white text-xs rounded'
@@ -125,12 +125,12 @@ const Controller = ({
                 </span>
                 <img
                     src={pen_color}
-                    className='w-6 h-6 rounded-full'
+                    className='w-4 h-4 md:w-6 md:h-6 rounded-full'
                 />
             </button>
             <button
                 onClick={() => setPenSize(true)}
-                className='p-1 text-white border border-gray-300 rounded relative group cursor'
+                className='p-1 bg-white text-white border border-gray-300 rounded relative group cursor'
             >
                 <span
                     className='absolute hidden group-hover:block w-16 p-0.5 top-1 left-9 text-center bg-slate-500 text-white text-xs rounded'
@@ -139,7 +139,7 @@ const Controller = ({
                 </span>
                 <img
                     src={pen_size}
-                    className='w-6 h-6 rounded-full'
+                    className='w-4 h-4 md:w-6 md:h-6 rounded-full'
                 />
                 {penSize &&
                     <div
@@ -157,7 +157,7 @@ const Controller = ({
             </button>
             <button
                 onClick={() => handleEarse()}
-                className={`p-1 text-white border border-gray-300 rounded relative group cursor ${earse && 'bg-white'}`}
+                className={`p-1  text-white border border-gray-300 rounded relative group cursor ${earse ? 'bg-pink-500' : 'bg-white'}`}
             >
                 <span
                     className='absolute hidden group-hover:block w-16 p-0.5 top-1 left-9 text-center bg-slate-500 text-white text-xs rounded'
@@ -166,12 +166,12 @@ const Controller = ({
                 </span>
                 <img
                     src={eraser_color}
-                    className='w-6 h-6 rounded-full'
+                    className='w-4 h-4 md:w-6 md:h-6 rounded-full'
                 />
             </button>
             <button
                 onClick={() => setEraser(true)}
-                className={`p-1 text-white border border-gray-300 rounded relative group cursor`}
+                className={`p-1 bg-white text-white border border-gray-300 rounded relative group cursor`}
             >
                 <span
                     className='absolute hidden group-hover:block w-16 p-0.5 top-1 left-9 text-center bg-slate-500 text-white text-xs rounded'
@@ -180,7 +180,7 @@ const Controller = ({
                 </span>
                 <img
                     src={eraser_size}
-                    className='w-6 h-6 rounded-full'
+                    className='w-4 h-4 md:w-6 md:h-6 rounded-full'
                 />
                 {eraser &&
                     <div
@@ -198,7 +198,7 @@ const Controller = ({
             </button>
             <button
                 onClick={() => canvasRef?.current.exportImage('png')}
-                className='p-1 text-white border border-gray-300 rounded relative group cursor'
+                className='p-1 bg-white text-white border border-gray-300 rounded relative group cursor'
             >
                 <span
                     className='absolute hidden group-hover:block w-16 p-0.5 top-1 left-9 text-center bg-slate-500 text-white text-xs rounded'
@@ -207,12 +207,12 @@ const Controller = ({
                 </span>
                 <img
                     src={save_image}
-                    className='w-6 h-6 rounded-full'
+                    className='w-4 h-4 md:w-6 md:h-6 rounded-full'
                 />
             </button>
             <button
                 onClick={() => canvasRef?.current.undo()}
-                className='p-1 text-white border border-gray-300 rounded relative group cursor'
+                className='p-1 bg-white text-white border border-gray-300 rounded relative group cursor'
             >
                 <span
                     className='absolute hidden group-hover:block w-16 p-0.5 top-1 left-9 text-center bg-slate-500 text-white text-xs rounded'
@@ -221,12 +221,12 @@ const Controller = ({
                 </span>
                 <img
                     src={undo}
-                    className='w-6 h-6 rounded-full'
+                    className='w-4 h-4 md:w-6 md:h-6 rounded-full'
                 />
             </button>
             <button
                 onClick={() => canvasRef?.current.redo()}
-                className='p-1 text-white border border-gray-300 rounded relative group cursor'
+                className='p-1 bg-white text-white border border-gray-300 rounded relative group cursor'
             >
                 <span
                     className='absolute hidden group-hover:block w-16 p-0.5 top-1 left-9 text-center bg-slate-500 text-white text-xs rounded'
@@ -235,12 +235,12 @@ const Controller = ({
                 </span>
                 <img
                     src={redo}
-                    className='w-6 h-6 rounded-full'
+                    className='w-4 h-4 md:w-6 md:h-6 rounded-full'
                 />
             </button>
             <button
                 onClick={() => canvasRef?.current.clearCanvas()}
-                className='p-1 text-white border border-gray-300 rounded relative group cursor'
+                className='p-1 bg-white text-white border border-gray-300 rounded relative group cursor'
             >
                 <span
                     className='absolute hidden group-hover:block w-16 p-0.5 top-1 left-9 text-center bg-slate-500 text-white text-xs rounded'
@@ -249,12 +249,12 @@ const Controller = ({
                 </span>
                 <img
                     src={clear}
-                    className='w-6 h-6 rounded-full'
+                    className='w-4 h-4 md:w-6 md:h-6 rounded-full'
                 />
             </button>
             <button
                 onClick={() => canvasRef?.current.resetCanvas()}
-                className='p-1 text-white border border-gray-300 rounded relative group cursor'
+                className='p-1 bg-white text-white border border-gray-300 rounded relative group cursor'
             >
                 <span
                     className='absolute hidden group-hover:block w-16 p-0.5 top-1 left-9 text-center bg-slate-500 text-white text-xs rounded'
@@ -263,7 +263,7 @@ const Controller = ({
                 </span>
                 <img
                     src={w_delete}
-                    className='w-6 h-6 rounded-full'
+                    className='w-4 h-4 md:w-6 md:h-6 rounded-full'
                 />
             </button>
         </div>

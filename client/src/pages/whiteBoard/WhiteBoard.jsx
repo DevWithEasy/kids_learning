@@ -28,7 +28,7 @@ const WhiteBoard = () => {
     return (
         <div
             ref={board}
-            className='relative h-screen pl-16 pt-12 pb-3 pr-3 bg-gray-200 overflow-hidden'
+            className='relative h-screen pl-10 md:pl-16 pt-12 pb-3 pr-3 bg-gray-200 overflow-hidden'
         >
             <Header/>
             <div
