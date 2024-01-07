@@ -1,5 +1,6 @@
 const ArAlphabet = require("../models/ArAlphabet")
 const BnAlphabet = require("../models/BnAlphabet")
+const Color = require("../models/Color")
 const Day = require("../models/Day")
 const EnAlphabet = require("../models/EnAlphabet")
 const Fola = require("../models/Fola")
@@ -10,216 +11,217 @@ const PuncuationMark = require("../models/PuncuationMark")
 const Season = require("../models/Season")
 const banglaOkkor = require("./banglaOkkor")
 
-exports.getAll=async(req,res,next) =>{
+exports.getAll = async (req, res, next) => {
     try {
-        const {lang} = req.params
+        const { lang } = req.params
         const collection = lang == 'bn' ?
-            BnAlphabet : lang == 'en' ? 
-            EnAlphabet : lang == 'ar' ? 
-            ArAlphabet : lang == 'kar' ?
-            Kar : lang == 'day' ?
-            Day : lang == 'month' ?
-            Month : Season
+            BnAlphabet : lang == 'en' ?
+                EnAlphabet : lang == 'ar' ?
+                    ArAlphabet : lang == 'kar' ?
+                        Kar : lang == 'day' ?
+                            Day : lang == 'month' ?
+                                Month : Season
 
-        const data = await collection.find({}).sort({'order_no' : 1})
+        const data = await collection.find({}).sort({ 'order_no': 1 })
 
         return res.status(200).json({
-            success : true,
-            status : 200,
-            message : 'Successfully find.',
+            success: true,
+            status: 200,
+            message: 'Successfully find.',
             data
         })
     } catch (error) {
         return res.status(500).json({
-            success : false,
-            status : 500,
-            message : error.message
+            success: false,
+            status: 500,
+            message: error.message
         })
     }
 }
 
-exports.bnAlphabetUpdate=async(req,res,next) =>{
+exports.bnAlphabetUpdate = async (req, res, next) => {
     try {
-        
-        await BnAlphabet.findByIdAndUpdate(req.params.id,{
-            $set : {
-                order_no : req.body.order_no
+
+        await BnAlphabet.findByIdAndUpdate(req.params.id, {
+            $set: {
+                order_no: req.body.order_no
             }
         })
-        
+
         return res.status(200).json({
-            success : true,
-            status : 200,
-            message : 'Successfully updated.'
+            success: true,
+            status: 200,
+            message: 'Successfully updated.'
         })
     } catch (error) {
         return res.status(500).json({
-            success : false,
-            status : 500,
-            message : error.message
+            success: false,
+            status: 500,
+            message: error.message
         })
     }
 }
 
-exports.enAlphabetUpdate=async(req,res,next) =>{
+exports.enAlphabetUpdate = async (req, res, next) => {
     try {
-        
-        await EnAlphabet.findByIdAndUpdate(req.params.id,{
-            $set : {
-                order_no : req.body.order_no
+
+        await EnAlphabet.findByIdAndUpdate(req.params.id, {
+            $set: {
+                order_no: req.body.order_no
             }
         })
-        
+
         return res.status(200).json({
-            success : true,
-            status : 200,
-            message : 'Successfully updated.'
+            success: true,
+            status: 200,
+            message: 'Successfully updated.'
         })
     } catch (error) {
         return res.status(500).json({
-            success : false,
-            status : 500,
-            message : error.message
+            success: false,
+            status: 500,
+            message: error.message
         })
     }
 }
 
-exports.arAlphabetUpdate=async(req,res,next) =>{
+exports.arAlphabetUpdate = async (req, res, next) => {
     try {
-        
-        await ArAlphabet.findByIdAndUpdate(req.params.id,{
-            $set : {
-                order_no : req.body.order_no
+
+        await ArAlphabet.findByIdAndUpdate(req.params.id, {
+            $set: {
+                order_no: req.body.order_no
             }
         })
-        
+
         return res.status(200).json({
-            success : true,
-            status : 200,
-            message : 'Successfully updated.'
+            success: true,
+            status: 200,
+            message: 'Successfully updated.'
         })
     } catch (error) {
         return res.status(500).json({
-            success : false,
-            status : 500,
-            message : error.message
+            success: false,
+            status: 500,
+            message: error.message
         })
     }
 }
 
-exports.dayUpdate=async(req,res,next) =>{
+exports.dayUpdate = async (req, res, next) => {
     try {
-        
-        await Day.findByIdAndUpdate(req.params.id,{
-            $set : {
-                order_no : req.body.order_no
+
+        await Day.findByIdAndUpdate(req.params.id, {
+            $set: {
+                order_no: req.body.order_no
             }
         })
-        
+
         return res.status(200).json({
-            success : true,
-            status : 200,
-            message : 'Successfully updated.'
+            success: true,
+            status: 200,
+            message: 'Successfully updated.'
         })
     } catch (error) {
         return res.status(500).json({
-            success : false,
-            status : 500,
-            message : error.message
+            success: false,
+            status: 500,
+            message: error.message
         })
     }
 }
 
-exports.monthUpdate=async(req,res,next) =>{
+exports.monthUpdate = async (req, res, next) => {
     try {
-        
-        await Month.findByIdAndUpdate(req.params.id,{
-            $set : {
-                order_no : req.body.order_no
+
+        await Month.findByIdAndUpdate(req.params.id, {
+            $set: {
+                order_no: req.body.order_no
             }
         })
-        
+
         return res.status(200).json({
-            success : true,
-            status : 200,
-            message : 'Successfully updated.'
+            success: true,
+            status: 200,
+            message: 'Successfully updated.'
         })
     } catch (error) {
         return res.status(500).json({
-            success : false,
-            status : 500,
-            message : error.message
+            success: false,
+            status: 500,
+            message: error.message
         })
     }
 }
 
-exports.seasonUpdate=async(req,res,next) =>{
+exports.seasonUpdate = async (req, res, next) => {
     try {
-        
-        await Season.findByIdAndUpdate(req.params.id,{
-            $set : {
-                order_no : req.body.order_no
+
+        await Season.findByIdAndUpdate(req.params.id, {
+            $set: {
+                order_no: req.body.order_no
             }
         })
-        
+
         return res.status(200).json({
-            success : true,
-            status : 200,
-            message : 'Successfully updated.'
+            success: true,
+            status: 200,
+            message: 'Successfully updated.'
         })
     } catch (error) {
         return res.status(500).json({
-            success : false,
-            status : 500,
-            message : error.message
+            success: false,
+            status: 500,
+            message: error.message
         })
     }
 }
 
-exports.getNumber=async(req,res,next) =>{
+exports.getNumber = async (req, res, next) => {
     try {
-        
-        const numbers = await Number.find({lang : 'en'})
-        
+
+        const numbers = await Number.find({ lang: 'en' })
+
         return res.status(200).json({
-            success : true,
-            status : 200,
-            message : 'Successfully updated.',
-            data : numbers
+            success: true,
+            status: 200,
+            message: 'Successfully updated.',
+            data: numbers
         })
     } catch (error) {
         return res.status(500).json({
-            success : false,
-            status : 500,
-            message : error.message
+            success: false,
+            status: 500,
+            message: error.message
         })
     }
 }
-exports.numberUpdate=async(req,res,next) =>{
+
+exports.numberUpdate = async (req, res, next) => {
     try {
-        
-        await Number.findByIdAndUpdate(req.params.id,{
-            $set : {
-                letter : req.body.letter,
-                punctuation : req.body.punctuation
+
+        await Number.findByIdAndUpdate(req.params.id, {
+            $set: {
+                letter: req.body.letter,
+                punctuation: req.body.punctuation
             }
         })
-        
+
         return res.status(200).json({
-            success : true,
-            status : 200,
-            message : 'Successfully updated.'
+            success: true,
+            status: 200,
+            message: 'Successfully updated.'
         })
     } catch (error) {
         return res.status(500).json({
-            success : false,
-            status : 500,
-            message : error.message
+            success: false,
+            status: 500,
+            message: error.message
         })
     }
 }
 
-exports.apply=async(req,res,next)=>{
+exports.apply = async (req, res, next) => {
     try {
         // banglaOkkor.fola
         // .forEach(async(p)=>{
@@ -228,6 +230,7 @@ exports.apply=async(req,res,next)=>{
         //     })
         //     await new_punc.save()
         // })
+
         return res.status(200).json({
             success : true,
             status : 200,
@@ -235,9 +238,69 @@ exports.apply=async(req,res,next)=>{
         })
     } catch (error) {
         return res.status(500).json({
-            success : false,
-            status : 500,
-            message : error.message
+            success: false,
+            status: 500,
+            message: error.message
+        })
+    }
+}
+
+exports.getColors = async (req, res, next) => {
+    try {
+
+        const data = await Color.find({})
+
+        return res.status(200).json({
+            success: true,
+            status: 200,
+            message: 'Successfully updated.',
+            data
+        })
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            status: 500,
+            message: error.message
+        })
+    }
+}
+
+exports.getDays = async (req, res, next) => {
+    try {
+        const {q} = req.query
+        const data = await Day.find({lang : q})
+
+        return res.status(200).json({
+            success: true,
+            status: 200,
+            message: 'Successfully updated.',
+            data : data.sort((a,b)=> a?.order_no - b?.order_no)
+        })
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            status: 500,
+            message: error.message
+        })
+    }
+}
+
+exports.getMonth = async (req, res, next) => {
+    try {
+        const {q} = req.query
+        const data = await Month.find({lang : q})
+
+        return res.status(200).json({
+            success: true,
+            status: 200,
+            message: 'Successfully updated.',
+            data : data.sort((a,b)=> a?.order_no - b?.order_no)
+        })
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            status: 500,
+            message: error.message
         })
     }
 }

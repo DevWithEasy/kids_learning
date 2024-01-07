@@ -1,5 +1,5 @@
 import { useRoutes } from 'react-router-dom'
-import { Alphabets, AlphabetsDetails, ArAllAlphabet, ArUpdateAlphabet, Arabic, Bangla, BnAllAlphabet, BnUpdateAlphabet, Dashboard, Days, DaysUpdate, EnAllAlphabet, EnUpdateAlphabet, English, Home, Layout, Layout_Admin, Mathematics, Months, Number, NumberUpdate, SeasonUpdate, Seasons, Welcome, WhiteBoard, WordGame, WritingBoard } from './pages/Index'
+import { AdminDays, AdminMonths, AdminSeasons, Alphabets, AlphabetsDetails, ArAllAlphabet, ArUpdateAlphabet, Arabic, Bangla, BnAllAlphabet, BnUpdateAlphabet, Color, Dashboard, Day, Days, DaysUpdate, EnAllAlphabet, EnUpdateAlphabet, English, Home, Layout, Layout_Admin, Mathematics, Month, MonthUpdate, Months, MultipicationTable, MultipicationTables, Number, NumberUpdate, SeasonUpdate, Welcome, WhiteBoard, WordGame, WritingBoard } from './pages/Index'
 
 
 function App() {
@@ -33,6 +33,14 @@ function App() {
           element: <Mathematics />
         },
         {
+          path: '/math/tables',
+          element: <MultipicationTables />
+        },
+        {
+          path: '/math/tables/:id',
+          element: <MultipicationTable />
+        },
+        {
           path: '/alphabets/:lan',
           element: <Alphabets />
         },
@@ -43,6 +51,26 @@ function App() {
         {
           path: '/alphabets/write/:lan',
           element: <WritingBoard />
+        },
+        {
+          path: '/colors',
+          element: <Color />
+        },
+        {
+          path: '/day',
+          element: <Day />
+        },
+        {
+          path: '/days',
+          element: <Days />
+        },
+        {
+          path: '/month',
+          element: <Month />
+        },
+        {
+          path: '/months',
+          element: <Months />
         },
         {
           path: '/game',
@@ -95,21 +123,21 @@ function App() {
           </Layout_Admin>
         },
         {
-          path: '/months',
+          path: '/admin/months',
           element: <Layout_Admin>
-            <Months />
+            <AdminMonths />
           </Layout_Admin>
         },
         {
           path: '/month/update/:id',
           element: <Layout_Admin>
-            <Months />
+            <MonthUpdate />
           </Layout_Admin>
         },
         {
-          path: '/days',
+          path: '/admin/days',
           element: <Layout_Admin>
-            <Days />
+            <AdminDays />
           </Layout_Admin>
         },
         {
@@ -119,9 +147,9 @@ function App() {
           </Layout_Admin>
         },
         {
-          path: '/seasons',
+          path: '/admin/seasons',
           element: <Layout_Admin>
-            <Seasons />
+            <AdminSeasons />
           </Layout_Admin>
         },
         {

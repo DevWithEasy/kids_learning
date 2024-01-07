@@ -33,7 +33,6 @@ const Alphabets = () => {
             setLoading
         })
     }, [path])
-
     return (
         <div
             className='h-screen space-y-3 bg-gray-100 font-kalpurush overflow-y-auto'

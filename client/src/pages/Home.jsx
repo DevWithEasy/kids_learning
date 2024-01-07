@@ -6,6 +6,9 @@ import arabic from "../assets/image/arabic.png";
 import math from "../assets/image/math.png";
 import board from "../assets/image/whiteboard.png";
 import game from "../assets/image/game.png";
+import color from "../assets/image/colour.png";
+import month from "../assets/image/month.png";
+import days from "../assets/image/days.png";
 
 const Home = () => {
     const [view, setView] = useState(true)
@@ -32,6 +35,21 @@ const Home = () => {
             title: 'অংক'
         },
         {
+            path: '/day',
+            img: days,
+            title: 'সাত দিনের নাম'
+        },
+        {
+            path: '/month',
+            img: month,
+            title: 'বার মাসের নাম'
+        },
+        {
+            path: '/colors',
+            img: color,
+            title: 'রঙ পরিচিতি'
+        },
+        {
             path: '/game',
             img: game,
             title: 'খেলা'
@@ -52,17 +70,17 @@ const Home = () => {
             className=""
         >
             <div
-                className="p-4 grid grid-cols-2 gap-4 text-2xl font-kalpurush"
+                className="p-4 grid grid-cols-2 md:grid-cols-4 gap-4 text-xl font-kalpurush"
             >
                 {lists.map((list, i) =>
                     <div
                         key={i}
                         onClick={() => navigate(list?.path)}
-                        className="p-4 flex flex-col items-center space-y-2 border rounded-md cursor-pointer"
+                        className="p-4 flex flex-col items-center space-y-4 border rounded-md cursor-pointer"
                     >
                         <img
                             src={list?.img}
-                            className="w-24 h-24"
+                            className="w-16 h-16"
                         />
                         <p
                             className=""

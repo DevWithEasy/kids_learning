@@ -1,5 +1,6 @@
 import Alphabets from "./Alphabets";
 import AlphabetsDetails from "./AlphabetsDetails";
+import Color from "./Color";
 import Home from "./Home";
 import Layout from "./Layout";
 import Layout_Admin from "./Layout_Admin";
@@ -13,21 +14,28 @@ import ArAllAlphabet from "./admin/arabic/ArAllAlphabet";
 import ArUpdateAlphabet from "./admin/arabic/ArUpdateAlphabet";
 import BnAllAlphabet from "./admin/bangla/BnAllAlphabet";
 import BnUpdateAlphabet from "./admin/bangla/BnUpdateAlphabet";
-import Days from "./admin/day/Days";
+import AdminDays from "./admin/day/AdminDays";
 import DaysUpdate from "./admin/day/DaysUpdate";
 import EnAllAlphabet from "./admin/english/EnAllAlphabet";
 import EnUpdateAlphabet from "./admin/english/EnUpdateAlphabet";
 import MonthUpdate from "./admin/month/MonthUpdate";
-import Months from "./admin/month/Months";
+import AdminMonths from "./admin/month/AdminMonths";
 import Number from "./admin/number/Number";
 import NumberUpdate from "./admin/number/NumberUpdate";
 import SeasonUpdate from "./admin/season/SeasonUpdate";
-import Seasons from "./admin/season/Seasons";
+import AdminSeasons from "./admin/season/AdminSeasons";
 import Arabic from "./arabic/Arabic";
 import Bangla from "./bangla/Bangla";
 import English from "./english/English";
 import Mathematics from "./math/Math";
+import MultipicationTable from "./math/MultipicationTable";
+import MultipicationTables from "./math/MultipicationTables";
 import WhiteBoard from "./whiteBoard/WhiteBoard";
+import Day from "./day/day";
+import Days from "./day/days";
+import Months from "./month/Months";
+import Month from "./month/Month";
 
-export { Alphabets, AlphabetsDetails, ArAllAlphabet, ArUpdateAlphabet, Arabic, Bangla, BnAllAlphabet, BnUpdateAlphabet, Dashboard, Days, DaysUpdate, EnAllAlphabet, EnUpdateAlphabet, English, Home, Layout, Layout_Admin, Mathematics, MonthUpdate, Months, Number, NumberUpdate, SeasonUpdate, Seasons, SignIn, Signup, Welcome, WhiteBoard, WordGame, WritingBoard };
+
+export {Day,Days,Months,Month,Color,MultipicationTables,MultipicationTable, Alphabets, AlphabetsDetails, ArAllAlphabet, ArUpdateAlphabet, Arabic, Bangla, BnAllAlphabet, BnUpdateAlphabet, Dashboard, AdminDays, DaysUpdate, EnAllAlphabet, EnUpdateAlphabet, English, Home, Layout, Layout_Admin, Mathematics, MonthUpdate, AdminMonths, Number, NumberUpdate, SeasonUpdate, AdminSeasons, SignIn, Signup, Welcome, WhiteBoard, WordGame, WritingBoard };
 

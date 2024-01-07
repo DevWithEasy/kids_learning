@@ -1,25 +1,11 @@
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import {toBengaliNumber} from 'bengali-number'
 
-const Arabic = () => {
-    const lists = [
-        {
-            path: '/alphabets/ar',
-            abr: 'ا',
-            title: 'আরবি হরফ পরিচিতি'
-        },
-        {
-            path: '/alphabets/details/ar',
-            abr: 'ب',
-            title: 'আরবি হরফ দেখি ও পড়ি'
-        },
-        {
-            path: '/alphabets/write/ar',
-            abr: 'ت',
-            title: 'আরবি হরফ ও শিখি'
-        }
-    ]
-
+const MultipicationTables = () => {
+    const numbers = new Array(20).fill(0).map((_, index) => index + 1)
+    
     return (
         <div
             className='h-screen bg-gray-100 space-y-3 font-kalpurush overflow-y-auto'
@@ -27,41 +13,39 @@ const Arabic = () => {
             <h1
                 className='px-4 py-3 bg-white text-4xl font-semibold border-b-2'
             >
-                আরবি
+                নামতা
             </h1>
             <div
                 className='p-2 pb-10 space-y-2'
             >
+                
                 {
-                    lists.map((list, i) =>
+                    numbers.map((number, i) =>
                         <motion.div
                             key={i}
                             initial={{
-                                y: 50,
-                                opacity: 0
+                                x : i % 2 === 0 ? -200 : 200
                             }}
                             animate={{
-                                y: 0,
-                                opacity: 1
+                                x : 0
                             }}
                             transition={{
-                                duration: 0.5,
-                                delay: i === 0 ? 0 : 0.2 + (i / 10)
+                                duration : 0.5
                             }}
                         >
                             <Link
-                                to={list.path}
+                                to={`/math/tables/${number}`}
                                 className='p-2 flex items-center space-x-3 bg-white text-xl border rounded-md'
                             >
                                 <div
                                     className='w-10 h-10 flex justify-center items-center bg-blue-100 rounded-full'
                                 >
                                     <span>
-                                        {list.abr}
+                                        {toBengaliNumber(number)}
                                     </span>
                                 </div>
                                 <span>
-                                    {list.title}
+                                    {toBengaliNumber(number)} এর নামতা
                                 </span>
                             </Link>
                         </motion.div>
@@ -69,8 +53,9 @@ const Arabic = () => {
                 }
 
             </div>
+            
         </div>
     );
 };
 
-export default Arabic;
+export default MultipicationTables;

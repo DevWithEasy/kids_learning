@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 import useAlphabetStore from '../../../store/alphabateStore';
 import apiurl from '../../../utils/apiurl';
 
-const Seasons = () => {
+const AdminDays = () => {
     const { addLetters, letters } = useAlphabetStore()
     const getData = async () => {
         try {
-            const res = await axios.get(`${apiurl}/api/admin/season`)
+            const res = await axios.get(`${apiurl}/api/admin/day`)
             addLetters(res.data.data)
         } catch (error) {
             console.log(error)
@@ -26,7 +26,7 @@ const Seasons = () => {
             <h2
                 className=' py-2 text-2xl font-bold border-b-2'
             >
-                সকল ঋতু
+                সকল দিন
             </h2>
             <div
                 className='grid grid-cols-8 gap-4'
@@ -35,8 +35,8 @@ const Seasons = () => {
                     letters.map(l =>
                         <Link
                             key={l._id}
-                            to={`/season/update/${l._id}`}
-                            className='p-4 bg-gray-50 text-center'
+                            to={`/day/update/${l._id}`}
+                            className='p-4 bg-gray-50 text-center border'
                         >
                             {l.name}
                         </Link>
@@ -48,4 +48,4 @@ const Seasons = () => {
     );
 };
 
-export default Seasons;
+export default AdminDays;

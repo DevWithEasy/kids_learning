@@ -14,14 +14,26 @@ const getPath=(data)=>{
         return `bangla/fola`
     }else if(lan === 'punctuation_mark'){
         return `bangla/punctuation_mark`
-    }else if(lan === 'en'){
-        return `english`
     }else if(lan === 'en' && query === 'capital'){
         return `english/?q=capital`
     }else if(lan === 'en' && query === 'small'){
         return `english/?q=small`
     }else if(lan === 'en' && query === 'number'){
         return `english/number`
+    }else if(lan === 'en'){
+        return `english`
+    }else if(lan === 'en_number'){
+        return `english/number`
+    }else if(lan === 'math'){
+        return `math`
+    }else if(query === 'd_bn'){
+        return `admin/find/days/?q=bn`
+    }else if(query === 'd_en'){
+        return `admin/find/days/?q=en`
+    }else if(query === 'm_bn'){
+        return `admin/find/months/?q=bn`
+    }else if(query === 'm_en'){
+        return `admin/find/months/?q=en`
     }
 }
 

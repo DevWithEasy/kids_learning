@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import useAlphabetStore from '../../../store/alphabateStore';
 import apiurl from '../../../utils/apiurl';
 
-const Months = () => {
+const AdminMonths = () => {
     const { addLetters, letters } = useAlphabetStore()
     const getData = async () => {
         try {
@@ -48,4 +48,4 @@ const Months = () => {
     );
 };
 
-export default Months;
+export default AdminMonths;

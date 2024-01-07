@@ -1,8 +1,8 @@
-const { demo } = require('../controllers/mathControllers')
+const { getNumbers } = require('../controllers/mathControllers')
 
 const router = require('express').Router()
 
-router.get('/',demo)
+router.get('/',getNumbers)
 
 
 module.exports = router

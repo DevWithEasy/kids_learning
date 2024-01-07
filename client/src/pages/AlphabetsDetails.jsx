@@ -88,6 +88,11 @@ const AlphabetsDetails = () => {
                     >
                         {letter?.sentence}
                     </p>
+                    <p
+                        className="py-2 text-2xl"
+                    >
+                        {letter?.punctuation}
+                    </p>
                 </div>
                 <div
                     id='slider'

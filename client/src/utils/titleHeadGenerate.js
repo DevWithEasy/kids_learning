@@ -20,6 +20,18 @@ const getTitle=(data)=>{
         return `ইংরেজি ছোট হাতের অক্ষর`
     }else if(lan === 'en' && query === 'number'){
         return `ইংরেজি নাম্বার (1-100)`
+    }else if(lan === 'en_number'){
+        return `ইংরেজি নাম্বার (1-100)`
+    }else if(lan === 'math'){
+        return `সংখ্যা (১-১০০)`
+    }else if(query === 'd_bn'){
+        return `বাংলা সাত দিনের নাম`
+    }else if(query === 'd_en'){
+        return `ইংরেজি সাত দিনের নাম`
+    }else if(query === 'm_bn'){
+        return `বাংলা বার মাসের নাম`
+    }else if(query === 'm_en'){
+        return `ইংরেজি বার মাসের নাম`
     }
 }
 

@@ -1,45 +1,20 @@
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
-const English = () => {
+const Month = () => {
     const lists = [
         {
-            path: '/alphabets/en?q=capital',
-            abr: 'A',
-            title: 'ইংরেজি বড় হাতের অক্ষর'
-        },
-        {
-            path: '/alphabets/write/en?q=capital',
+            path: '/months?q=m_bn',
             abr: 'B',
-            title: 'ইংরেজি বড় হাতের লিখি ও শিখি'
+            title: 'বাংলা বার মাসের নাম'
         },
         {
-            path: '/alphabets/en?q=small',
-            abr: 'a',
-            title: 'ইংরেজি ছোট হাতের অক্ষর'
-        },
-        {
-            path: '/alphabets/write/en?q=small',
-            abr: 'b',
-            title: 'ইংরেজি ছোট হাতের লিখি ও শিখি'
-        },
-        {
-            path: '/alphabets/details/en',
-            abr: 'Aa',
-            title: 'ইংরেজি দেখি ও পড়ি'
-        },
-        {
-            path: '/alphabets/en?q=number',
-            abr: '1',
-            title: 'ইংরেজি নাম্বার (1-100)'
-        },
-        {
-            path: '/alphabets/details/en_number',
-            abr: '2',
-            title: 'ইংরেজি নাম্বার দেখি ও পড়ি'
+            path: '/months?q=m_en',
+            abr: 'E',
+            title: 'ইংরেজি বার মাসের নাম'
         }
     ]
-
     return (
         <div
             className='h-screen bg-gray-100 space-y-3 font-kalpurush overflow-y-auto'
@@ -47,7 +22,7 @@ const English = () => {
             <h1
                 className='px-4 py-3 bg-white text-4xl font-semibold border-b-2'
             >
-                ইংরেজি
+                বার মাসের নাম
             </h1>
             <div
                 className='p-2 pb-10 space-y-2'
@@ -93,4 +68,4 @@ const English = () => {
     );
 };
 
-export default English;
+export default Month;
