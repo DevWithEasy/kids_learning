@@ -7,6 +7,8 @@ import apiurl from '../utils/apiurl';
 import getTitle from '../utils/titleHeadGenerate';
 import Loading from '../components/Loading';
 import getLetter from '../utils/letterGenerate';
+import getArabicList from '../utils/arabicLetterGenerate';
+import { ArabicAlphabet } from '../components/Index';
 
 const Alphabets = () => {
     const { lan } = useParams()
@@ -33,6 +35,7 @@ const Alphabets = () => {
             setLoading
         })
     }, [path])
+    getArabicList(letters,2)
     return (
         <div
             className='h-screen space-y-3 bg-gray-100 font-kalpurush overflow-y-auto'
@@ -43,7 +46,7 @@ const Alphabets = () => {
                 {title}
             </h2>
             <div
-                className={`p-2 grid ${lan === 'bangla_kar' || lan === 'bangla_fola' ? 'grid-cols-2' : 'grid-cols-4'} md:grid-cols-5 gap-4`}
+                className={`p-2 grid ${lan === 'bangla_kar' || lan === 'bangla_fola' ? 'grid-cols-2' : 'grid-cols-4'} md:grid-cols-5 gap-4 ${lan === 'ar' && 'hidden'}`}
             >
                 {letters &&
                     letters.map((letter, i) =>
@@ -93,7 +96,11 @@ const Alphabets = () => {
                         </motion.div>
                     )
                 }
+                
             </div>
+            {lan === 'ar' &&
+                <ArabicAlphabet {...{letters}}/>
+            }
             {loading &&
                 <Loading />
             }
