@@ -12,12 +12,19 @@ const Letter = ({ letter, value }) => {
     });
     const isOdd = value % 2 === 0
     return (
-        <div
+        <motion.div
             ref={drag}
+            initial={{
+                y : 0
+            }}
+            animate={{
+                y : !isOdd ? -20+(Math.random(100)*20) : 0
+            }}
+            drag
             className={`w-12 h-12 p-2 flex justify-center items-center bg-green-100 text-2xl rounded-full shadow-md hover:cursor-move ${isDragging ? 'opacity-50' : 'opacity-100'} md:w-16 md:h-16 md:text-3xl`}
         >
             <span>{letter}</span>
-        </div>
+        </motion.div>
     );
 };
 
