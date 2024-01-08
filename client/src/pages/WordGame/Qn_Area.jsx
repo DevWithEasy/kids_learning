@@ -13,7 +13,6 @@ const QN_Area = ({ word,letters }) => {
                 {letters &&
                     letters.map((letter, i) => <Letter
                         key={i}
-                        value={i}
                         letter={letter}
                     />)
                 }
