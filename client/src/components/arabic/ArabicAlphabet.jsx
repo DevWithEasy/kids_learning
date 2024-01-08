@@ -1,7 +1,12 @@
 import React from 'react';
 import getArabicList from '../../utils/arabicLetterGenerate';
+import apiurl from '../../utils/apiurl';
 
 const ArabicAlphabet = ({ letters }) => {
+    const play = (path) => {
+        const audio = new Audio(`${apiurl}${path}`)
+        audio.play()
+    }
     return (
         <div>
             <div

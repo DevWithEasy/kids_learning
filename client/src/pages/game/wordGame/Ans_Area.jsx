@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDrop } from 'react-dnd';
-import AnsAlert from '../../components/wordGame/AnsAlert';
+import AnsAlert from '../../../components/wordGame/AnsAlert';
 
 const Ans_Area = ({ word, letters, setLetters, ans_letters, setAns_letters, clientHeight }) => {
     const [{ isOver }, drop] = useDrop(() => ({

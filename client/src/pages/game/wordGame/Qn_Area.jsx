@@ -1,5 +1,5 @@
 import React from 'react';
-import Letter from '../../components/wordGame/Letter';
+import Letter from '../../../components/wordGame/Letter';
 
 const QN_Area = ({ word,letters }) => {
     
