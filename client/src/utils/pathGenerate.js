@@ -34,6 +34,10 @@ const getPath=(data)=>{
         return `admin/find/months/?q=bn`
     }else if(query === 'm_en'){
         return `admin/find/months/?q=en`
+    }else if(query === 's_bn'){
+        return `admin/find/seasons/?q=bn`
+    }else if(query === 's_en'){
+        return `admin/find/seasons/?q=en`
     }
 }
 

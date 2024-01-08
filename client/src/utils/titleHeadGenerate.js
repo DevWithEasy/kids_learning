@@ -30,8 +30,12 @@ const getTitle=(data)=>{
         return `ইংরেজি সাত দিনের নাম`
     }else if(query === 'm_bn'){
         return `বাংলা বার মাসের নাম`
-    }else if(query === 'm_en'){
+    }else if(query === 's_en'){
         return `ইংরেজি বার মাসের নাম`
+    }else if(query === 's_bn'){
+        return `বাংলা ছয় ঋতুর নাম`
+    }else if(query === 's_en'){
+        return `ইংরেজি ছয় ঋতুর নাম`
     }
 }
 

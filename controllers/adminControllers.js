@@ -304,3 +304,23 @@ exports.getMonth = async (req, res, next) => {
         })
     }
 }
+
+exports.getSeason = async (req, res, next) => {
+    try {
+        const {q} = req.query
+        const data = await Season.find({lang : q})
+
+        return res.status(200).json({
+            success: true,
+            status: 200,
+            message: 'Successfully updated.',
+            data : data.sort((a,b)=> a?.order_no - b?.order_no)
+        })
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            status: 500,
+            message: error.message
+        })
+    }
+}

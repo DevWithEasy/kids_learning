@@ -1,4 +1,4 @@
-const { getAll, bnAlphabetUpdate, enAlphabetUpdate, arAlphabetUpdate, dayUpdate, monthUpdate, seasonUpdate, apply, getNumber, numberUpdate, getColors, getDays, getMonth } = require('../controllers/adminControllers')
+const { getAll, bnAlphabetUpdate, enAlphabetUpdate, arAlphabetUpdate, dayUpdate, monthUpdate, seasonUpdate, apply, getNumber, numberUpdate, getColors, getDays, getMonth, getSeason } = require('../controllers/adminControllers')
 
 const router = require('express').Router()
 
@@ -15,5 +15,6 @@ router.get('/server/method',apply)
     .get('/find/colors',getColors)
     .get('/find/days',getDays)
     .get('/find/months',getMonth)
+    .get('/find/seasons',getSeason)
 
 module.exports = router

@@ -1,5 +1,5 @@
 import { useRoutes } from 'react-router-dom'
-import { AdminDays, AdminMonths, AdminSeasons, Alphabets, AlphabetsDetails, ArAllAlphabet, ArUpdateAlphabet, Arabic, Bangla, BnAllAlphabet, BnUpdateAlphabet, Color, Dashboard, Day, Days, DaysUpdate, EnAllAlphabet, EnUpdateAlphabet, English, Home, Layout, Layout_Admin, Mathematics, Month, MonthUpdate, Months, MultipicationTable, MultipicationTables, Number, NumberUpdate, SeasonUpdate, Welcome, WhiteBoard, WordGame, WritingBoard } from './pages/Index'
+import { AdminDays, AdminMonths, AdminSeasons, Alphabets, AlphabetsDetails, ArAllAlphabet, ArUpdateAlphabet, Arabic, Bangla, BnAllAlphabet, BnUpdateAlphabet, Color, Dashboard, Day, Days, DaysUpdate, EnAllAlphabet, EnUpdateAlphabet, English, Home, Layout, Layout_Admin, Mathematics, Month, MonthUpdate, Months, MultipicationTable, MultipicationTables, Number, NumberUpdate, Season, SeasonUpdate, Seasons, Welcome, WhiteBoard, WordGame, WritingBoard } from './pages/Index'
 
 
 function App() {
@@ -71,6 +71,14 @@ function App() {
         {
           path: '/months',
           element: <Months />
+        },
+        {
+          path: '/season',
+          element: <Season />
+        },
+        {
+          path: '/seasons',
+          element: <Seasons />
         },
         {
           path: '/game',

@@ -9,6 +9,7 @@ import game from "../assets/image/game.png";
 import color from "../assets/image/colour.png";
 import month from "../assets/image/month.png";
 import days from "../assets/image/days.png";
+import season from "../assets/image/season.png";
 
 const Home = () => {
     const [view, setView] = useState(true)
@@ -43,6 +44,11 @@ const Home = () => {
             path: '/month',
             img: month,
             title: 'বার মাসের নাম'
+        },
+        {
+            path: '/season',
+            img: season,
+            title: 'ছয় ঋতুর নাম'
         },
         {
             path: '/colors',

@@ -35,7 +35,9 @@ import Day from "./day/day";
 import Days from "./day/days";
 import Months from "./month/Months";
 import Month from "./month/Month";
+import Season from "./season/Season";
+import Seasons from "./season/Seasons";
 
 
-export {Day,Days,Months,Month,Color,MultipicationTables,MultipicationTable, Alphabets, AlphabetsDetails, ArAllAlphabet, ArUpdateAlphabet, Arabic, Bangla, BnAllAlphabet, BnUpdateAlphabet, Dashboard, AdminDays, DaysUpdate, EnAllAlphabet, EnUpdateAlphabet, English, Home, Layout, Layout_Admin, Mathematics, MonthUpdate, AdminMonths, Number, NumberUpdate, SeasonUpdate, AdminSeasons, SignIn, Signup, Welcome, WhiteBoard, WordGame, WritingBoard };
+export {Season,Seasons,Day,Days,Months,Month,Color,MultipicationTables,MultipicationTable, Alphabets, AlphabetsDetails, ArAllAlphabet, ArUpdateAlphabet, Arabic, Bangla, BnAllAlphabet, BnUpdateAlphabet, Dashboard, AdminDays, DaysUpdate, EnAllAlphabet, EnUpdateAlphabet, English, Home, Layout, Layout_Admin, Mathematics, MonthUpdate, AdminMonths, Number, NumberUpdate, SeasonUpdate, AdminSeasons, SignIn, Signup, Welcome, WhiteBoard, WordGame, WritingBoard };
 
