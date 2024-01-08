@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NumberMatch = () => {
+const AlhphabetMatch = () => {
     
     return (
         <div>
@@ -9,4 +9,4 @@ const NumberMatch = () => {
     );
 };
 
-export default NumberMatch;
+export default AlhphabetMatch;

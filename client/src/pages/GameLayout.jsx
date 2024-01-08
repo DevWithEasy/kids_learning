@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import bgSound from '../assets/background.mp3';
 
 const GameLayout = ({children}) => {
@@ -11,7 +11,9 @@ const GameLayout = ({children}) => {
 
     }, [])
     return (
-        <div>
+        <div
+            className='h-screen overflow-y-auto bg-gray-100'
+        >
             {children}
             <audio ref={audioRef} src={bgSound} loop />
         </div>

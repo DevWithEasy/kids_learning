@@ -1,5 +1,5 @@
 import { useRoutes } from 'react-router-dom'
-import { AdminDays, AdminMonths, AdminSeasons, Alphabets, AlphabetsDetails, ArAllAlphabet, ArUpdateAlphabet, Arabic, Bangla, BnAllAlphabet, BnUpdateAlphabet, Color, Dashboard, Day, Days, DaysUpdate, EnAllAlphabet, EnUpdateAlphabet, English, Home, Layout, Layout_Admin, Mathematics, Month, MonthUpdate, Months, MultipicationTable, MultipicationTables, Number, NumberUpdate, Season, SeasonUpdate, Seasons, Welcome, WhiteBoard, WordGame, WritingBoard } from './pages/Index'
+import { Addition, AdminDays, AdminMonths, AdminSeasons, Alphabets, AlphabetsDetails, ArAllAlphabet, ArUpdateAlphabet, Arabic, Bangla, BnAllAlphabet, BnUpdateAlphabet, Color, Dashboard, Day, Days, DaysUpdate, EnAllAlphabet, EnUpdateAlphabet, English, Game, GameLayout, Home, Layout, Layout_Admin, Mathematics, Month, MonthUpdate, Months, MultipicationTable, MultipicationTables, Number, NumberUpdate, Season, SeasonUpdate, Seasons, Substraction, Welcome, WhiteBoard, WordGame, WritingBoard } from './pages/Index'
 
 
 function App() {
@@ -82,7 +82,21 @@ function App() {
         },
         {
           path: '/game',
-          element: <WordGame />
+          element: <GameLayout>
+            <Game/>
+          </GameLayout>
+        },
+        {
+          path: '/game/addition',
+          element: <GameLayout>
+            <Addition/>
+          </GameLayout>
+        },
+        {
+          path: '/game/substraction',
+          element: <GameLayout>
+            <Substraction/>
+          </GameLayout>
         },
         {
           path: '/whiteboard',
