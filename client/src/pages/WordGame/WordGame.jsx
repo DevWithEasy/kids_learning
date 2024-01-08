@@ -14,20 +14,11 @@ const WordGame = () => {
     const [word, setWord] = useState('কলসি')
     const [letters, setLetters] = useState([])
     const [ans_letters, setAns_letters] = useState([])
-    const [clientWidth, setClientWidth] = useState(0)
-    const [clientHeight, setClientHeight] = useState(0)
 
     useEffect(() => {
         setLetters(shuffleWord(word))
 
         addWord(word)
-
-        if (game.current) {
-            const { width, height } = game?.current.getBoundingClientRect();
-
-            setClientWidth(width)
-            setClientHeight(height)
-        }
     }, [word])
     
 
