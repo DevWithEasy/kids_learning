@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import MathMethod from '../../../utils/game/MathMethod';
 import correct_ans_sound from '../../../assets/correct.mp3'
 import wrong_ans_sound from '../../../assets/game_wrong_answer.mp3'
@@ -11,21 +11,26 @@ import pineapple from '../../../assets/image/addition_pineapple.png'
 
 const Addition = () => {
     const fruits = [apple, banana, guava, orange, pineapple]
-    const [n_1,setN_1] = useState()
-    const [n_2,setN_2] = useState()
-    const [answer,setAnswer] = useState('?')
-    const [numbers,setNumbers] = useState()
+    const [n_1, setN_1] = useState(0)
+    const [n_2, setN_2] = useState(0)
+    const [answer, setAnswer] = useState('?')
+    const [numbers, setNumbers] = useState([])
     const [addArray, setAddArray] = useState([])
-    const [index, setIndex] = useState(MathMethod.random(5))
+    const [index, setIndex] = useState(0)
     const image = fruits[index]
     const [array_1, setArray_1] = useState(MathMethod.dragArray(n_1, 'array_1'))
     const [array_2, setArray_2] = useState(MathMethod.dragArray(n_2, 'array_2'))
-    const handleAnswer=(addition,n)=>{
-        if(addition === n){
+    const [dummyArray_1, setDummyArray_1] = useState([])
+    const [dummyArray_2, setDummyArray_2] = useState([])
+    const [wrong, setWrong] = useState(false)
+    const [wrongId, setWrongId] = useState(null)
+    const handleAnswer = (addition, n, id) => {
+        if (addition === n) {
             setAnswer(n)
+            setWrongId(id)
             const audio = new Audio(correct_ans_sound)
             audio.play()
-            setTimeout(()=>{
+            setTimeout(() => {
                 const n_1 = MathMethod.random(5)
                 const n_2 = MathMethod.random(5)
                 setN_1(n_1)
@@ -34,39 +39,83 @@ const Addition = () => {
                 setAnswer('?')
                 setAddArray([])
                 setIndex(MathMethod.random(5))
-            },1000)
-        }else{
+                setArray_1(MathMethod.dragArray(n_1, 'array_1'))
+                setArray_2(MathMethod.dragArray(n_2, 'array_2'))
+                setDummyArray_1(MathMethod.dummayArray(n_1))
+                setDummyArray_2(MathMethod.dummayArray(n_2))
+                setWrongId(null)
+            }, 1000)
+        } else {
             const audio = new Audio(wrong_ans_sound)
             audio.play()
+            setWrong(true)
+            setWrongId(id)
+            setTimeout(() => {
+                setWrong(false)
+                setWrongId(null)
+            }, 500)
         }
     }
+    useEffect(() => {
+        const n_1 = MathMethod.random(5)
+        const n_2 = MathMethod.random(5)
+        setN_1(n_1)
+        setN_2(n_2)
+        setNumbers(MathMethod.numbers(n_1 + n_2))
+        setIndex(MathMethod.random(5))
+        setArray_1(MathMethod.dragArray(n_1, 'array_1'))
+        setArray_2(MathMethod.dragArray(n_2, 'array_2'))
+        setDummyArray_1(MathMethod.dummayArray(n_1))
+        setDummyArray_2(MathMethod.dummayArray(n_2))
+        console.log('from useEffect')
+    }, [])
     return (
         <div
-            className='pt-12'
+            className=''
         >
+            <h2
+                className='p-2  fixed top-0 text-2xl bg-white w-full shadow'
+            >
+                যোগের খেলা
+            </h2>
             <div
-                className='p-10 text-6xl space-y-2'
+                className='p-2 text-6xl space-y-2'
             >
                 <div
-                    className='p-5 bg-white'
+                    className='flex flex-col justify-center items-center p-5 bg-white rounded-md border'
                 >
-                    {n_1} + {n_2} = {answer}
+                    <p>
+                        {n_1} + {n_2}
+                    </p>
+                    <p>
+                        =
+                    </p>
+                    <p
+                        className={`px-6 py-2 border rounded-md ${answer === '?' ? 'text-gray-300' : ' border-green-500'}`}
+                    >
+                        <span
+                            className={`${answer === '?' ? 'inline-block px-2 text-4xl  animate-bounce' : 'text-green-500'}`}
+                        >
+                            {answer}
+                        </span>
+                    </p>
                 </div>
                 <div
-                    className='p-5 bg-white space-x-3'
+                    className='flex justify-center p-5 bg-white space-x-3 rounded-md border'
                 >
                     {numbers &&
-                        numbers.map(number=>
+                        numbers.map((number, i) =>
                             <button
-                                onClick={()=>handleAnswer(n_1+n_2,number)}
-                                className='px-6 py-2 border'
+                                key={i}
+                                onClick={() => handleAnswer(n_1 + n_2, number, i)}
+                                className={`px-6 py-2 border rounded-md ${wrong && wrongId == i ? 'bg-red-500 text-white' : !wrong && wrongId == i ? 'bg-green-500 text-white' : ''}`}
                             >
                                 {number}
-                            </button>    
+                            </button>
                         )
                     }
                 </div>
-                <AdditionHelper {...{n_1,n_2,image,array_1,array_2,addArray, setAddArray}}/>
+                <AdditionHelper {...{ image, array_1, setArray_1, array_2, setArray_2, dummyArray_1, dummyArray_2, addArray, setAddArray }} />
             </div>
         </div>
     );

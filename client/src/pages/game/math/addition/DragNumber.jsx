@@ -16,7 +16,7 @@ const DragNumber = ({ item, image }) => {
             <img
                 ref={drag}
                 src={image}
-                className='w-12 h-12'
+                className='w-10 h-10'
             />
             <DragNumberPreview />
         </>

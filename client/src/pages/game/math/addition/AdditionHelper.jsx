@@ -1,12 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import MathMethod from '../../../../utils/game/MathMethod';
 import { useDrop } from 'react-dnd';
 import DragNumber from './DragNumber';
 
-const AdditionHelper = ({ n_1, n_2, image, addArray, setAddArray }) => {
-    const [array_1, setArray_1] = useState(MathMethod.dragArray(n_1, 'array_1'))
-    const [array_2, setArray_2] = useState(MathMethod.dragArray(n_2, 'array_2'))
-
+const AdditionHelper = ({ image, array_1, setArray_1, array_2, setArray_2, dummyArray_1, dummyArray_2, addArray, setAddArray }) => {
     const [{ isOver }, drop] = useDrop(() => ({
         accept: 'number',
         drop: (item) => addItem(item),
@@ -16,59 +12,75 @@ const AdditionHelper = ({ n_1, n_2, image, addArray, setAddArray }) => {
     }))
 
     const addItem = (item) => {
-        
-        setAddArray(prevArray => [...prevArray, item])
-
         if (item.array === 'array_1') {
-            console.log(item)
-            const newArray = array_1.filter(i => i._id !== item._id)
-            console.log(newArray)
-            setArray_1(newArray)
-        } else {
-            // const newArray = array_2.filter(i => i._id !== item._id)
-            // setArray_2(newArray)
+            setAddArray(prev=> {
+                return [...prev,item]
+            })
+            setArray_1(prev=>{
+                return prev.filter(i=> i._id != item._id)
+            })
+        } else if (item.array === 'array_2'){
+            setAddArray(prev=> {
+                return [...prev,item]
+            })
+            setArray_2(prev=>{
+                return prev.filter(i=> i._id != item._id)
+            })
         }
     }
-
     return (
         <div
-            className='p-10 bg-white flex justify-between'
+            className='flex flex-col md:flex-row justify-between bg-white  border rounded-md'
         >
             <div
                 ref={drop}
-                className={`w-1/2 flex flex-wrap ${isOver ? 'bg-gray-50' : ''}`}
+                className={`md:w-1/2 p-5 flex flex-wrap ${isOver ? 'bg-gray-50' : ''} border-b md:border-b-none md:border-r`}
             >
-                {addArray &&
+                {addArray.length === 0 ?
+                    <p
+                        className='w-full animate-pulse space-y-2'
+                    >
+                        <img
+                            src={image}
+                            className='w-10 mx-auto h-10 grayscale opacity-50'
+                        />
+                        <p
+                            className='text-sm font-kalpurush text-center text-gray-500'
+                        >
+                            নিচের কলার সারি থেকে শেষ দিকে থেকে কলা গুলো টেনে এনে রাখ
+                        </p>
+                    </p>
+                    :
                     addArray.map((item, i) =>
                         <img
                             key={i}
                             src={item?.image}
-                            className='w-12 h-12'
+                            className='w-10 h-10'
                         />
                     )
                 }
             </div>
             <div
-                className='w-1/2'
+                className='md:w-1/2 space-y-2'
             >
                 <div
-                    className='relative'
+                    className='relative p-5 border-b'
                 >
                     <div
                         className='flex items-center'
                     >
                         {
-                            MathMethod.dummayArray(n_1).map(i =>
+                            dummyArray_1.map(i =>
                                 <img
                                     key={i}
                                     src={image}
-                                    className='w-12 h-12 grayscale opacity-50'
+                                    className='w-10 h-10 grayscale opacity-50'
                                 />
                             )
                         }
                     </div>
                     <div
-                        className='absolute top-0 flex items-center z-50 '
+                        className='absolute top-5 flex items-center z-50 '
                     >
                         {array_1.map((item, i) =>
                             <DragNumber key={i} {...{ item, image }} />
@@ -76,23 +88,23 @@ const AdditionHelper = ({ n_1, n_2, image, addArray, setAddArray }) => {
                     </div>
                 </div>
                 <div
-                    className='relative flex items-center'
+                    className='relative p-5 flex items-center'
                 >
                     <div
                         className='flex items-center'
                     >
                         {
-                            MathMethod.dummayArray(n_2).map(i =>
+                            dummyArray_2.map(i =>
                                 <img
                                     key={i}
                                     src={image}
-                                    className='w-12 h-12 grayscale'
+                                    className='w-10 h-10 grayscale opacity-50'
                                 />
                             )
                         }
                     </div>
                     <div
-                        className='absolute top-0 flex items-center z-50'
+                        className='absolute top-5 flex items-center z-50'
                     >
                         {array_2.map((item, i) =>
                             <DragNumber key={i} {...{ item, image }} />
