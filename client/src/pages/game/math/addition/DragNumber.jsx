@@ -10,6 +10,7 @@ const DragNumber = ({ item, image }) => {
             isDragging: !!monitor.isDragging(),
         })
     }))
+    // console.log(image)
     return (
         <>
             <img

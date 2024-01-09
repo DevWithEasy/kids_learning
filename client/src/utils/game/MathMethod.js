@@ -1,3 +1,5 @@
+import {v4 as uuidv4} from 'uuid'
+
 class MathMethod {
     static random(n) {
         const n_1 = Math.floor(Math.random() * n)
@@ -40,7 +42,7 @@ class MathMethod {
     static dragArray(n,name){
         return new Array(n).fill(0).map((_,i) => {
             return {
-                _id : i,
+                _id : uuidv4(),
                 array : name
             }
         })
