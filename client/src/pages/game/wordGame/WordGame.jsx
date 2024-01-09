@@ -28,16 +28,15 @@ const WordGame = () => {
 
     }, [word])
     return (
-        <DndProvider backend={isMobile ? TouchBackend : HTML5Backend}>
-            <div
-                ref={game}
-                className='h-screen flex flex-col justify-between bg-gray-100 font-kalpurush'
-            >
-                <Ans_Area {...{ word, letters, setLetters, ans_letters, setAns_letters }} />
-                <QN_Area {...{ word, letters, setLetters, ans_letters, setAns_letters }} />
-            </div>
+        <div
+            ref={game}
+            className='h-screen flex flex-col justify-between bg-gray-100 font-kalpurush'
+        >
+            <Ans_Area {...{ word, letters, setLetters, ans_letters, setAns_letters }} />
+            <QN_Area {...{ word, letters, setLetters, ans_letters, setAns_letters }} />
             <audio ref={audioRef} src={bgSound} loop />
-        </DndProvider>
+        </div>
+
     );
 };
 
