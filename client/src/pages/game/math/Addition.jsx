@@ -8,22 +8,12 @@ import banana from '../../../assets/image/addition_banana.png'
 import guava from '../../../assets/image/addition_guava.png'
 import orange from '../../../assets/image/addition_orange.png'
 import pineapple from '../../../assets/image/addition_pineapple.png'
+import useAddStore from '../../../store/addStore';
 
 const Addition = () => {
     const fruits = [apple, banana, guava, orange, pineapple]
-    const [n_1, setN_1] = useState(0)
-    const [n_2, setN_2] = useState(0)
-    const [answer, setAnswer] = useState('?')
-    const [numbers, setNumbers] = useState([])
-    const [addArray, setAddArray] = useState([])
-    const [index, setIndex] = useState(0)
+    const {n_1,setN_1,n_2,setN_2,index,setIndex,numbers,setNumbers,answer,setAnswer,setAddArray,setArray_1,setArray_2,setDummyArray_1,setDummyArray_2,wrong,setWrong,wrongId,setWrongId} = useAddStore()
     const image = fruits[index]
-    const [array_1, setArray_1] = useState(MathMethod.dragArray(n_1, 'array_1'))
-    const [array_2, setArray_2] = useState(MathMethod.dragArray(n_2, 'array_2'))
-    const [dummyArray_1, setDummyArray_1] = useState([])
-    const [dummyArray_2, setDummyArray_2] = useState([])
-    const [wrong, setWrong] = useState(false)
-    const [wrongId, setWrongId] = useState(null)
     const handleAnswer = (addition, n, id) => {
         if (addition === n) {
             setAnswer(n)
@@ -31,18 +21,18 @@ const Addition = () => {
             const audio = new Audio(correct_ans_sound)
             audio.play()
             setTimeout(() => {
-                const n_1 = MathMethod.random(5)
-                const n_2 = MathMethod.random(5)
-                setN_1(n_1)
-                setN_2(n_2)
-                setNumbers(MathMethod.numbers(n_1 + n_2))
+                const gn_1 = MathMethod.random(5)
+                const gn_2 = MathMethod.random(5)
+                setN_1(gn_1)
+                setN_2(gn_2)
+                setNumbers(MathMethod.numbers(gn_1 + gn_2))
                 setAnswer('?')
                 setAddArray([])
                 setIndex(MathMethod.random(5))
-                setArray_1(MathMethod.dragArray(n_1, 'array_1'))
-                setArray_2(MathMethod.dragArray(n_2, 'array_2'))
-                setDummyArray_1(MathMethod.dummayArray(n_1))
-                setDummyArray_2(MathMethod.dummayArray(n_2))
+                setArray_1(MathMethod.dragArray(gn_1, 'array_1'))
+                setArray_2(MathMethod.dragArray(gn_2, 'array_2'))
+                setDummyArray_1(MathMethod.dummayArray(gn_1))
+                setDummyArray_2(MathMethod.dummayArray(gn_2))
                 setWrongId(null)
             }, 1000)
         } else {
@@ -57,24 +47,25 @@ const Addition = () => {
         }
     }
     useEffect(() => {
-        const n_1 = MathMethod.random(5)
-        const n_2 = MathMethod.random(5)
-        setN_1(n_1)
-        setN_2(n_2)
-        setNumbers(MathMethod.numbers(n_1 + n_2))
+        const gn_1 = MathMethod.random(5)
+        const gn_2 = MathMethod.random(5)
+        setN_1(gn_1)
+        setN_2(gn_2)
+        setNumbers(MathMethod.numbers(gn_1 + gn_2))
         setIndex(MathMethod.random(5))
-        setArray_1(MathMethod.dragArray(n_1, 'array_1'))
-        setArray_2(MathMethod.dragArray(n_2, 'array_2'))
-        setDummyArray_1(MathMethod.dummayArray(n_1))
-        setDummyArray_2(MathMethod.dummayArray(n_2))
-        console.log('from useEffect')
+        setAddArray([])
+        setArray_1(MathMethod.dragArray(gn_1, 'array_1'))
+        setArray_2(MathMethod.dragArray(gn_2, 'array_2'))
+        setDummyArray_1(MathMethod.dummayArray(gn_1))
+        setDummyArray_2(MathMethod.dummayArray(gn_2))
     }, [])
+    // console.log(n_1)
     return (
         <div
             className=''
         >
             <h2
-                className='p-2  fixed top-0 text-2xl bg-white w-full shadow'
+                className='p-2  fixed top-0 text-2xl bg-white w-full shadow z-10'
             >
                 যোগের খেলা
             </h2>
@@ -115,7 +106,7 @@ const Addition = () => {
                         )
                     }
                 </div>
-                <AdditionHelper {...{ image, array_1, setArray_1, array_2, setArray_2, dummyArray_1, dummyArray_2, addArray, setAddArray }} />
+                <AdditionHelper {...{ image }} />
             </div>
         </div>
     );

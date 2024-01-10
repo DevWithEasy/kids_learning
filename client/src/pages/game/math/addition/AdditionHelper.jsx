@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useDrop } from 'react-dnd';
 import DragNumber from './DragNumber';
+import useAddStore from '../../../../store/addStore';
 
-const AdditionHelper = ({ image, array_1, setArray_1, array_2, setArray_2, dummyArray_1, dummyArray_2, addArray, setAddArray }) => {
+const AdditionHelper = ({ image }) => {
+    const { array_1, array_2, dummyArray_1, dummyArray_2, addArray, dropItem, setArray_1, setArray_2 } = useAddStore()
     const [{ isOver }, drop] = useDrop(() => ({
         accept: 'number',
         drop: (item) => addItem(item),
@@ -12,22 +14,10 @@ const AdditionHelper = ({ image, array_1, setArray_1, array_2, setArray_2, dummy
     }))
 
     const addItem = (item) => {
-        if (item.array === 'array_1') {
-            setAddArray(prev=> {
-                return [...prev,item]
-            })
-            setArray_1(prev=>{
-                return prev.filter(i=> i._id != item._id)
-            })
-        } else if (item.array === 'array_2'){
-            setAddArray(prev=> {
-                return [...prev,item]
-            })
-            setArray_2(prev=>{
-                return prev.filter(i=> i._id != item._id)
-            })
-        }
+        dropItem(item)
     }
+    // console.log(array_1)
+    // console.log(array_2)
     return (
         <div
             className='flex flex-col md:flex-row justify-between bg-white  border rounded-md'
@@ -44,11 +34,11 @@ const AdditionHelper = ({ image, array_1, setArray_1, array_2, setArray_2, dummy
                             src={image}
                             className='w-10 mx-auto h-10 grayscale opacity-50'
                         />
-                        <p
-                            className='text-sm font-kalpurush text-center text-gray-500'
+                        <span
+                            className='block text-sm font-kalpurush text-center text-gray-500'
                         >
                             নিচের কলার সারি থেকে শেষ দিকে থেকে কলা গুলো টেনে এনে রাখ
-                        </p>
+                        </span>
                     </p>
                     :
                     addArray.map((item, i) =>
@@ -83,7 +73,7 @@ const AdditionHelper = ({ image, array_1, setArray_1, array_2, setArray_2, dummy
                         className='absolute top-5 flex items-center z-50 '
                     >
                         {array_1.map((item, i) =>
-                            <DragNumber key={i} {...{ item, image }} />
+                            <DragNumber key={i} {...{ item, image, yoyo: array_1.length === i + 1 ? 'yes' : 'no' }} />
                         )}
                     </div>
                 </div>
@@ -107,7 +97,7 @@ const AdditionHelper = ({ image, array_1, setArray_1, array_2, setArray_2, dummy
                         className='absolute top-5 flex items-center z-50'
                     >
                         {array_2.map((item, i) =>
-                            <DragNumber key={i} {...{ item, image }} />
+                            <DragNumber key={i} {...{ i, item, image, yoyo: array_2.length === i + 1 ? 'yes' : 'no' }} />
                         )}
                     </div>
                 </div>

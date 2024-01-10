@@ -1,11 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { isMobile } from 'react-device-detect';
-import { DndProvider } from 'react-dnd';
-import { HTML5Backend } from 'react-dnd-html5-backend';
-import { TouchBackend } from 'react-dnd-touch-backend';
+import bgSound from '../../../assets/background.mp3';
 import useWordStore from '../../../store/wordStore';
 import shuffleWord from '../../../utils/shuffleWord';
-import bgSound from '../../../assets/background.mp3';
 import Ans_Area from './Ans_Area';
 import QN_Area from './Qn_Area';
 

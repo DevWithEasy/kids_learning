@@ -1,8 +1,9 @@
 import React from 'react';
 import { useDrag } from 'react-dnd';
 import DragNumberPreview from './DragNumberPreview';
+import useAddStore from '../../../../store/addStore';
 
-const DragNumber = ({ item, image }) => {
+const DragNumber = ({yoyo, item, image }) => {
     const [{ isDragging }, drag] = useDrag(() => ({
         type: 'number',
         item: { ...item, image },
@@ -10,13 +11,13 @@ const DragNumber = ({ item, image }) => {
             isDragging: !!monitor.isDragging(),
         })
     }))
-    // console.log(image)
+    console.log(yoyo)
     return (
         <>
             <img
-                ref={drag}
+                ref={yoyo === 'yes' ? drag : null}
                 src={image}
-                className='w-10 h-10'
+                className={`w-10 h-10 ${isDragging && 'opacity-0'}`}
             />
             <DragNumberPreview />
         </>
