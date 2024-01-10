@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { motion } from 'framer-motion'
-import correct from '../../assets/correct0.png'
-import wrong from '../../assets/wrong0.png'
-import correctAudio from '../../assets/correct.mp3'
-import wrongAudio from '../../assets/wrong.mp3'
+import correct from '../../../assets/correct0.png'
+import wrong from '../../../assets/wrong0.png'
+import correctAudio from '../../../assets/correct.mp3'
+import wrongAudio from '../../../assets/wrong.mp3'
 
 const AnsAlert = ({ type, ansView, setAnsView }) => {
     const viewVarirnts={

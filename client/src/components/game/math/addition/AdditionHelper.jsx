@@ -4,7 +4,7 @@ import DragNumber from './DragNumber';
 import useAddStore from '../../../../store/addStore';
 
 const AdditionHelper = ({ image }) => {
-    const { array_1, array_2, dummyArray_1, dummyArray_2, addArray, dropItem, setArray_1, setArray_2 } = useAddStore()
+    const { array_1, array_2, dummyArray_1, dummyArray_2, addArray, dropItem } = useAddStore()
     const [{ isOver }, drop] = useDrop(() => ({
         accept: 'number',
         drop: (item) => addItem(item),
@@ -16,8 +16,7 @@ const AdditionHelper = ({ image }) => {
     const addItem = (item) => {
         dropItem(item)
     }
-    // console.log(array_1)
-    // console.log(array_2)
+
     return (
         <div
             className='flex flex-col md:flex-row justify-between bg-white  border rounded-md'
@@ -37,7 +36,7 @@ const AdditionHelper = ({ image }) => {
                         <span
                             className='block text-sm font-kalpurush text-center text-gray-500'
                         >
-                            নিচের কলার সারি থেকে শেষ দিকে থেকে কলা গুলো টেনে এনে রাখ
+                            নিচের ফলের সারি থেকে শেষ দিকে থেকে ফল গুলো টেনে এনে রাখ
                         </span>
                     </p>
                     :

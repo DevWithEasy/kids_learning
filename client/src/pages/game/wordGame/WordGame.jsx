@@ -2,8 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import bgSound from '../../../assets/background.mp3';
 import useWordStore from '../../../store/wordStore';
 import shuffleWord from '../../../utils/shuffleWord';
-import Ans_Area from './Ans_Area';
-import QN_Area from './Qn_Area';
+import { Ans_Area, QN_Area } from '../../../components/Index';
 
 const WordGame = () => {
     const game = useRef()

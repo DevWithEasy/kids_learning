@@ -17,7 +17,7 @@ const GameLayout = ({ children }) => {
     return (
         <DndProvider backend={isMobile ? TouchBackend : HTML5Backend}>
             <div
-                className='h-screen pt-12 pb-5 font-kalpurush overflow-y-auto bg-gray-100'
+                className='h-screen pt-12 font-kalpurush overflow-y-auto bg-gray-100'
             >
                 {children}
                 <audio ref={audioRef} src={bgSound} loop />
