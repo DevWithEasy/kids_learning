@@ -1,13 +1,23 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import correct_ans_sound from '../../../assets/correct.mp3';
 import wrong_ans_sound from '../../../assets/game_wrong_answer.mp3';
 import { A_NumberArea, AdditionHelper, Q_NumberArea } from '../../../components/Index';
-import useAddStore from '../../../store/addStore';
 import MathMethod from '../../../utils/game/MathMethod';
 import fruits from '../../../utils/fruits';
 
 const Addition = () => {
-    const {n_1,setN_1,n_2,setN_2,index,setIndex,numbers,setNumbers,answer,setAnswer,setAddArray,setArray_1,setArray_2,setDummyArray_1,setDummyArray_2,wrong,setWrong,wrongId,setWrongId} = useAddStore()
+    const [n_1,setN_1] = useState(0)
+    const [n_2,setN_2] = useState(0)
+    const [index,setIndex] = useState(0)
+    const [numbers,setNumbers] = useState([])
+    const [array_1,setArray_1] = useState([])
+    const [array_2,setArray_2] = useState([])
+    const [dummyArray_1,setDummyArray_1] = useState([])
+    const [dummyArray_2,setDummyArray_2] = useState([])
+    const [wrong,setWrong] = useState(false)
+    const [wrongId,setWrongId] = useState(null)
+    const [answer,setAnswer] = useState('?')
+    const [addArray,setAddArray] = useState([])
     const image = fruits[index]
     const handleAnswer = (addition, n, id) => {
         if (addition === n) {
@@ -41,6 +51,7 @@ const Addition = () => {
             }, 500)
         }
     }
+
     useEffect(() => {
         const gn_1 = MathMethod.random(5)
         const gn_2 = MathMethod.random(5)
@@ -54,7 +65,7 @@ const Addition = () => {
         setDummyArray_1(MathMethod.dummayArray(gn_1))
         setDummyArray_2(MathMethod.dummayArray(gn_2))
     }, [])
-    // console.log(n_1)
+    
     return (
         <div
             className=''
@@ -84,7 +95,11 @@ const Addition = () => {
                 }}/>
 
                 <AdditionHelper {...{ 
-                    image
+                    image,
+                    array_1,setArray_1,
+                    array_2,setArray_2,
+                    dummyArray_1,dummyArray_2,
+                    addArray,setAddArray
                 }} />
             </div>
         </div>

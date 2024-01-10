@@ -6,7 +6,7 @@ const Menu = ({ view, setView }) => {
     const navigate = useNavigate()
     return (
         <div
-            className='fixed top-0 left-0 h-screen w-full py-10 flex justify-center bg-gray-500/50 font-kalpurush'
+            className='fixed top-0 left-0 h-screen w-full py-10 flex justify-center bg-gray-500/50 font-kalpurush z-50'
         >
             <div
                 className='relative h-full w-full mx-5 bg-white rounded-md shadow-md'

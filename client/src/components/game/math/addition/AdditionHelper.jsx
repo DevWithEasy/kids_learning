@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useDrop } from 'react-dnd';
 import DragNumber from './DragNumber';
-import useAddStore from '../../../../store/addStore';
 
-const AdditionHelper = ({ image }) => {
-    const { array_1, array_2, dummyArray_1, dummyArray_2, addArray, dropItem } = useAddStore()
+const AdditionHelper = ({
+    image,
+    array_1, setArray_1,
+    array_2, setArray_2,
+    dummyArray_1, dummyArray_2,
+    addArray, setAddArray
+}) => {
     const [{ isOver }, drop] = useDrop(() => ({
         accept: 'number',
         drop: (item) => addItem(item),
@@ -14,7 +18,26 @@ const AdditionHelper = ({ image }) => {
     }))
 
     const addItem = (item) => {
-        dropItem(item)
+        // dropItem(item)
+        if (item.array === 'array_1') {
+            setAddArray(prev=>{
+                return [...prev,item]
+            })
+            setArray_1(prev=>{
+                const newArray = [...prev]
+                newArray.pop()
+                return [...newArray]
+            })
+        } else if (item.array === 'array_2') {
+            setAddArray(prev=>{
+                return [...prev,item]
+            })
+            setArray_2(prev=>{
+                const newArray = [...prev]
+                newArray.pop()
+                return [...newArray]
+            })
+        }
     }
 
     return (

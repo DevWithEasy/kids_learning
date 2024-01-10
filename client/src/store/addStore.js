@@ -44,9 +44,9 @@ const addStore = (set) => ({
             numbers: n_array
         }))
     },
-    setAddArray: () => {
+    setAddArray: (n_array) => {
         set((state) => ({
-            addArray: []
+            addArray: n_array
         }))
     },
     setArray_1: (n_array) => {
