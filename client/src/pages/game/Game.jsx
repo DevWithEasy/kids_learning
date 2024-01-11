@@ -1,12 +1,107 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import addition from '../../assets/image/add.png'
-import minus from '../../assets/image/minus.png'
 import strawberry from '../../assets/image/strawberry.png'
 import { arabic, bangla, color, days, english, math, month, season } from '../../utils/homeImages';
 
 const Game = () => {
     const navigate = useNavigate()
+    const lists = [
+        {
+            title: 'শব্দ শুনে বর্ণ খুজি',
+            paths: [
+                {
+                    title: 'আরবি',
+                    image: arabic,
+                    path: '/game/alphabet/ar'
+                },
+                {
+                    title: 'বাংলা',
+                    image: bangla,
+                    path: '/game/alphabet/bn'
+                },
+                {
+                    title: 'ইংরেজি',
+                    image: english,
+                    path: '/game/alphabet/en'
+                },
+                {
+                    title: 'অংক (নাম্বার বাংলা)',
+                    image: math,
+                    path: '/game/alphabet/'
+                },
+                {
+                    title: 'অংক (নাম্বার ইংরেজি)',
+                    image: math,
+                    path: '/game/alphabet/'
+                },
+            ]
+        },
+        {
+            title: 'শব্দ বানান মিলাই',
+            paths: [
+                {
+                    title: 'বাংলা',
+                    image: bangla,
+                    path: '/game/alphabet/'
+                },
+                {
+                    title: 'ইংরেজি',
+                    image: english,
+                    path: '/game/alphabet/'
+                },
+                {
+                    title: 'অংক (নাম্বার বাংলা)',
+                    image: math,
+                    path: '/game/alphabet/'
+                },
+                {
+                    title: 'অংক (নাম্বার ইংরেজি)',
+                    image: math,
+                    path: '/game/alphabet/'
+                },
+                {
+                    title: 'সাতদিনের নাম (বাংলা)',
+                    image: days,
+                    path: '/game/alphabet/'
+                },
+                {
+                    title: 'সাতদিনের নাম (ইংরেজি)',
+                    image: days,
+                    path: '/game/alphabet/'
+                },
+                {
+                    title: 'বার মাসের নাম (বাংলা)',
+                    image: month,
+                    path: '/game/alphabet/'
+                },
+                {
+                    title: 'বার মাসের নাম (ইংরেজি)',
+                    image: month,
+                    path: '/game/alphabet/'
+                },
+                {
+                    title: 'ঋতুর নাম (বাংলা)',
+                    image: season,
+                    path: '/game/alphabet/'
+                },
+                {
+                    title: 'ঋতুর নাম নাম (ইংরেজি)',
+                    image: season,
+                    path: '/game/alphabet/'
+                },
+                {
+                    title: 'রং নাম (বাংলা)',
+                    image: color,
+                    path: '/game/alphabet/'
+                },
+                {
+                    title: 'রং নাম (ইংরেজি)',
+                    image: color,
+                    path: '/game/alphabet/'
+                },
+            ]
+        }
+    ]
     return (
         <div
             className='p-2 space-y-2'
@@ -105,261 +200,40 @@ const Game = () => {
                     </p>
                 </div>
             </div>
-            <h2
-                className='p-2 text-2xl font-bold border-b-2 border-white'
-            >
-                শব্দ শুনে বর্ণ খুজি
-            </h2>
-            <div
-                className='grid grid-cols-2 md:grid-cols-8 gap-4 text-xl'
-            >
-                <div
-                    onClick={() => navigate('')}
-                    className="p-4 flex flex-col items-center space-y-4 bg-white border rounded-md cursor-pointer"
-                >
-                    <img
-                        src={arabic}
-                        className="w-16 h-16"
-                    />
-                    <p
-                        className=""
-                    >
-                        আরবি
-                    </p>
-                </div>
-                <div
-                    onClick={() => navigate('')}
-                    className="p-4 flex flex-col items-center space-y-4 bg-white border rounded-md cursor-pointer"
-                >
-                    <img
-                        src={bangla}
-                        className="w-16 h-16"
-                    />
-                    <p
-                        className=""
-                    >
-                        বাংলা
-                    </p>
-                </div>
-                <div
-                    onClick={() => navigate('')}
-                    className="p-4 flex flex-col items-center space-y-4 bg-white border rounded-md cursor-pointer"
-                >
-                    <img
-                        src={english}
-                        className="w-16 h-16"
-                    />
-                    <p
-                        className=""
-                    >
-                        ইংরেজি
-                    </p>
-                </div>
-                <div
-                    onClick={() => navigate('')}
-                    className="p-4 flex flex-col items-center space-y-4 bg-white border rounded-md cursor-pointer"
-                >
-                    <img
-                        src={math}
-                        className="w-16 h-16"
-                    />
-                    <p
-                        className=""
-                    >
-                        অংক (নাম্বার বাংলা)
-                    </p>
-                </div>
-                <div
-                    onClick={() => navigate('')}
-                    className="p-4 flex flex-col items-center space-y-4 bg-white border rounded-md cursor-pointer"
-                >
-                    <img
-                        src={math}
-                        className="w-16 h-16"
-                    />
-                    <p
-                        className=""
-                    >
-                        অংক (নাম্বার ইংরেজি)
-                    </p>
-                </div>
-            </div>
-            <h2
-                className='p-2 text-2xl font-bold border-b-2 border-white'
-            >
-                শব্দ বানান মিলাই
-            </h2>
-            <div
-                className='grid grid-cols-2 md:grid-cols-8 gap-4 text-xl'
-            >
-                <div
-                    onClick={() => navigate('')}
-                    className="p-4 flex flex-col items-center space-y-4 bg-white border rounded-md cursor-pointer"
-                >
-                    <img
-                        src={bangla}
-                        className="w-16 h-16"
-                    />
-                    <p
-                        className=""
-                    >
-                        বাংলা
-                    </p>
-                </div>
-                <div
-                    onClick={() => navigate('')}
-                    className="p-4 flex flex-col items-center space-y-4 bg-white border rounded-md cursor-pointer"
-                >
-                    <img
-                        src={english}
-                        className="w-16 h-16"
-                    />
-                    <p
-                        className=""
-                    >
-                        ইংরেজি
-                    </p>
-                </div>
-                <div
-                    onClick={() => navigate('')}
-                    className="p-4 flex flex-col items-center space-y-4 bg-white border rounded-md cursor-pointer"
-                >
-                    <img
-                        src={math}
-                        className="w-16 h-16"
-                    />
-                    <p
-                        className=""
-                    >
-                        অংক (নাম্বার বাংলা)
-                    </p>
-                </div>
-                <div
-                    onClick={() => navigate('')}
-                    className="p-4 flex flex-col items-center space-y-4 bg-white border rounded-md cursor-pointer"
-                >
-                    <img
-                        src={math}
-                        className="w-16 h-16"
-                    />
-                    <p
-                        className=""
-                    >
-                        অংক (নাম্বার ইংরেজি)
-                    </p>
-                </div>
-                <div
-                    onClick={() => navigate('')}
-                    className="p-4 flex flex-col items-center space-y-4 bg-white border rounded-md cursor-pointer"
-                >
-                    <img
-                        src={days}
-                        className="w-16 h-16"
-                    />
-                    <p
-                        className=""
-                    >
-                        সাতদিনের নাম (বাংলা)
-                    </p>
-                </div>
-                <div
-                    onClick={() => navigate('')}
-                    className="p-4 flex flex-col items-center space-y-4 bg-white border rounded-md cursor-pointer"
-                >
-                    <img
-                        src={days}
-                        className="w-16 h-16"
-                    />
-                    <p
-                        className=""
-                    >
-                        সাতদিনের নাম (ইংরেজি)
-                    </p>
-                </div>
-                <div
-                    onClick={() => navigate('')}
-                    className="p-4 flex flex-col items-center space-y-4 bg-white border rounded-md cursor-pointer"
-                >
-                    <img
-                        src={month}
-                        className="w-16 h-16"
-                    />
-                    <p
-                        className=""
-                    >
-                        বার মাসের নাম (বাংলা)
-                    </p>
-                </div>
-                <div
-                    onClick={() => navigate('')}
-                    className="p-4 flex flex-col items-center space-y-4 bg-white border rounded-md cursor-pointer"
-                >
-                    <img
-                        src={month}
-                        className="w-16 h-16"
-                    />
-                    <p
-                        className=""
-                    >
-                        বার মাসের নাম (ইংরেজি)
-                    </p>
-                </div>
-                <div
-                    onClick={() => navigate('')}
-                    className="p-4 flex flex-col items-center space-y-4 bg-white border rounded-md cursor-pointer"
-                >
-                    <img
-                        src={season}
-                        className="w-16 h-16"
-                    />
-                    <p
-                        className=""
-                    >
-                        ঋতুর নাম (বাংলা)
-                    </p>
-                </div>
-                <div
-                    onClick={() => navigate('')}
-                    className="p-4 flex flex-col items-center space-y-4 bg-white border rounded-md cursor-pointer"
-                >
-                    <img
-                        src={season}
-                        className="w-16 h-16"
-                    />
-                    <p
-                        className=""
-                    >
-                        ঋতুর নাম নাম (ইংরেজি)
-                    </p>
-                </div>
-                <div
-                    onClick={() => navigate('')}
-                    className="p-4 flex flex-col items-center space-y-4 bg-white border rounded-md cursor-pointer"
-                >
-                    <img
-                        src={color}
-                        className="w-16 h-16"
-                    />
-                    <p
-                        className=""
-                    >
-                        রং নাম (বাংলা)
-                    </p>
-                </div>
-                <div
-                    onClick={() => navigate('')}
-                    className="p-4 flex flex-col items-center space-y-4 bg-white border rounded-md cursor-pointer"
-                >
-                    <img
-                        src={color}
-                        className="w-16 h-16"
-                    />
-                    <p
-                        className=""
-                    >
-                        রং নাম (ইংরেজি)
-                    </p>
-                </div>
+            <div>
+                {
+                    lists.map((list, i) =>
+                        <div
+                            className='space-y-2'
+                        >
+                            <h2
+                                className='p-2 text-2xl font-bold border-b-2 border-white'
+                            >
+                                {list.title}
+                            </h2>
+                            <div
+                                className='grid grid-cols-2 md:grid-cols-8 gap-4 text-xl'
+                            >
+                                {
+                                    list.paths.map((path, i) => <div
+                                        onClick={() => navigate(path.path)}
+                                        className="p-4 flex flex-col items-center space-y-4 bg-white border rounded-md cursor-pointer"
+                                    >
+                                        <img
+                                            src={path.image}
+                                            className="w-16 h-16"
+                                        />
+                                        <p
+                                            className=""
+                                        >
+                                            {path.title}
+                                        </p>
+                                    </div>)
+                                }
+                            </div>
+                        </div>
+                    )
+                }
             </div>
         </div>
     );

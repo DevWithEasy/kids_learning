@@ -29,6 +29,7 @@ import Bangla from "./bangla/Bangla";
 import Day from "./day/day";
 import Days from "./day/days";
 import English from "./english/English";
+import AlphabetMatch from "./game/AlphabetMatch/AlphabetMatch";
 import Game from "./game/Game";
 import WordGame from "./game/WordGame/WordGame";
 import Addition from "./game/math/Addition";
@@ -42,5 +43,5 @@ import Season from "./season/Season";
 import Seasons from "./season/Seasons";
 import WhiteBoard from "./whiteBoard/WhiteBoard";
 
-export { GameLayout,Game,Addition,Substraction,AdminDays, AdminMonths, AdminSeasons, Alphabets, AlphabetsDetails, ArAllAlphabet, ArUpdateAlphabet, Arabic, Bangla, BnAllAlphabet, BnUpdateAlphabet, Color, Dashboard, Day, Days, DaysUpdate, EnAllAlphabet, EnUpdateAlphabet, English, Home, Layout, Layout_Admin, Mathematics, Month, MonthUpdate, Months, MultipicationTable, MultipicationTables, Number, NumberUpdate, Season, SeasonUpdate, Seasons, SignIn, Signup, Welcome, WhiteBoard, WordGame, WritingBoard };
+export { AlphabetMatch,GameLayout,Game,Addition,Substraction,AdminDays, AdminMonths, AdminSeasons, Alphabets, AlphabetsDetails, ArAllAlphabet, ArUpdateAlphabet, Arabic, Bangla, BnAllAlphabet, BnUpdateAlphabet, Color, Dashboard, Day, Days, DaysUpdate, EnAllAlphabet, EnUpdateAlphabet, English, Home, Layout, Layout_Admin, Mathematics, Month, MonthUpdate, Months, MultipicationTable, MultipicationTables, Number, NumberUpdate, Season, SeasonUpdate, Seasons, SignIn, Signup, Welcome, WhiteBoard, WordGame, WritingBoard };
 
