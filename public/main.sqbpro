@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/WebDevelopment/kids_learning/public/main.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="1806"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,3:mainDay"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="ArAlphabet" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="40"/><column index="2" value="68"/><column index="3" value="45"/><column index="4" value="41"/><column index="5" value="68"/><column index="7" value="110"/><column index="8" value="91"/><column index="9" value="43"/><column index="10" value="43"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Day" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="40"/><column index="2" value="68"/><column index="3" value="43"/><column index="4" value="40"/><column index="5" value="46"/><column index="6" value="43"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">CREATE TABLE Fola (
+    id SERIAL PRIMARY KEY,
+    order_no INTEGER NOT NULL,
+    letter VARCHAR(255) NOT NULL,
+    name VARCHAR(255) UNIQUE NOT NULL,
+    audio BLOB NOT NULL
+);
+
+CREATE TABLE FolaExample (
+    id SERIAL PRIMARY KEY,
+    fola_id INTEGER NOT NULL,
+    example_text VARCHAR(255) NOT NULL,
+    FOREIGN KEY (fola_id) REFERENCES Fola(id)
+);
+
+CREATE TABLE Kar (
+    id SERIAL PRIMARY KEY,
+    order_no INTEGER NOT NULL,
+    letter VARCHAR(255) NOT NULL,
+    kar VARCHAR(255) NOT NULL,
+    image BLOB NOT NULL,
+    audio BLOB NOT NULL
+);
+
+CREATE TABLE KarLetter (
+    id SERIAL PRIMARY KEY,
+    kar_id INTEGER NOT NULL,
+    kar_letter VARCHAR(255) NOT NULL,
+    FOREIGN KEY (kar_id) REFERENCES Kar(id)
+);
+
+CREATE TABLE KarWord (
+    id SERIAL PRIMARY KEY,
+    kar_id INTEGER NOT NULL,
+    kar_word VARCHAR(255) NOT NULL,
+    FOREIGN KEY (kar_id) REFERENCES Kar(id)
+);
+
+CREATE TABLE Month (
+    id SERIAL PRIMARY KEY,
+    order_no INTEGER NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    punctuation VARCHAR(255),
+    lang VARCHAR(255) NOT NULL,
+    image BLOB NOT NULL,
+    audio BLOB NOT NULL
+);
+
+CREATE TABLE Number (
+    id SERIAL PRIMARY KEY,
+    letter VARCHAR(255) NOT NULL,
+    punctuation VARCHAR(255) NOT NULL,
+    lang VARCHAR(255) NOT NULL,
+    audio BLOB NOT NULL
+);
+
+CREATE TABLE PunctuationMark (
+    id SERIAL PRIMARY KEY,
+    order_no INTEGER NOT NULL,
+    name VARCHAR(255) UNIQUE NOT NULL,
+    mark VARCHAR(255) NOT NULL,
+    use_case VARCHAR(255) NOT NULL,
+    audio BLOB NOT NULL
+);
+
+CREATE TABLE PunctuationExample (
+    id SERIAL PRIMARY KEY,
+    punctuation_id INTEGER NOT NULL,
+    example_text VARCHAR(255) NOT NULL,
+    FOREIGN KEY (punctuation_id) REFERENCES PunctuationMark(id)
+);
+
+CREATE TABLE Season (
+    id SERIAL PRIMARY KEY,
+    order_no INTEGER NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    lang VARCHAR(255) NOT NULL,
+    image BLOB NOT NULL,
+    audio BLOB NOT NULL
+);
+
+
+
+
+
+
+</sql><current_tab id="0"/></tab_sql></sqlb_project>

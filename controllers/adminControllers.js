@@ -1,3 +1,4 @@
+const SQLdb = require("../config/SQLdb")
 const ArAlphabet = require("../models/ArAlphabet")
 const BnAlphabet = require("../models/BnAlphabet")
 const Color = require("../models/Color")
@@ -222,31 +223,46 @@ exports.numberUpdate = async (req, res, next) => {
 }
 const fs = require('fs')
 const path = require('path')
+
 exports.apply = async (req, res, next) => {
     try {
-        // banglaOkkor.fola
-        // .forEach(async(p)=>{
-        //     const new_punc = new Fola({
-        //         ...p
-        //     })
-        //     await new_punc.save()
-        // })
+        const collection = await PuncuationMark.find()
 
-        fs.readFile('public/audio/ar1.mp3',(error,data)=>{
-            if(error){
+        collection.forEach(element => {
+
+            // SQL INSERT query
+            const sql = `INSERT INTO PunctuationMark (order_no, name, mark, use_case, audio)
+               VALUES (?, ?, ?, ?, ?)`;
+            let image;
+            let audio;
+            try {
+                // Read the file synchronously
+                // image = fs.readFileSync(`public/${element.image}`);
+                audio = fs.readFileSync(`public/${element.audio}`);
+            } catch (error) {
                 return res.status(500).json({
                     success: false,
                     status: 500,
                     message: error.message
-                })
-            }else{
-                return res.status(200).json({
-                    data
-                })
+                });
             }
+
+            SQLdb.run(sql, [
+               
+                element.order_no, element.name, element.mark,element.use_case,
+                audio
+            ], (err) => {
+                if (err) {
+                    console.error('Error inserting data:', err.message);
+                } else {
+                    console.log('Data inserted successfully');
+                }
+            })
         })
 
-        
+
+        return res.status(200).json(collection)
+
     } catch (error) {
         return res.status(500).json({
             success: false,
@@ -278,14 +294,14 @@ exports.getColors = async (req, res, next) => {
 
 exports.getDays = async (req, res, next) => {
     try {
-        const {q} = req.query
-        const data = await Day.find({lang : q})
+        const { q } = req.query
+        const data = await Day.find({ lang: q })
 
         return res.status(200).json({
             success: true,
             status: 200,
             message: 'Successfully updated.',
-            data : data.sort((a,b)=> a?.order_no - b?.order_no)
+            data: data.sort((a, b) => a?.order_no - b?.order_no)
         })
     } catch (error) {
         return res.status(500).json({
@@ -298,14 +314,14 @@ exports.getDays = async (req, res, next) => {
 
 exports.getMonth = async (req, res, next) => {
     try {
-        const {q} = req.query
-        const data = await Month.find({lang : q})
+        const { q } = req.query
+        const data = await Month.find({ lang: q })
 
         return res.status(200).json({
             success: true,
             status: 200,
             message: 'Successfully updated.',
-            data : data.sort((a,b)=> a?.order_no - b?.order_no)
+            data: data.sort((a, b) => a?.order_no - b?.order_no)
         })
     } catch (error) {
         return res.status(500).json({
@@ -318,14 +334,14 @@ exports.getMonth = async (req, res, next) => {
 
 exports.getSeason = async (req, res, next) => {
     try {
-        const {q} = req.query
-        const data = await Season.find({lang : q})
+        const { q } = req.query
+        const data = await Season.find({ lang: q })
 
         return res.status(200).json({
             success: true,
             status: 200,
             message: 'Successfully updated.',
-            data : data.sort((a,b)=> a?.order_no - b?.order_no)
+            data: data.sort((a, b) => a?.order_no - b?.order_no)
         })
     } catch (error) {
         return res.status(500).json({

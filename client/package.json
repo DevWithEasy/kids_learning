@@ -13,6 +13,7 @@
     "axios": "^1.6.3",
     "bengali-number": "^1.1.0",
     "framer-motion": "^10.16.16",
+    "helmet": "^7.1.0",
     "react": "^18.2.0",
     "react-device-detect": "^2.2.3",
     "react-dnd": "^16.0.1",
