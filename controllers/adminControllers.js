@@ -220,7 +220,8 @@ exports.numberUpdate = async (req, res, next) => {
         })
     }
 }
-
+const fs = require('fs')
+const path = require('path')
 exports.apply = async (req, res, next) => {
     try {
         // banglaOkkor.fola
@@ -231,11 +232,21 @@ exports.apply = async (req, res, next) => {
         //     await new_punc.save()
         // })
 
-        return res.status(200).json({
-            success : true,
-            status : 200,
-            message : 'Successfully updated.'
+        fs.readFile('public/audio/ar1.mp3',(error,data)=>{
+            if(error){
+                return res.status(500).json({
+                    success: false,
+                    status: 500,
+                    message: error.message
+                })
+            }else{
+                return res.status(200).json({
+                    data
+                })
+            }
         })
+
+        
     } catch (error) {
         return res.status(500).json({
             success: false,
