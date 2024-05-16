@@ -226,39 +226,39 @@ const path = require('path')
 
 exports.apply = async (req, res, next) => {
     try {
-        const collection = await PuncuationMark.find()
+        const collection = await BnAlphabet.find().sort({order_no : 1})
 
-        collection.forEach(element => {
+        // collection.forEach(element => {
 
-            // SQL INSERT query
-            const sql = `INSERT INTO PunctuationMark (order_no, name, mark, use_case, audio)
-               VALUES (?, ?, ?, ?, ?)`;
-            let image;
-            let audio;
-            try {
-                // Read the file synchronously
-                // image = fs.readFileSync(`public/${element.image}`);
-                audio = fs.readFileSync(`public/${element.audio}`);
-            } catch (error) {
-                return res.status(500).json({
-                    success: false,
-                    status: 500,
-                    message: error.message
-                });
-            }
+        //     // SQL INSERT query
+        //     const sql = `INSERT INTO PunctuationMark (order_no, name, mark, use_case, audio)
+        //        VALUES (?, ?, ?, ?, ?)`;
+        //     let image;
+        //     let audio;
+        //     try {
+        //         // Read the file synchronously
+        //         // image = fs.readFileSync(`public/${element.image}`);
+        //         audio = fs.readFileSync(`public/${element.audio}`);
+        //     } catch (error) {
+        //         return res.status(500).json({
+        //             success: false,
+        //             status: 500,
+        //             message: error.message
+        //         });
+        //     }
 
-            SQLdb.run(sql, [
+        //     SQLdb.run(sql, [
                
-                element.order_no, element.name, element.mark,element.use_case,
-                audio
-            ], (err) => {
-                if (err) {
-                    console.error('Error inserting data:', err.message);
-                } else {
-                    console.log('Data inserted successfully');
-                }
-            })
-        })
+        //         element.order_no, element.name, element.mark,element.use_case,
+        //         audio
+        //     ], (err) => {
+        //         if (err) {
+        //             console.error('Error inserting data:', err.message);
+        //         } else {
+        //             console.log('Data inserted successfully');
+        //         }
+        //     })
+        // })
 
 
         return res.status(200).json(collection)
