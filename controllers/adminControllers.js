@@ -226,20 +226,20 @@ const path = require('path')
 
 exports.apply = async (req, res, next) => {
     try {
-        const collection = await Fola.find().sort({ order_no: 1 })
+        const collection = await ArAlphabet.find().sort({ order_no: 1 })
 
         // collection.forEach(element => {
 
         //     // SQL INSERT query
-        //     const sql = `INSERT INTO Season (order_no, name, lang, image, audio)
-        //        VALUES (?, ?, ?, ?, ?)`;
-        //     let image;
+        //     const sql = `INSERT INTO ArAlphabet (order_no, letter, start_position, center_position, end_position, audio, video)
+        //        VALUES (?, ?, ?, ?, ?, ?, ?)`;
+        //     let video;
         //     let audio;
         //     try {
         //         // Read the file synchronously
-        //         image = fs.readFileSync(`public/${element.image}`);
+        //         // image = fs.readFileSync(`public/${element.image}`);
         //         audio = fs.readFileSync(`public/${element.audio}`);
-        //         // video = fs.readFileSync(`public/${element.video}`);
+        //         video = fs.readFileSync(`public/${element.video}`);
         //     } catch (error) {
         //         return res.status(500).json({
         //             success: false,
@@ -250,10 +250,12 @@ exports.apply = async (req, res, next) => {
         //     // Run SQL statement
         //     SQLdb.run(sql, [
         //         element.order_no, 
-        //         element.name, 
-        //         element.lang,
-        //         image, 
-        //         audio
+        //         element.letter, 
+        //         element.position.start,
+        //         element.position.center,
+        //         element.position.end,
+        //         audio, 
+        //         video
         //     ], (err) => {
         //         if (err) {
         //             console.error('Error inserting data:', err.message);
