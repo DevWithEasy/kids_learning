@@ -263,22 +263,22 @@ exports.apply = async (req, res, next) => {
         //     })
         // })
 
-        collection.forEach(elm => {
-            elm.examples.forEach(ex => {
-                const sql = 'INSERT INTO FolaExample (fola_id, example_text)  VALUES (?, ?)'
-                // Run SQL statement
-                SQLdb.run(sql, [
-                    elm.order_no,
-                    ex,
-                ], (err) => {
-                    if (err) {
-                        console.error('Error inserting data:', err.message);
-                    } else {
-                        console.log('Data inserted successfully');
-                    }
-                })
-            })
-        })
+        // collection.forEach(elm => {
+        //     elm.examples.forEach(ex => {
+        //         const sql = 'INSERT INTO FolaExample (fola_id, example_text)  VALUES (?, ?)'
+        //         // Run SQL statement
+        //         SQLdb.run(sql, [
+        //             elm.order_no,
+        //             ex,
+        //         ], (err) => {
+        //             if (err) {
+        //                 console.error('Error inserting data:', err.message);
+        //             } else {
+        //                 console.log('Data inserted successfully');
+        //             }
+        //         })
+        //     })
+        // })
 
         return res.status(200).json(collection)
 
