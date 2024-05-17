@@ -226,19 +226,20 @@ const path = require('path')
 
 exports.apply = async (req, res, next) => {
     try {
-        const collection = await BnAlphabet.find().sort({order_no : 1})
+        const collection = await Fola.find().sort({ order_no: 1 })
 
         // collection.forEach(element => {
 
         //     // SQL INSERT query
-        //     const sql = `INSERT INTO PunctuationMark (order_no, name, mark, use_case, audio)
+        //     const sql = `INSERT INTO Season (order_no, name, lang, image, audio)
         //        VALUES (?, ?, ?, ?, ?)`;
         //     let image;
         //     let audio;
         //     try {
         //         // Read the file synchronously
-        //         // image = fs.readFileSync(`public/${element.image}`);
+        //         image = fs.readFileSync(`public/${element.image}`);
         //         audio = fs.readFileSync(`public/${element.audio}`);
+        //         // video = fs.readFileSync(`public/${element.video}`);
         //     } catch (error) {
         //         return res.status(500).json({
         //             success: false,
@@ -246,10 +247,12 @@ exports.apply = async (req, res, next) => {
         //             message: error.message
         //         });
         //     }
-
+        //     // Run SQL statement
         //     SQLdb.run(sql, [
-               
-        //         element.order_no, element.name, element.mark,element.use_case,
+        //         element.order_no, 
+        //         element.name, 
+        //         element.lang,
+        //         image, 
         //         audio
         //     ], (err) => {
         //         if (err) {
@@ -260,6 +263,22 @@ exports.apply = async (req, res, next) => {
         //     })
         // })
 
+        collection.forEach(elm => {
+            elm.examples.forEach(ex => {
+                const sql = 'INSERT INTO FolaExample (fola_id, example_text)  VALUES (?, ?)'
+                // Run SQL statement
+                SQLdb.run(sql, [
+                    elm.order_no,
+                    ex,
+                ], (err) => {
+                    if (err) {
+                        console.error('Error inserting data:', err.message);
+                    } else {
+                        console.log('Data inserted successfully');
+                    }
+                })
+            })
+        })
 
         return res.status(200).json(collection)
 
