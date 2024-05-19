@@ -1,2 +1,4 @@
 node_modules
 .env
+public/main.db
+public/main.sqbpro
