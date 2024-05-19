@@ -1,0 +1,143 @@
+CREATE TABLE ArAlphabet (
+    id SERIAL PRIMARY KEY,
+    order_no INTEGER NOT NULL,
+    letter VARCHAR(255) UNIQUE NOT NULL,
+    start_position VARCHAR(255),
+    center_position VARCHAR(255),
+    end_position VARCHAR(255),
+    audio BLOB NOT NULL,
+    video BLOB NOT NULL
+);
+
+CREATE TABLE BnAlphabet (
+    id SERIAL PRIMARY KEY,
+    order_no INTEGER NOT NULL,
+    letter VARCHAR(255) UNIQUE NOT NULL,
+    word VARCHAR(255),
+    sentence VARCHAR(255),
+    vowel BOOLEAN NOT NULL,
+    image BLOB NOT NULL,
+    audio BLOB NOT NULL,
+    video BLOB NOT NULL
+);
+
+CREATE TABLE Color (
+    id SERIAL PRIMARY KEY,
+    bn_name VARCHAR(255) NOT NULL,
+    en_name VARCHAR(255) NOT NULL,
+    code VARCHAR(255) NOT NULL,
+    image BLOB NOT NULL,
+    audio BLOB NOT NULL
+);
+
+CREATE TABLE Day (
+    id SERIAL PRIMARY KEY,
+    order_no INTEGER NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    lang VARCHAR(255) NOT NULL,
+    image BLOB NOT NULL,
+    audio BLOB NOT NULL
+);
+
+CREATE TABLE EnAlphabet (
+    id SERIAL PRIMARY KEY,
+    order_no INTEGER NOT NULL,
+    capital VARCHAR(255) NOT NULL,
+    small VARCHAR(255) NOT NULL,
+    word VARCHAR(255),
+    sentence VARCHAR(255),
+    image BLOB NOT NULL,
+    audio BLOB NOT NULL,
+    video BLOB NOT NULL, 
+    meaning VARCHAR(255)
+);
+
+
+CREATE TABLE Fola (
+    id SERIAL PRIMARY KEY,
+    order_no INTEGER NOT NULL,
+    letter VARCHAR(255) NOT NULL,
+    name VARCHAR(255) UNIQUE NOT NULL,
+    audio BLOB NOT NULL
+);
+
+
+CREATE TABLE FolaExample (
+    id SERIAL PRIMARY KEY,
+    fola_id INTEGER NOT NULL,
+    example_text VARCHAR(255) NOT NULL,
+    FOREIGN KEY (fola_id) REFERENCES Fola(id)
+);
+
+
+CREATE TABLE Kar (
+    id SERIAL PRIMARY KEY,
+    order_no INTEGER NOT NULL,
+    letter VARCHAR(255) NOT NULL,
+    kar VARCHAR(255) NOT NULL,
+    image BLOB NOT NULL,
+    audio BLOB NOT NULL
+);
+
+
+CREATE TABLE KarLetter (
+    id SERIAL PRIMARY KEY,
+    kar_id INTEGER NOT NULL,
+    kar_letter VARCHAR(255) NOT NULL,
+    FOREIGN KEY (kar_id) REFERENCES Kar(id)
+);
+
+
+CREATE TABLE KarWord (
+    id SERIAL PRIMARY KEY,
+    kar_id INTEGER NOT NULL,
+    kar_word VARCHAR(255) NOT NULL,
+    FOREIGN KEY (kar_id) REFERENCES Kar(id)
+);
+
+
+CREATE TABLE Month (
+    id SERIAL PRIMARY KEY,
+    order_no INTEGER NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    punctuation VARCHAR(255),
+    lang VARCHAR(255) NOT NULL,
+    image BLOB NOT NULL,
+    audio BLOB NOT NULL
+);
+
+
+CREATE TABLE Number (
+    id SERIAL PRIMARY KEY,
+    letter VARCHAR(255) NOT NULL,
+    punctuation VARCHAR(255) NOT NULL,
+    lang VARCHAR(255) NOT NULL,
+    audio BLOB NOT NULL
+);
+
+
+CREATE TABLE PunctuationExample (
+    id SERIAL PRIMARY KEY,
+    punctuation_id INTEGER NOT NULL,
+    example_text VARCHAR(255) NOT NULL,
+    FOREIGN KEY (punctuation_id) REFERENCES PunctuationMark(id)
+);
+
+
+CREATE TABLE PunctuationMark (
+    id SERIAL PRIMARY KEY,
+    order_no INTEGER NOT NULL,
+    name VARCHAR(255) UNIQUE NOT NULL,
+    mark VARCHAR(255) NOT NULL,
+    use_case VARCHAR(255) NOT NULL,
+    audio BLOB NOT NULL
+);
+
+CREATE TABLE Season (
+    id SERIAL PRIMARY KEY,
+    order_no INTEGER NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    lang VARCHAR(255) NOT NULL,
+    image BLOB NOT NULL,
+    audio BLOB NOT NULL
+);

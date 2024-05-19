@@ -221,77 +221,7 @@ exports.numberUpdate = async (req, res, next) => {
         })
     }
 }
-const fs = require('fs')
-const path = require('path')
 
-exports.apply = async (req, res, next) => {
-    try {
-        const collection = await ArAlphabet.find().sort({ order_no: 1 })
-
-        // collection.forEach(element => {
-
-        //     // SQL INSERT query
-        //     const sql = `INSERT INTO ArAlphabet (order_no, letter, start_position, center_position, end_position, audio, video)
-        //        VALUES (?, ?, ?, ?, ?, ?, ?)`;
-        //     let video;
-        //     let audio;
-        //     try {
-        //         // Read the file synchronously
-        //         // image = fs.readFileSync(`public/${element.image}`);
-        //         audio = fs.readFileSync(`public/${element.audio}`);
-        //         video = fs.readFileSync(`public/${element.video}`);
-        //     } catch (error) {
-        //         return res.status(500).json({
-        //             success: false,
-        //             status: 500,
-        //             message: error.message
-        //         });
-        //     }
-        //     // Run SQL statement
-        //     SQLdb.run(sql, [
-        //         element.order_no, 
-        //         element.letter, 
-        //         element.position.start,
-        //         element.position.center,
-        //         element.position.end,
-        //         audio, 
-        //         video
-        //     ], (err) => {
-        //         if (err) {
-        //             console.error('Error inserting data:', err.message);
-        //         } else {
-        //             console.log('Data inserted successfully');
-        //         }
-        //     })
-        // })
-
-        // collection.forEach(elm => {
-        //     elm.examples.forEach(ex => {
-        //         const sql = 'INSERT INTO FolaExample (fola_id, example_text)  VALUES (?, ?)'
-        //         // Run SQL statement
-        //         SQLdb.run(sql, [
-        //             elm.order_no,
-        //             ex,
-        //         ], (err) => {
-        //             if (err) {
-        //                 console.error('Error inserting data:', err.message);
-        //             } else {
-        //                 console.log('Data inserted successfully');
-        //             }
-        //         })
-        //     })
-        // })
-
-        return res.status(200).json(collection)
-
-    } catch (error) {
-        return res.status(500).json({
-            success: false,
-            status: 500,
-            message: error.message
-        })
-    }
-}
 
 exports.getColors = async (req, res, next) => {
     try {
@@ -364,6 +294,527 @@ exports.getSeason = async (req, res, next) => {
             message: 'Successfully updated.',
             data: data.sort((a, b) => a?.order_no - b?.order_no)
         })
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            status: 500,
+            message: error.message
+        })
+    }
+}
+
+const fs = require('fs')
+const path = require('path')
+exports.apply = async (req, res, next) => {
+    try {
+        const collection = await ArAlphabet.find().sort({ order_no: 1 })
+
+        return res.status(200).json(collection)
+
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            status: 500,
+            message: error.message
+        })
+    }
+}
+
+exports.createDatabase = async (req, res, next) => {
+    try {
+        // collection.forEach(element => {
+        //     // SQL INSERT query
+        //     const sql = `INSERT INTO ArAlphabet (order_no, letter, start_position, center_position, end_position, audio, video)
+        //        VALUES (?, ?, ?, ?, ?, ?, ?)`;
+        //     let video;
+        //     let audio;
+        //     try {
+        //         // Read the file synchronously
+        //         // image = fs.readFileSync(`public/${element.image}`);
+        //         audio = fs.readFileSync(`public/${element.audio}`);
+        //         video = fs.readFileSync(`public/${element.video}`);
+        //     } catch (error) {
+        //         return res.status(500).json({
+        //             success: false,
+        //             status: 500,
+        //             message: error.message
+        //         });
+        //     }
+        //     // Run SQL statement
+        //     SQLdb.run(sql, [
+        //         element.order_no,
+        //         element.letter,
+        //         element.position.start,
+        //         element.position.center,
+        //         element.position.end,
+        //         audio,
+        //         video
+        //     ], (err) => {
+        //         if (err) {
+        //             console.error('Error inserting data:', err.message);
+        //         } else {
+        //             console.log('Data inserted successfully');
+        //         }
+        //     })
+        // })
+
+        // collection.forEach(elm => {
+        //     elm.examples.forEach(ex => {
+        //         const sql = 'INSERT INTO FolaExample (fola_id, example_text)  VALUES (?, ?)'
+        //         // Run SQL statement
+        //         SQLdb.run(sql, [
+        //             elm.order_no,
+        //             ex,
+        //         ], (err) => {
+        //             if (err) {
+        //                 console.error('Error inserting data:', err.message);
+        //             } else {
+        //                 console.log('Data inserted successfully');
+        //             }
+        //         })
+        //     })
+        // })
+
+        const [
+            bangla_alphabet,
+            bangla_kar,
+            bangla_puncuation,
+            bangla_fola,
+            english_alphabet,
+            arabic_alphabet,
+            numbers,
+            days,
+            months,
+            seasons,
+            colors
+        ] = await Promise.all([
+            BnAlphabet.find().sort({ order_no: 1 }),
+            Kar.find().sort({ order_no: 1 }),
+            PuncuationMark.find().sort({ order_no: 1 }),
+            Fola.find().sort({ order_no: 1 }),
+            EnAlphabet.find().sort({ order_no: 1 }),
+            ArAlphabet.find().sort({ order_no: 1 }),
+            Number.find().sort({ order_no: 1 }),
+            Day.find().sort({ order_no: 1 }),
+            Month.find().sort({ order_no: 1 }),
+            Season.find().sort({ order_no: 1 }),
+            Color.find().sort({ order_no: 1 })
+        ])
+
+        //arabic alphabet - ok
+        arabic_alphabet.forEach(element => {
+            // SQL INSERT query
+            const sql = `INSERT INTO ArAlphabet (order_no, letter, start_position, center_position, end_position, audio, video)
+               VALUES (?, ?, ?, ?, ?, ?, ?)`
+
+            let video
+            let audio
+            try {
+                audio = fs.readFileSync(`public/${element.audio}`);
+                video = fs.readFileSync(`public/${element.video}`);
+            } catch (error) {
+                return res.status(500).json({
+                    success: false,
+                    status: 500,
+                    message: error.message
+                });
+            }
+            // Run SQL statement
+            SQLdb.run(sql, [
+                element.order_no,
+                element.letter,
+                element.position.start,
+                element.position.center,
+                element.position.end,
+                audio,
+                video
+            ], (err) => {
+                if (err) {
+                    console.error('Error inserting data:', err.message);
+                } else {
+                    console.log('Data inserted successfully');
+                }
+            })
+        })
+
+        //bangla alphabet
+        bangla_alphabet.forEach(element => {
+            // SQL INSERT query
+            const sql = `INSERT INTO ArAlphabet (order_no, letter, start_position, center_position, end_position, audio, video)
+               VALUES (?, ?, ?, ?, ?, ?, ?)`
+
+            let image
+            let video
+            let audio
+            try {
+                // Read the file synchronously
+                image = fs.readFileSync(`public/${element.image}`);
+                audio = fs.readFileSync(`public/${element.audio}`);
+                video = fs.readFileSync(`public/${element.video}`);
+            } catch (error) {
+                return res.status(500).json({
+                    success: false,
+                    status: 500,
+                    message: error.message
+                });
+            }
+            // Run SQL statement
+            SQLdb.run(sql, [
+                element.order_no,
+                element.letter,
+                element.position.start,
+                element.position.center,
+                element.position.end,
+                audio,
+                video
+            ], (err) => {
+                if (err) {
+                    console.error('Error inserting data:', err.message);
+                } else {
+                    console.log('Data inserted successfully');
+                }
+            })
+        })
+
+        //punctuation marks
+        bangla_puncuation.forEach(element => {
+            // SQL INSERT query
+            const sql = `INSERT INTO ArAlphabet (order_no, letter, start_position, center_position, end_position, audio, video)
+               VALUES (?, ?, ?, ?, ?, ?, ?)`
+
+            let image
+            let video
+            let audio
+            try {
+                // Read the file synchronously
+                image = fs.readFileSync(`public/${element.image}`);
+                audio = fs.readFileSync(`public/${element.audio}`);
+                video = fs.readFileSync(`public/${element.video}`);
+            } catch (error) {
+                return res.status(500).json({
+                    success: false,
+                    status: 500,
+                    message: error.message
+                });
+            }
+            // Run SQL statement
+            SQLdb.run(sql, [
+                element.order_no,
+                element.letter,
+                element.position.start,
+                element.position.center,
+                element.position.end,
+                audio,
+                video
+            ], (err) => {
+                if (err) {
+                    console.error('Error inserting data:', err.message);
+                } else {
+                    console.log('Data inserted successfully');
+                }
+            })
+        })
+
+        //fola
+        bangla_fola.forEach(element => {
+            // SQL INSERT query
+            const sql = `INSERT INTO ArAlphabet (order_no, letter, start_position, center_position, end_position, audio, video)
+               VALUES (?, ?, ?, ?, ?, ?, ?)`
+
+            let image
+            let video
+            let audio
+            try {
+                // Read the file synchronously
+                image = fs.readFileSync(`public/${element.image}`);
+                audio = fs.readFileSync(`public/${element.audio}`);
+                video = fs.readFileSync(`public/${element.video}`);
+            } catch (error) {
+                return res.status(500).json({
+                    success: false,
+                    status: 500,
+                    message: error.message
+                });
+            }
+            // Run SQL statement
+            SQLdb.run(sql, [
+                element.order_no,
+                element.letter,
+                element.position.start,
+                element.position.center,
+                element.position.end,
+                audio,
+                video
+            ], (err) => {
+                if (err) {
+                    console.error('Error inserting data:', err.message);
+                } else {
+                    console.log('Data inserted successfully');
+                }
+            })
+        })
+
+        //kar
+        bangla_kar.forEach(element => {
+            // SQL INSERT query
+            const sql = `INSERT INTO ArAlphabet (order_no, letter, start_position, center_position, end_position, audio, video)
+               VALUES (?, ?, ?, ?, ?, ?, ?)`
+
+            let image
+            let video
+            let audio
+            try {
+                // Read the file synchronously
+                image = fs.readFileSync(`public/${element.image}`);
+                audio = fs.readFileSync(`public/${element.audio}`);
+                video = fs.readFileSync(`public/${element.video}`);
+            } catch (error) {
+                return res.status(500).json({
+                    success: false,
+                    status: 500,
+                    message: error.message
+                });
+            }
+            // Run SQL statement
+            SQLdb.run(sql, [
+                element.order_no,
+                element.letter,
+                element.position.start,
+                element.position.center,
+                element.position.end,
+                audio,
+                video
+            ], (err) => {
+                if (err) {
+                    console.error('Error inserting data:', err.message);
+                } else {
+                    console.log('Data inserted successfully');
+                }
+            })
+        })
+
+        //english alphabet
+        english_alphabet.forEach(element => {
+            // SQL INSERT query
+            const sql = `INSERT INTO ArAlphabet (order_no, letter, start_position, center_position, end_position, audio, video)
+               VALUES (?, ?, ?, ?, ?, ?, ?)`
+
+            let image
+            let video
+            let audio
+            try {
+                // Read the file synchronously
+                image = fs.readFileSync(`public/${element.image}`);
+                audio = fs.readFileSync(`public/${element.audio}`);
+                video = fs.readFileSync(`public/${element.video}`);
+            } catch (error) {
+                return res.status(500).json({
+                    success: false,
+                    status: 500,
+                    message: error.message
+                });
+            }
+            // Run SQL statement
+            SQLdb.run(sql, [
+                element.order_no,
+                element.letter,
+                element.position.start,
+                element.position.center,
+                element.position.end,
+                audio,
+                video
+            ], (err) => {
+                if (err) {
+                    console.error('Error inserting data:', err.message);
+                } else {
+                    console.log('Data inserted successfully');
+                }
+            })
+        })
+
+        //numbers
+        numbers.forEach(element => {
+            // SQL INSERT query
+            const sql = `INSERT INTO ArAlphabet (order_no, letter, start_position, center_position, end_position, audio, video)
+               VALUES (?, ?, ?, ?, ?, ?, ?)`
+
+            let image
+            let video
+            let audio
+            try {
+                // Read the file synchronously
+                image = fs.readFileSync(`public/${element.image}`);
+                audio = fs.readFileSync(`public/${element.audio}`);
+                video = fs.readFileSync(`public/${element.video}`);
+            } catch (error) {
+                return res.status(500).json({
+                    success: false,
+                    status: 500,
+                    message: error.message
+                });
+            }
+            // Run SQL statement
+            SQLdb.run(sql, [
+                element.order_no,
+                element.letter,
+                element.position.start,
+                element.position.center,
+                element.position.end,
+                audio,
+                video
+            ], (err) => {
+                if (err) {
+                    console.error('Error inserting data:', err.message);
+                } else {
+                    console.log('Data inserted successfully');
+                }
+            })
+        })
+
+        //months - ok
+        months.forEach(element => {
+            // SQL INSERT query
+            const sql = `INSERT INTO Month (order_no, name, punctuation, lang, image, audio)
+            VALUES (?, ?, ?, ?, ?, ?)`;
+
+            let image
+            let audio
+            try {
+                image = fs.readFileSync(`public/${element.image}`)
+                audio = fs.readFileSync(`public/${element.audio}`)
+            } catch (error) {
+                return res.status(500).json({
+                    success: false,
+                    status: 500,
+                    message: error.message
+                });
+            }
+            // Run SQL statement
+            SQLdb.run(sql, [
+                element.order_no,
+                element.name,
+                element.punctuation,
+                element.lang,
+                audio,
+                image
+            ], (err) => {
+                if (err) {
+                    console.error('Error inserting data:', err.message);
+                } else {
+                    console.log('Data inserted successfully');
+                }
+            })
+        })
+
+        //days
+        days.forEach(element => {
+            // SQL INSERT query
+            const sql = `INSERT INTO ArAlphabet (order_no, letter, start_position, center_position, end_position, audio, video)
+               VALUES (?, ?, ?, ?, ?, ?, ?)`
+
+            let image
+            let video
+            let audio
+            try {
+                // Read the file synchronously
+                image = fs.readFileSync(`public/${element.image}`);
+                audio = fs.readFileSync(`public/${element.audio}`);
+                video = fs.readFileSync(`public/${element.video}`);
+            } catch (error) {
+                return res.status(500).json({
+                    success: false,
+                    status: 500,
+                    message: error.message
+                });
+            }
+            // Run SQL statement
+            SQLdb.run(sql, [
+                element.order_no,
+                element.letter,
+                element.position.start,
+                element.position.center,
+                element.position.end,
+                audio,
+                video
+            ], (err) => {
+                if (err) {
+                    console.error('Error inserting data:', err.message);
+                } else {
+                    console.log('Data inserted successfully');
+                }
+            })
+        })
+
+        //seasons - ok
+        seasons.forEach(element => {
+            // SQL INSERT query
+            const sql = `INSERT INTO Season (order_no, name, lang, image, audio)
+               VALUES (?, ?, ?, ?, ?)`;
+
+            let image
+            let audio
+            try {
+                image = fs.readFileSync(`public/${element.image}`)
+                audio = fs.readFileSync(`public/${element.audio}`)
+            } catch (error) {
+                return res.status(500).json({
+                    success: false,
+                    status: 500,
+                    message: error.message
+                });
+            }
+            // Run SQL statement
+            SQLdb.run(sql, [
+                element.order_no,
+                element.name,
+                element.lang,
+                audio,
+                image
+            ], (err) => {
+                if (err) {
+                    console.error('Error inserting data:', err.message);
+                } else {
+                    console.log('Data inserted successfully');
+                }
+            })
+        })
+
+        //colors
+        colors.forEach(element => {
+            // SQL INSERT query
+            const sql = `INSERT INTO Color (bn_name, en_name, code, image, audio)
+            VALUES (?, ?, ?, ?, ?)`;
+
+            let image
+            let audio
+            try {
+                // Read the file synchronously
+                image = fs.readFileSync(`public/${element.image}`)
+                audio = fs.readFileSync(`public/${element.audio}`)
+            } catch (error) {
+                return res.status(500).json({
+                    success: false,
+                    status: 500,
+                    message: error.message
+                });
+            }
+            // Run SQL statement
+            SQLdb.run(sql, [
+                element.bn_name,
+                element.en_name,
+                element.code,
+                audio,
+                image
+            ], (err) => {
+                if (err) {
+                    console.error('Error inserting data:', err.message);
+                } else {
+                    console.log('Data inserted successfully');
+                }
+            })
+        })
+
+
     } catch (error) {
         return res.status(500).json({
             success: false,
