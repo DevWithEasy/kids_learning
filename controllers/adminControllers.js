@@ -11,6 +11,8 @@ const Number = require("../models/Number")
 const PuncuationMark = require("../models/PuncuationMark")
 const Season = require("../models/Season")
 const banglaOkkor = require("./banglaOkkor")
+const fs = require('fs')
+const path = require('path')
 
 exports.getAll = async (req, res, next) => {
     try {
@@ -303,8 +305,6 @@ exports.getSeason = async (req, res, next) => {
     }
 }
 
-const fs = require('fs')
-const path = require('path')
 exports.apply = async (req, res, next) => {
     try {
         const collection = await ArAlphabet.find().sort({ order_no: 1 })
@@ -813,6 +813,66 @@ exports.createDatabase = async (req, res, next) => {
                 }
             })
         })
+
+
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            status: 500,
+            message: error.message
+        })
+    }
+}
+
+exports.createJavaScript = async (req, res, next) => {
+    try {
+        const [
+            bangla_alphabet,
+            bangla_kar,
+            bangla_puncuation,
+            bangla_fola,
+            english_alphabet,
+            arabic_alphabet,
+            numbers,
+            days,
+            months,
+            seasons,
+            colors
+        ] = await Promise.all([
+            BnAlphabet.find().sort({ order_no: 1 }),
+            Kar.find().sort({ order_no: 1 }),
+            PuncuationMark.find().sort({ order_no: 1 }),
+            Fola.find().sort({ order_no: 1 }),
+            EnAlphabet.find().sort({ order_no: 1 }),
+            ArAlphabet.find().sort({ order_no: 1 }),
+            Number.find().sort({ order_no: 1 }),
+            Day.find().sort({ order_no: 1 }),
+            Month.find().sort({ order_no: 1 }),
+            Season.find().sort({ order_no: 1 }),
+            Color.find().sort({ order_no: 1 })
+        ])
+
+        const hello = bangla_alphabet.map(alpha=> {
+            const urlText = alpha.image.split('/')[alpha.image.split('/').length-1]
+            const nameText = urlText.split('.')[0]
+            return `import ${nameText} from '../assets/image/${urlText}'`
+        })
+        console.log(hello)
+
+        // const jsContent = `const data = {
+        //     colors: ${JSON.stringify(hello, null, 2)}
+        // };`        
+
+        // const filePath = path.join(process.cwd(), 'public', 'main.js');
+
+        // fs.writeFile(filePath,jsContent,(err)=>{
+        //     if (err) {
+        //         console.error('Error writing file:', err);
+        //         return res.status(500).send('Server Error');
+        //     }else{
+        //         return res.status(200).json(colors)
+        //     }
+        // })
 
 
     } catch (error) {
