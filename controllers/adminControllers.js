@@ -840,35 +840,197 @@ exports.createJavaScript = async (req, res, next) => {
             Color.find().sort({ order_no: 1 })
         ])
 
-        // const hello = bangla_alphabet.map(alpha => {
-        //     const urlText = alpha.image.split('/')[alpha.image.split('/').length - 1]
-        //     const nameText = urlText.split('.')[0]
-        //     return `import ${nameText} from '../assets/image/${urlText}'`
-        // })
-        // console.log(hello)
-
         let importText = ''
 
-
+        //bangla alphabet
         const bangla_alphabet_convert = bangla_alphabet.map(alphabet => {
 
             const audioUrl = alphabet.audio.split('/')[alphabet.audio.split('/').length - 1]
             const audioText = audioUrl.split('.')[0]
-            importText += `import ${'audio_'+audioText} from '../assets/audio/${audioUrl}'\n`
+            importText += `import ${'audio_' + audioText} from '../assets/audio/${audioUrl}'\n`
 
             const imageUrl = alphabet.image.split('/')[alphabet.image.split('/').length - 1]
             const imageText = imageUrl.split('.')[0]
-            importText += `import ${'image_'+imageText} from '../assets/audio/${imageUrl}'\n`
+            importText += `import ${'image_' + imageText} from '../assets/image/${imageUrl}'\n`
 
             const videoUrl = alphabet.video.split('/')[alphabet.video.split('/').length - 1]
             const videoText = videoUrl.split('.')[0]
-            importText += `import ${'video_'+videoText} from '../assets/audio/${videoUrl}'\n`
+            importText += `import ${'video_' + videoText} from '../assets/video/${videoUrl}'\n`
 
             return {
                 ...alphabet._doc,
-                image : 'start_image_'+imageText+'_end',
-                audio : 'start_audio_'+audioText+'_end',
-                video : 'start_video_'+videoText+'_end'
+                image: 'start_image_' + imageText + '_end',
+                audio: 'start_audio_' + audioText + '_end',
+                video: 'start_video_' + videoText + '_end'
+            }
+        })
+
+        //bangla punctuation
+        const punctuation_mark_convert = bangla_puncuation.map(alphabet => {
+
+            const audioUrl = alphabet.audio.split('/')[alphabet.audio.split('/').length - 1]
+            const audioText = audioUrl.split('.')[0]
+            importText += `import ${'audio_' + audioText} from '../assets/audio/${audioUrl}'\n`
+
+            return {
+                ...alphabet._doc,
+                audio: 'start_audio_' + audioText + '_end',
+            }
+        })
+
+        //bangla fola
+        const fola_convert = bangla_fola.map(alphabet => {
+
+            const audioUrl = alphabet.audio.split('/')[alphabet.audio.split('/').length - 1]
+            const audioText = audioUrl.split('.')[0]
+            importText += `import ${'audio_' + audioText} from '../assets/audio/${audioUrl}'\n`
+
+            return {
+                ...alphabet._doc,
+                audio: 'start_audio_' + audioText + '_end',
+            }
+        })
+
+        const kar_convert = bangla_kar.map(alphabet => {
+
+            const audioUrl = alphabet.audio.split('/')[alphabet.audio.split('/').length - 1]
+            const audioText = audioUrl.split('.')[0]
+            importText += `import ${'audio_' + audioText} from '../assets/audio/${audioUrl}'\n`
+
+            const imageUrl = alphabet.image.split('/')[alphabet.image.split('/').length - 1]
+            const imageText = imageUrl.split('.')[0]
+            importText += `import ${'image_' + imageText} from '../assets/image/${imageUrl}'\n`
+
+            return {
+                ...alphabet._doc,
+                image: 'start_image_' + imageText + '_end',
+                audio: 'start_audio_' + audioText + '_end'
+            }
+        })
+
+        //arabic alphabet
+        const arabic_alphabet_convert = arabic_alphabet.map(alphabet => {
+
+            const audioUrl = alphabet.audio.split('/')[alphabet.audio.split('/').length - 1]
+            const audioText = audioUrl.split('.')[0]
+            importText += `import ${'audio_' + audioText} from '../assets/audio/${audioUrl}'\n`
+
+            const videoUrl = alphabet.video.split('/')[alphabet.video.split('/').length - 1]
+            const videoText = videoUrl.split('.')[0]
+            importText += `import ${'video_' + videoText} from '../assets/video/${videoUrl}'\n`
+
+            return {
+                ...alphabet._doc,
+                audio: 'start_audio_' + audioText + '_end',
+                video: 'start_video_' + videoText + '_end'
+            }
+        })
+
+        //english alphabet
+        const enslish_alphabet_convert = english_alphabet.map(alphabet => {
+
+            const audioUrl = alphabet.audio.split('/')[alphabet.audio.split('/').length - 1]
+            const audioText = audioUrl.split('.')[0]
+            importText += `import ${'audio_' + audioText} from '../assets/audio/${audioUrl}'\n`
+
+            const imageUrl = alphabet.image.split('/')[alphabet.image.split('/').length - 1]
+            const imageText = imageUrl.split('.')[0]
+            importText += `import ${'image_' + imageText} from '../assets/image/${imageUrl}'\n`
+
+            const videoUrl = alphabet.video.split('/')[alphabet.video.split('/').length - 1]
+            const videoText = videoUrl.split('.')[0]
+            importText += `import ${'video_' + videoText} from '../assets/video/${videoUrl}'\n`
+
+            return {
+                ...alphabet._doc,
+                image: 'start_image_' + imageText + '_end',
+                audio: 'start_audio_' + audioText + '_end',
+                video: 'start_video_' + videoText + '_end'
+            }
+        })
+
+        //numbers
+        const number_convert = numbers.map(alphabet => {
+
+            const audioUrl = alphabet.audio.split('/')[alphabet.audio.split('/').length - 1]
+            const audioText = audioUrl.split('.')[0]
+            importText += `import ${'audio_' + audioText} from '../assets/audio/${audioUrl}'\n`
+
+            return {
+                ...alphabet._doc,
+                audio: 'start_audio_' + audioText + '_end',
+            }
+        })
+
+        //days
+        const day_convert = days.map(alphabet => {
+
+            const audioUrl = alphabet.audio.split('/')[alphabet.audio.split('/').length - 1]
+            const audioText = audioUrl.split('.')[0]
+            importText += `import ${'audio_' + audioText} from '../assets/audio/${audioUrl}'\n`
+
+            const imageUrl = alphabet.image.split('/')[alphabet.image.split('/').length - 1]
+            const imageText = imageUrl.split('.')[0]
+            importText += `import ${'image_' + imageText} from '../assets/image/${imageUrl}'\n`
+
+            return {
+                ...alphabet._doc,
+                image: 'start_image_' + imageText + '_end',
+                audio: 'start_audio_' + audioText + '_end'
+            }
+        })
+
+        //months
+        const month_convert = months.map(alphabet => {
+
+            const audioUrl = alphabet.audio.split('/')[alphabet.audio.split('/').length - 1]
+            const audioText = audioUrl.split('.')[0]
+            importText += `import ${'audio_' + audioText} from '../assets/audio/${audioUrl}'\n`
+
+            const imageUrl = alphabet.image.split('/')[alphabet.image.split('/').length - 1]
+            const imageText = imageUrl.split('.')[0]
+            importText += `import ${'image_' + imageText} from '../assets/image/${imageUrl}'\n`
+
+            return {
+                ...alphabet._doc,
+                image: 'start_image_' + imageText + '_end',
+                audio: 'start_audio_' + audioText + '_end'
+            }
+        })
+
+        //seasons
+        const season_convert = seasons.map(alphabet => {
+
+            const audioUrl = alphabet.audio.split('/')[alphabet.audio.split('/').length - 1]
+            const audioText = audioUrl.split('.')[0]
+            importText += `import ${'audio_' + audioText} from '../assets/audio/${audioUrl}'\n`
+
+            const imageUrl = alphabet.image.split('/')[alphabet.image.split('/').length - 1]
+            const imageText = imageUrl.split('.')[0]
+            importText += `import ${'image_' + imageText} from '../assets/image/${imageUrl}'\n`
+
+            return {
+                ...alphabet._doc,
+                image: 'start_image_' + imageText + '_end',
+                audio: 'start_audio_' + audioText + '_end'
+            }
+        })
+
+        //colors
+        const color_convert = colors.map(alphabet => {
+
+            const audioUrl = alphabet.audio.split('/')[alphabet.audio.split('/').length - 1]
+            const audioText = audioUrl.split('.')[0]
+            importText += `import ${'audio_' + audioText} from '../assets/audio/${audioUrl}'\n`
+
+            const imageUrl = alphabet.image.split('/')[alphabet.image.split('/').length - 1]
+            const imageText = imageUrl.split('.')[0]
+            importText += `import ${'image_' + imageText} from '../assets/image/${imageUrl}'\n`
+
+            return {
+                ...alphabet._doc,
+                image: 'start_image_' + imageText + '_end',
+                audio: 'start_audio_' + audioText + '_end'
             }
         })
 
@@ -876,8 +1038,20 @@ exports.createJavaScript = async (req, res, next) => {
         ${importText}
 
         const data = {
-            colors: ${JSON.stringify(bangla_alphabet_convert, null, 2)}
-        };` 
+            bangla_alphabets: ${JSON.stringify(bangla_alphabet_convert, null, 2)},
+            bagla_punctuation_marks : ${JSON.stringify(punctuation_mark_convert, null, 2)},
+            bangla_fola : ${JSON.stringify(fola_convert, null, 2)},
+            bangla_kar : ${JSON.stringify(kar_convert, null, 2)},
+            arabic_alphabets : ${JSON.stringify(arabic_alphabet_convert, null, 2)},
+            enslish_alphabets : ${JSON.stringify(enslish_alphabet_convert, null, 2)},
+            numbers : ${JSON.stringify(number_convert, null, 2)},
+            days : ${JSON.stringify(day_convert, null, 2)},
+            months : ${JSON.stringify(month_convert, null, 2)},
+            seasons : ${JSON.stringify(season_convert, null, 2)},
+            colors : ${JSON.stringify(color_convert, null, 2)},
+        };
+        export default data
+        `
 
         // const jsContent = `const data = {
         //     colors: ${JSON.stringify(data, null, 2)}
@@ -885,12 +1059,15 @@ exports.createJavaScript = async (req, res, next) => {
 
         const filePath = path.join(process.cwd(), 'public', 'main.js');
 
-        fs.writeFile(filePath,jsContent,(err)=>{
+        fs.writeFile(filePath, jsContent, (err) => {
             if (err) {
                 console.error('Error writing file:', err);
                 return res.status(500).send('Server Error');
-            }else{
-                return res.status(200).json(bangla_alphabet_convert)
+            } else {
+                return res.status(200).json({
+                    success : true,
+                    message : 'File Successfully Generated.'
+                })
             }
         })
 
