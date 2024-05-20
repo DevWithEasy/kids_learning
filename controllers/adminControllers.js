@@ -322,58 +322,6 @@ exports.apply = async (req, res, next) => {
 
 exports.createDatabase = async (req, res, next) => {
     try {
-        // collection.forEach(element => {
-        //     // SQL INSERT query
-        //     const sql = `INSERT INTO ArAlphabet (order_no, letter, start_position, center_position, end_position, audio, video)
-        //        VALUES (?, ?, ?, ?, ?, ?, ?)`;
-        //     let video;
-        //     let audio;
-        //     try {
-        //         // Read the file synchronously
-        //         // image = fs.readFileSync(`public/${element.image}`);
-        //         audio = fs.readFileSync(`public/${element.audio}`);
-        //         video = fs.readFileSync(`public/${element.video}`);
-        //     } catch (error) {
-        //         return res.status(500).json({
-        //             success: false,
-        //             status: 500,
-        //             message: error.message
-        //         });
-        //     }
-        //     // Run SQL statement
-        //     SQLdb.run(sql, [
-        //         element.order_no,
-        //         element.letter,
-        //         element.position.start,
-        //         element.position.center,
-        //         element.position.end,
-        //         audio,
-        //         video
-        //     ], (err) => {
-        //         if (err) {
-        //             console.error('Error inserting data:', err.message);
-        //         } else {
-        //             console.log('Data inserted successfully');
-        //         }
-        //     })
-        // })
-
-        // collection.forEach(elm => {
-        //     elm.examples.forEach(ex => {
-        //         const sql = 'INSERT INTO FolaExample (fola_id, example_text)  VALUES (?, ?)'
-        //         // Run SQL statement
-        //         SQLdb.run(sql, [
-        //             elm.order_no,
-        //             ex,
-        //         ], (err) => {
-        //             if (err) {
-        //                 console.error('Error inserting data:', err.message);
-        //             } else {
-        //                 console.log('Data inserted successfully');
-        //             }
-        //         })
-        //     })
-        // })
 
         const [
             bangla_alphabet,
@@ -432,16 +380,16 @@ exports.createDatabase = async (req, res, next) => {
                 if (err) {
                     console.error('Error inserting data:', err.message);
                 } else {
-                    console.log('Data inserted successfully');
+                    console.log(`Arabic data inserted ${element.order_no}`);
                 }
             })
         })
 
-        //bangla alphabet
+        //bangla alphabet - ok
         bangla_alphabet.forEach(element => {
             // SQL INSERT query
-            const sql = `INSERT INTO ArAlphabet (order_no, letter, start_position, center_position, end_position, audio, video)
-               VALUES (?, ?, ?, ?, ?, ?, ?)`
+            const sql = `INSERT INTO BnAlphabet (order_no, letter, word, sentence, vowel, image, audio, video)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
 
             let image
             let video
@@ -462,34 +410,30 @@ exports.createDatabase = async (req, res, next) => {
             SQLdb.run(sql, [
                 element.order_no,
                 element.letter,
-                element.position.start,
-                element.position.center,
-                element.position.end,
+                element.word,
+                element.sentence,
+                element.vowel,
                 audio,
+                image,
                 video
             ], (err) => {
                 if (err) {
                     console.error('Error inserting data:', err.message);
                 } else {
-                    console.log('Data inserted successfully');
+                    console.log(`Bangla data inserted ${element.order_no}`);
                 }
             })
         })
 
-        //punctuation marks
+        //punctuation marks - ok
         bangla_puncuation.forEach(element => {
             // SQL INSERT query
-            const sql = `INSERT INTO ArAlphabet (order_no, letter, start_position, center_position, end_position, audio, video)
-               VALUES (?, ?, ?, ?, ?, ?, ?)`
+            const sql = `INSERT INTO PunctuationMark (order_no, name, mark, use_case, audio) VALUES (?, ?, ?, ?, ?)`;
 
-            let image
-            let video
             let audio
             try {
                 // Read the file synchronously
-                image = fs.readFileSync(`public/${element.image}`);
-                audio = fs.readFileSync(`public/${element.audio}`);
-                video = fs.readFileSync(`public/${element.video}`);
+                audio = fs.readFileSync(`public/${element.audio}`)
             } catch (error) {
                 return res.status(500).json({
                     success: false,
@@ -500,35 +444,44 @@ exports.createDatabase = async (req, res, next) => {
             // Run SQL statement
             SQLdb.run(sql, [
                 element.order_no,
-                element.letter,
-                element.position.start,
-                element.position.center,
-                element.position.end,
-                audio,
-                video
+                element.name,
+                element.mark,
+                element.use_case,
+                audio
             ], (err) => {
                 if (err) {
                     console.error('Error inserting data:', err.message);
                 } else {
-                    console.log('Data inserted successfully');
+                    console.log(`Punctuation data inserted ${element.order_no}`);
                 }
+            })
+
+            //kar words add in table
+            element.examples.forEach(ex => {
+                const sql = `INSERT INTO PunctuationExample (punctuation_id, example_text) VALUES (?, ?)`;
+                // Run SQL statement
+                SQLdb.run(sql, [
+                    element.order_no,
+                    ex,
+                ], (err) => {
+                    if (err) {
+                        console.error('Error inserting data:', err.message);
+                    } else {
+                        console.log('Data inserted successfully');
+                    }
+                })
             })
         })
 
-        //fola
+        //fola - ok
         bangla_fola.forEach(element => {
             // SQL INSERT query
-            const sql = `INSERT INTO ArAlphabet (order_no, letter, start_position, center_position, end_position, audio, video)
-               VALUES (?, ?, ?, ?, ?, ?, ?)`
+            const sql = `INSERT INTO Fola (order_no, letter, name, audio) VALUES (?, ?, ?, ?)`;
 
-            let image
-            let video
             let audio
             try {
                 // Read the file synchronously
-                image = fs.readFileSync(`public/${element.image}`);
                 audio = fs.readFileSync(`public/${element.audio}`);
-                video = fs.readFileSync(`public/${element.video}`);
             } catch (error) {
                 return res.status(500).json({
                     success: false,
@@ -540,34 +493,45 @@ exports.createDatabase = async (req, res, next) => {
             SQLdb.run(sql, [
                 element.order_no,
                 element.letter,
-                element.position.start,
-                element.position.center,
-                element.position.end,
-                audio,
-                video
+                element.name,
+                audio
             ], (err) => {
                 if (err) {
                     console.error('Error inserting data:', err.message);
                 } else {
-                    console.log('Data inserted successfully');
+                    console.log(`Fola data inserted ${element.order_no}`);
                 }
             })
+
+            //fola example add in table
+            element.examples.forEach(ex => {
+                const sql = 'INSERT INTO FolaExample (fola_id, example_text)  VALUES (?, ?)'
+                // Run SQL statement
+                SQLdb.run(sql, [
+                    element.order_no,
+                    ex,
+                ], (err) => {
+                    if (err) {
+                        console.error('Error inserting data:', err.message);
+                    } else {
+                        console.log('Data inserted successfully');
+                    }
+                })
+            })
+
         })
 
-        //kar
+        //kar - ok
         bangla_kar.forEach(element => {
             // SQL INSERT query
-            const sql = `INSERT INTO ArAlphabet (order_no, letter, start_position, center_position, end_position, audio, video)
-               VALUES (?, ?, ?, ?, ?, ?, ?)`
+            const sql = `INSERT INTO Kar (order_no, letter, kar, image, audio) VALUES (?, ?, ?, ?, ?)`;
 
             let image
-            let video
             let audio
             try {
                 // Read the file synchronously
-                image = fs.readFileSync(`public/${element.image}`);
-                audio = fs.readFileSync(`public/${element.audio}`);
-                video = fs.readFileSync(`public/${element.video}`);
+                image = fs.readFileSync(`public/${element.image}`)
+                audio = fs.readFileSync(`public/${element.audio}`)
             } catch (error) {
                 return res.status(500).json({
                     success: false,
@@ -579,25 +543,55 @@ exports.createDatabase = async (req, res, next) => {
             SQLdb.run(sql, [
                 element.order_no,
                 element.letter,
-                element.position.start,
-                element.position.center,
-                element.position.end,
+                element.kar,
                 audio,
-                video
+                image
             ], (err) => {
                 if (err) {
                     console.error('Error inserting data:', err.message);
                 } else {
-                    console.log('Data inserted successfully');
+                    console.log(`Kar data inserted ${element.order_no}`);
                 }
+            })
+
+            //kar words add in table
+            element.kar_word.forEach(ex => {
+                const sql = `INSERT INTO KarWord (kar_id, kar_word) VALUES (?, ?)`;
+                // Run SQL statement
+                SQLdb.run(sql, [
+                    element.order_no,
+                    ex,
+                ], (err) => {
+                    if (err) {
+                        console.error('Error inserting data:', err.message);
+                    } else {
+                        console.log('Data inserted successfully');
+                    }
+                })
+            })
+
+            //kar letters add in table
+            element.kar_letter.forEach(ex => {
+                const sql = `INSERT INTO KarLetter (kar_id, kar_letter) VALUES (?, ?)`;
+                // Run SQL statement
+                SQLdb.run(sql, [
+                    element.order_no,
+                    ex,
+                ], (err) => {
+                    if (err) {
+                        console.error('Error inserting data:', err.message);
+                    } else {
+                        console.log('Data inserted successfully');
+                    }
+                })
             })
         })
 
-        //english alphabet
+        //english alphabet - ok
         english_alphabet.forEach(element => {
             // SQL INSERT query
-            const sql = `INSERT INTO ArAlphabet (order_no, letter, start_position, center_position, end_position, audio, video)
-               VALUES (?, ?, ?, ?, ?, ?, ?)`
+            const sql = `INSERT INTO EnAlphabet (order_no, capital, small, word, sentence, image, audio, video)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
 
             let image
             let video
@@ -617,35 +611,32 @@ exports.createDatabase = async (req, res, next) => {
             // Run SQL statement
             SQLdb.run(sql, [
                 element.order_no,
-                element.letter,
-                element.position.start,
-                element.position.center,
-                element.position.end,
+                element.capital,
+                element.small,
+                element.word,
+                element.sentence,
                 audio,
+                image,
                 video
             ], (err) => {
                 if (err) {
                     console.error('Error inserting data:', err.message);
                 } else {
-                    console.log('Data inserted successfully');
+                    console.log(`English data inserted ${element.order_no}`);
                 }
             })
         })
 
-        //numbers
+        //numbers - ok
         numbers.forEach(element => {
             // SQL INSERT query
-            const sql = `INSERT INTO ArAlphabet (order_no, letter, start_position, center_position, end_position, audio, video)
-               VALUES (?, ?, ?, ?, ?, ?, ?)`
+            const sql = `INSERT INTO Number (letter, punctuation, lang, audio)
+               VALUES (?, ?, ?, ?)`;
 
-            let image
-            let video
             let audio
             try {
                 // Read the file synchronously
-                image = fs.readFileSync(`public/${element.image}`);
-                audio = fs.readFileSync(`public/${element.audio}`);
-                video = fs.readFileSync(`public/${element.video}`);
+                audio = fs.readFileSync(`public/${element.audio}`)
             } catch (error) {
                 return res.status(500).json({
                     success: false,
@@ -655,18 +646,15 @@ exports.createDatabase = async (req, res, next) => {
             }
             // Run SQL statement
             SQLdb.run(sql, [
-                element.order_no,
                 element.letter,
-                element.position.start,
-                element.position.center,
-                element.position.end,
+                element.punctuation,
+                element.lang,
                 audio,
-                video
             ], (err) => {
                 if (err) {
                     console.error('Error inserting data:', err.message);
                 } else {
-                    console.log('Data inserted successfully');
+                    console.log(`Number data inserted ${element.order_no}`);
                 }
             })
         })
@@ -701,25 +689,22 @@ exports.createDatabase = async (req, res, next) => {
                 if (err) {
                     console.error('Error inserting data:', err.message);
                 } else {
-                    console.log('Data inserted successfully');
+                    console.log(`Month data inserted ${element.order_no}`);
                 }
             })
         })
 
-        //days
+        //days - ok
         days.forEach(element => {
             // SQL INSERT query
-            const sql = `INSERT INTO ArAlphabet (order_no, letter, start_position, center_position, end_position, audio, video)
-               VALUES (?, ?, ?, ?, ?, ?, ?)`
+            const sql = `INSERT INTO Day (order_no, name, lang, image, audio) VALUES (?, ?, ?, ?, ?)`;
 
             let image
-            let video
             let audio
             try {
                 // Read the file synchronously
-                image = fs.readFileSync(`public/${element.image}`);
-                audio = fs.readFileSync(`public/${element.audio}`);
-                video = fs.readFileSync(`public/${element.video}`);
+                image = fs.readFileSync(`public/${element.image}`)
+                audio = fs.readFileSync(`public/${element.audio}`)
             } catch (error) {
                 return res.status(500).json({
                     success: false,
@@ -730,17 +715,15 @@ exports.createDatabase = async (req, res, next) => {
             // Run SQL statement
             SQLdb.run(sql, [
                 element.order_no,
-                element.letter,
-                element.position.start,
-                element.position.center,
-                element.position.end,
+                element.name,
+                element.lang,
                 audio,
-                video
+                image
             ], (err) => {
                 if (err) {
                     console.error('Error inserting data:', err.message);
                 } else {
-                    console.log('Data inserted successfully');
+                    console.log(`Days data inserted ${element.order_no}`);
                 }
             })
         })
@@ -774,16 +757,15 @@ exports.createDatabase = async (req, res, next) => {
                 if (err) {
                     console.error('Error inserting data:', err.message);
                 } else {
-                    console.log('Data inserted successfully');
+                    console.log(`Season data inserted ${element.order_no}`);
                 }
             })
         })
 
-        //colors
+        //colors - ok
         colors.forEach(element => {
             // SQL INSERT query
-            const sql = `INSERT INTO Color (bn_name, en_name, code, image, audio)
-            VALUES (?, ?, ?, ?, ?)`;
+            const sql = `INSERT INTO Color (bn_name, en_name, code, image, audio) VALUES (?, ?, ?, ?, ?)`;
 
             let image
             let audio
@@ -809,9 +791,15 @@ exports.createDatabase = async (req, res, next) => {
                 if (err) {
                     console.error('Error inserting data:', err.message);
                 } else {
-                    console.log('Data inserted successfully');
+                    console.log(`Colors data inserted ${element.order_no}`);
                 }
             })
+        })
+
+        return res.status(500).json({
+            success: true,
+            status: 200,
+            message: 'Database create successfully.'
         })
 
 
@@ -852,8 +840,8 @@ exports.createJavaScript = async (req, res, next) => {
             Color.find().sort({ order_no: 1 })
         ])
 
-        const hello = bangla_alphabet.map(alpha=> {
-            const urlText = alpha.image.split('/')[alpha.image.split('/').length-1]
+        const hello = bangla_alphabet.map(alpha => {
+            const urlText = alpha.image.split('/')[alpha.image.split('/').length - 1]
             const nameText = urlText.split('.')[0]
             return `import ${nameText} from '../assets/image/${urlText}'`
         })
