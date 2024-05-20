@@ -796,7 +796,7 @@ exports.createDatabase = async (req, res, next) => {
             })
         })
 
-        return res.status(500).json({
+        return res.status(200).json({
             success: true,
             status: 200,
             message: 'Database create successfully.'
@@ -840,27 +840,59 @@ exports.createJavaScript = async (req, res, next) => {
             Color.find().sort({ order_no: 1 })
         ])
 
-        const hello = bangla_alphabet.map(alpha => {
-            const urlText = alpha.image.split('/')[alpha.image.split('/').length - 1]
-            const nameText = urlText.split('.')[0]
-            return `import ${nameText} from '../assets/image/${urlText}'`
+        // const hello = bangla_alphabet.map(alpha => {
+        //     const urlText = alpha.image.split('/')[alpha.image.split('/').length - 1]
+        //     const nameText = urlText.split('.')[0]
+        //     return `import ${nameText} from '../assets/image/${urlText}'`
+        // })
+        // console.log(hello)
+
+        let importText = ''
+
+
+        const bangla_alphabet_convert = bangla_alphabet.map(alphabet => {
+
+            const audioUrl = alphabet.audio.split('/')[alphabet.audio.split('/').length - 1]
+            const audioText = audioUrl.split('.')[0]
+            importText += `import ${'audio_'+audioText} from '../assets/audio/${audioUrl}'\n`
+
+            const imageUrl = alphabet.image.split('/')[alphabet.image.split('/').length - 1]
+            const imageText = imageUrl.split('.')[0]
+            importText += `import ${'image_'+imageText} from '../assets/audio/${imageUrl}'\n`
+
+            const videoUrl = alphabet.video.split('/')[alphabet.video.split('/').length - 1]
+            const videoText = videoUrl.split('.')[0]
+            importText += `import ${'video_'+videoText} from '../assets/audio/${videoUrl}'\n`
+
+            return {
+                ...alphabet._doc,
+                image : 'start_image_'+imageText+'_end',
+                audio : 'start_audio_'+audioText+'_end',
+                video : 'start_video_'+videoText+'_end'
+            }
         })
-        console.log(hello)
+
+        const jsContent = `
+        ${importText}
+
+        const data = {
+            colors: ${JSON.stringify(bangla_alphabet_convert, null, 2)}
+        };` 
 
         // const jsContent = `const data = {
-        //     colors: ${JSON.stringify(hello, null, 2)}
+        //     colors: ${JSON.stringify(data, null, 2)}
         // };`        
 
-        // const filePath = path.join(process.cwd(), 'public', 'main.js');
+        const filePath = path.join(process.cwd(), 'public', 'main.js');
 
-        // fs.writeFile(filePath,jsContent,(err)=>{
-        //     if (err) {
-        //         console.error('Error writing file:', err);
-        //         return res.status(500).send('Server Error');
-        //     }else{
-        //         return res.status(200).json(colors)
-        //     }
-        // })
+        fs.writeFile(filePath,jsContent,(err)=>{
+            if (err) {
+                console.error('Error writing file:', err);
+                return res.status(500).send('Server Error');
+            }else{
+                return res.status(200).json(bangla_alphabet_convert)
+            }
+        })
 
 
     } catch (error) {
