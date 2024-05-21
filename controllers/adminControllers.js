@@ -971,7 +971,10 @@ exports.createJavaScript = async (req, res, next) => {
 
             const imageUrl = alphabet.image.split('/')[alphabet.image.split('/').length - 1]
             const imageText = imageUrl.split('.')[0]
-            importText += `import ${'image_' + imageText} from '../assets/image/${imageUrl}'\n`
+
+            if (alphabet.lang === 'bn') {
+                importText += `import ${'image_' + imageText} from '../assets/image/${imageUrl}'\n`
+            }
 
             return {
                 ...alphabet._doc,
@@ -989,7 +992,10 @@ exports.createJavaScript = async (req, res, next) => {
 
             const imageUrl = alphabet.image.split('/')[alphabet.image.split('/').length - 1]
             const imageText = imageUrl.split('.')[0]
-            importText += `import ${'image_' + imageText} from '../assets/image/${imageUrl}'\n`
+
+            if(alphabet.lang === 'bn'){
+                importText += `import ${'image_' + imageText} from '../assets/image/${imageUrl}'\n`
+            }
 
             return {
                 ...alphabet._doc,
@@ -1004,10 +1010,13 @@ exports.createJavaScript = async (req, res, next) => {
             const audioUrl = alphabet.audio.split('/')[alphabet.audio.split('/').length - 1]
             const audioText = audioUrl.split('.')[0]
             importText += `import ${'audio_' + audioText} from '../assets/audio/${audioUrl}'\n`
-
+            
             const imageUrl = alphabet.image.split('/')[alphabet.image.split('/').length - 1]
             const imageText = imageUrl.split('.')[0]
-            importText += `import ${'image_' + imageText} from '../assets/image/${imageUrl}'\n`
+            
+            if(alphabet.lang === 'bn'){
+                importText += `import ${'image_' + imageText} from '../assets/image/${imageUrl}'\n`
+            }
 
             return {
                 ...alphabet._doc,
@@ -1051,11 +1060,7 @@ exports.createJavaScript = async (req, res, next) => {
             colors : ${JSON.stringify(color_convert, null, 2)},
         };
         export default data
-        `
-
-        // const jsContent = `const data = {
-        //     colors: ${JSON.stringify(data, null, 2)}
-        // };`        
+        `      
 
         const filePath = path.join(process.cwd(), 'public', 'main.js');
 
