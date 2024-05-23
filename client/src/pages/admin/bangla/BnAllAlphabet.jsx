@@ -35,7 +35,7 @@ const BnAllAlphabet = () => {
                     letters.map(l =>
                         <Link
                             key={l._id}
-                            to={`/bn/update/alphabet/${l._id}`}
+                            to={`/alphabet/bn/update/${l._id}`}
                             className='p-4 bg-gray-50 text-center text-xl border'
                         >
                             {l.letter}

@@ -35,7 +35,7 @@ const EnAllAlphabet = () => {
                     letters.map(l =>
                         <Link
                             key={l._id}
-                            to={`/en/update/alphabet/${l._id}`}
+                            to={`/alphabet/en/update/${l._id}`}
                             className='p-4 bg-gray-50 text-center text-xl border'
                         >
                             {l.capital}

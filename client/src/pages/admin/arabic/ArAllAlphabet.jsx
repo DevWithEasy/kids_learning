@@ -35,7 +35,7 @@ const ArAllAlphabet = () => {
                     letters.map(l =>
                         <Link
                             key={l._id}
-                            to={`/ar/update/alphabet/${l._id}`}
+                            to={`/alphabet/ar/update/${l._id}`}
                             className='p-4 bg-gray-50 text-center text-4xl border'
                         >
                             {l.letter}
